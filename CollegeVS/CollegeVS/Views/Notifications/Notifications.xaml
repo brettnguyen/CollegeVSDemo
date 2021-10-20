@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+          
+              xmlns:views="clr-namespace:CollegeVS.Views"
+                 xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+               xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="#10466C"
+                  xmlns:controls="clr-namespace:CollegeVS"
+             x:Class="CollegeVS.Views.Notifications"
+              Shell.FlyoutItemIsVisible="False"
+              Shell.FlyoutBehavior="Disabled"
+              Shell.NavBarIsVisible="False"
+           >
+ 
+
+        
+
+
+    <ContentPage.Content>
+        <yummy:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+             <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <StackLayout>
+                <Grid BackgroundColor="#10466C" HeightRequest="60">
+                    <StackLayout Orientation="Horizontal" Spacing="0">
+                        <StackLayout VerticalOptions="Center">
+                            <ImageButton  Source="wbackarrow.png" Rotation="270" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Center" Padding="5" IsVisible="true" Command="{Binding ReturnToCLGVSHome}" />
+                        </StackLayout>
+
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Label Text="Notifications" Padding="0" TextColor="White" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center" />
+                    </StackLayout>
+
+                </Grid>
+                
+
+                    <Grid Padding="0"  BackgroundColor="Transparent" >
+
+                        <ListView x:Name="NotificationInfos"
+                              ItemsSource="{Binding .}"
+                                  HasUnevenRows="True"
+                                  SelectionMode="None"
+                               BackgroundColor="Transparent"
+                                 >
+
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout>
+                                            <Frame HasShadow="True" BorderColor="White"  BackgroundColor="Transparent" Padding="0" HeightRequest="100" Margin="5">
+                                                <Grid Padding="10,0,0,0">
+                                                    <StackLayout VerticalOptions="Center">
+                                                        <AbsoluteLayout>
+
+                                                            <Frame BackgroundColor="Transparent" Padding="0" Grid.Row="0" HasShadow="False" HeightRequest="40" WidthRequest="40">
+                                                                <ImageButton Source="{Binding PostImage}" Aspect="AspectFit" BackgroundColor="Transparent" />
+                                                            </Frame>
+                                                            <Frame BackgroundColor="Transparent" Padding="0" HasShadow="False" HeightRequest="40" WidthRequest="40">
+                                                                <ImageButton Source="{Binding ChallengeImage}" BackgroundColor="Transparent" />
+                                                            </Frame>
+                                                            <StackLayout Padding="0,0,0,0">
+                                                                <Frame HasShadow="False" CornerRadius="{OnPlatform Android='100',iOS='23'}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="Transparent"  VerticalOptions="Center" WidthRequest="45" HeightRequest="45">
+                                                                    <ImageButton Source="{Binding UserImage}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Start"
+                                                   Aspect="Fill" >
+
+                                                                    </ImageButton>
+                                                                </Frame>
+
+                                                            </StackLayout>
+
+                                                        </AbsoluteLayout>
+                                                    </StackLayout>
+                                                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal">
+                                                        <StackLayout Orientation="Vertical" Spacing="0">
+                                                            <Label Text="{Binding Username}" HorizontalTextAlignment="Center" LineBreakMode="NoWrap" TextColor="White" FontSize="16" FontAttributes="Bold" VerticalOptions="Center"/>
+
+                                                            <Frame Padding="0" BackgroundColor="Transparent" WidthRequest="225" HasShadow="False" HorizontalOptions="Center">
+                                                                <StackLayout HorizontalOptions="Center">
+                                                                    <Label Text="{Binding Details}"  LineBreakMode="WordWrap" VerticalTextAlignment="Center" TextColor="White" FontSize="16" FontAttributes="Bold" BackgroundColor="Transparent" HorizontalTextAlignment="Center" HorizontalOptions="Start" VerticalOptions="Center" />
+                                                                </StackLayout>
+                                                            </Frame>
+
+                                                        </StackLayout>
+
+
+                                                    </StackLayout>
+                                                    <StackLayout HorizontalOptions="End" VerticalOptions="Center" Padding="0,0,20,0">
+                                                        <Frame BackgroundColor="Transparent" Padding="0" Grid.Row="0" HasShadow="False" HeightRequest="40" WidthRequest="40">
+                                                            <ImageButton Source="{Binding PostCommentImage}" Aspect="AspectFit" BackgroundColor="Transparent" />
+                                                        </Frame>
+                                                    </StackLayout>
+                                                </Grid>
+                                            </Frame>
+                                        </StackLayout>
+
+
+
+
+
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </Grid>
+             
+            </StackLayout>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>
+    

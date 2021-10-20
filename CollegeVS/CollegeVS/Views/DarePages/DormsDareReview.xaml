@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:CollegeVS"
+                          xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="CollegeVS.Views.DormsDareReview"
+              xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="#10466C"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+       
+             >
+  <ContentPage.Content>
+
+
+        <yummy:PancakeView  Margin="{OnPlatform Android='0',iOS='0,0,0,-55'}" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                   <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+        
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout>
+                    
+                        <Grid BackgroundColor="#10466C" Grid.Row="0"  Padding="0,0,0,0">
+                            <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="10,0,0,0">
+                            <ImageButton Source="wbackarrow.png" HeightRequest="20" Rotation="270" WidthRequest="20" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackArrow_Clicked" />
+                        </StackLayout>
+                            <StackLayout Padding="0,0,0,5" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label Text="Dare Review" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="End" VerticalTextAlignment="End" TextColor="White" FontSize="22"/>
+                            </StackLayout>
+                             <StackLayout HorizontalOptions="End" VerticalOptions="Center" Orientation="Horizontal" Padding="0,0,10,0">
+                               <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Next_Tapped" >
+                                </TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                              <Label VerticalOptions="Center" Text="Send" TextColor="White" FontAttributes="Bold" FontSize="18"/>
+                            <Image Source="wbackarrow.png" Opacity=".9" HeightRequest="20" Rotation="90" WidthRequest="20" VerticalOptions="Center" BackgroundColor="Transparent" />
+                        </StackLayout>
+                        </Grid>
+                    
+                     <ScrollView VerticalScrollBarVisibility="Always" BackgroundColor="Transparent">
+                    <Grid Padding="0,0,0,0" RowSpacing="0" HorizontalOptions="Center" VerticalOptions="Center">
+
+                            <Grid  Padding="0,0,0,0" RowSpacing="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                                <StackLayout Grid.Row="0" HorizontalOptions="Center">
+                                    <Grid Padding="0,0,0,0">
+                                    
+
+
+                                        <AbsoluteLayout HorizontalOptions="Center" >
+                               
+                                   
+                                    <StackLayout>
+
+                                  
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"  CornerRadius="15" BackgroundColor="#10466C">
+
+                                        
+                                        <Button  Padding="15" Text="Dorms" TextColor="White" BackgroundColor="Transparent" BorderColor="Green" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75"  CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout  Style="{StaticResource DareStackStyle}" >
+                                   
+                                    <Frame HasShadow="False" Style="{StaticResource DareFrameStyleTwo}"  BackgroundColor="Green" Padding="3">
+                                       
+                                        <Frame HasShadow="False" Style="{StaticResource DareFrameStyleThree}"  Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            
+                                            <Image   Source="thedormsicon.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"  />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                             
+                            </AbsoluteLayout>
+                                    </Grid>
+                                </StackLayout>
+
+                                <StackLayout Padding="0,5,0,0" Grid.Row="1" HorizontalOptions="Center" Spacing="10">
+                                    <StackLayout Padding="0,0,10,0" HorizontalOptions="Center">
+                                    <StackLayout Opacity=".8" Orientation="Horizontal">
+                                        <Label TextDecorations="None"  Text="Choose User:"  TextColor="White" FontAttributes="Bold" FontSize="Large"/>
+                                        <Image Source="whiteusericon.png" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent"/>
+                                    </StackLayout>
+                                     <Frame HasShadow="False" Padding="0" Opacity=".9" BackgroundColor="#4a6488" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="350"  CornerRadius="10">
+                                            <StackLayout Padding="{OnPlatform Android='-60,5,0,0',iOS='0,0,0,0'}">
+                                            <controls:CustomSearchBar x:Name="SearchUser" Opacity=".9" BackgroundColor="Transparent" TextColor="White" TextTransform="None" FontAttributes="Bold" PlaceholderColor="LightGray" HeightRequest="45"  Placeholder="Choose user" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                                </StackLayout>
+                                        </Frame>
+                                    </StackLayout>
+                                    <StackLayout Padding="0,0,10,0"  Grid.Row="2" HorizontalOptions="Center">
+                                    <StackLayout Orientation="Horizontal" Opacity=".8" >
+                                        <Label Text="Dare Title:"  TextColor="White" FontAttributes="Bold" FontSize="Large"/>
+                                        <Image Source="whitetitle.png" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent"/>
+                                    </StackLayout>
+                                      <Frame HasShadow="False" WidthRequest="350" Padding="0" Opacity=".9" BackgroundColor="#4a6488" CornerRadius="10">
+                                                <StackLayout Padding="35,5,0,5">
+                                                   
+                                                    <controls:CustomEdit x:Name="DareTitle" TextColor="White" Margin="0,0,0,0" BackgroundColor="Transparent"  WidthRequest="350"  PlaceholderColor="LightGray" Placeholder="#Dorms"  FontAttributes="Bold" VerticalOptions="Center"   HorizontalOptions="Start"  AutoSize="TextChanges" MaxLength="50"  />
+                                                       
+                                                </StackLayout>
+                                                    </Frame>
+                                    </StackLayout>
+                                    <StackLayout Grid.Row="3" HorizontalOptions="Center">
+                                    
+                                        <StackLayout Padding="0,0,10,0" HorizontalOptions="Center">
+                                        <StackLayout Opacity=".8" Margin="0,0,0,0" Orientation="Horizontal">
+                                            <Label Text="Details (Optional):" HorizontalTextAlignment="Start" VerticalOptions="End" VerticalTextAlignment="End"  TextColor="White" FontAttributes="Bold" FontSize="Large"/>
+                                            <Image Source="whitedetails.png" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent"/>
+                                        </StackLayout>
+                                        <Frame HasShadow="False" WidthRequest="350" Padding="0" Opacity=".9" BackgroundColor="#4a6488" CornerRadius="10">
+                                                <StackLayout Padding="35,5,0,5">
+                                                   
+                                                    <controls:CustomEdit  TextColor="White" Margin="0,0,0,0" BackgroundColor="Transparent"  WidthRequest="350"  PlaceholderColor="LightGray" Placeholder="Write details here!"  FontAttributes="Bold" VerticalOptions="Center"   HorizontalOptions="Start"  AutoSize="TextChanges" MaxLength="50"  />
+                                                       
+                                                </StackLayout>
+                                                    </Frame>
+                                        </StackLayout>
+                                  
+                                    <Grid HorizontalOptions="Center" Padding="30,0,20,30">
+                                        
+                                            <StackLayout Opacity=".8" VerticalOptions="Start" Orientation="Horizontal">
+                                                <Label Text="Reference (Optional):" HorizontalOptions="Start"  VerticalOptions="Center" VerticalTextAlignment="End"  TextColor="White" FontAttributes="Bold" FontSize="Large"/>
+                                                <Image VerticalOptions="Center" Margin="0,0,0,0"  Source="whiterefimage.png" HeightRequest="40" WidthRequest="40" BackgroundColor="Transparent"/>
+                                            </StackLayout>
+                                        <StackLayout Padding="0,40,0,0" HorizontalOptions="Center" VerticalOptions="End">
+                                            <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488" Padding="0" HorizontalOptions="Center"  WidthRequest="200" HeightRequest="270" Style="{StaticResource DareRevFrameStyle}"  CornerRadius="20">
+                                                <StackLayout  HorizontalOptions="Center" VerticalOptions="Center">
+                                                    <Image WidthRequest="200" HeightRequest="270" IsVisible="false"  x:Name="RefrenceFile"  BackgroundColor="Transparent" Aspect="Fill" />
+                                                    <Label  Text="Choose Image/Video" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="LightGray" Opacity=".7" FontAttributes="Bold" FontSize="16"/>
+
+                                                    <Image Style="{StaticResource DareRevImageStyle}" Source="ImageCameraButton.png" Opacity=".7" HeightRequest="55" WidthRequest="55" BackgroundColor="Transparent" />
+                                                    <Label Text="(Tap to choose)" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="LightGray" Opacity=".7" WidthRequest="150" FontAttributes="Bold" FontSize="16"/>
+                                                </StackLayout>
+                                            </Frame>
+                                        </StackLayout>
+                                    </Grid>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Grid>
+                      
+
+                    </Grid>
+                          </ScrollView>
+                   
+                   
+                </StackLayout>
+            </Grid>
+           
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

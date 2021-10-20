@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:t="clr-namespace:SlideOverKit;assembly=SlideOverKit"
+             x:Class="CollegeVS.Views.RightSideMasterPage"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             BackgroundColor="#4a6488"
+             >
+    <ContentView.Content>
+        <Frame BackgroundColor="#4a6488" Padding="0,0,0,0" HasShadow="False" HeightRequest="100"  >
+        
+        <StackLayout Orientation="Horizontal">
+                <StackLayout Margin="10,10,20,0">
+                    <Frame Style="{StaticResource FlyoutFrameStyle}"  HasShadow="False" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="Transparent"  VerticalOptions="Center" >
+                        <ImageButton Source="SteveHarvey.jpg"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Start"
+                                                   Aspect="Fill" >
+
+                        </ImageButton>
+                    </Frame>
+
+                </StackLayout>
+                <StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="0">
+                <Label Text="@SteveHarvey" HorizontalTextAlignment="Center" TextColor="white" Style="{StaticResource FlyoutLabelStyle}" FontAttributes="bold"/>
+            </StackLayout>
+
+            <Grid Padding="0,0,0,0" HorizontalOptions="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="{OnPlatform Android='40',iOS='40'}"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+              
+                <StackLayout Grid.Row="1">
+                    <Label Opacity=".8" Text="Posts" HorizontalTextAlignment="Center" TextColor="White" Style="{StaticResource FlyoutLabelStyle}" FontAttributes="bold"/>
+                    
+                </StackLayout>
+                <StackLayout Grid.Row="1" Grid.Column="2">
+                    <Label Opacity=".8" Text="Points" TextColor="White" Style="{StaticResource FlyoutLabelStyle}" FontAttributes="bold"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0">
+                    <Label Opacity=".9" Text="100" HorizontalTextAlignment="Center" TextColor="White" Style="{StaticResource FlyoutLabelStyleTwo}" FontAttributes="bold"/>
+                </StackLayout>
+                <StackLayout Grid.Row="0" Grid.Column="2">
+                    <Label  Opacity=".9" Text="1M" HorizontalTextAlignment="Center" TextColor="White" Style="{StaticResource FlyoutLabelStyleTwo}" FontAttributes="bold"/>
+                </StackLayout>
+
+            </Grid>
+            </StackLayout>
+        </StackLayout>
+       
+
+        </Frame>
+    </ContentView.Content>
+</ContentView>

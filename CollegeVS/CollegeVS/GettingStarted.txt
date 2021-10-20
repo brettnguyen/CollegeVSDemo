@@ -1,0 +1,92 @@
+Welcome to Xamarin.Forms! Here are some tips to get started building your app.
+
+Building Your App UI
+--------------------
+
+XAML Hot Reload quickly applies UI changes as you make them to your running app.
+This is the most productive way to preview and iteratively create your UI.
+
+Try it out:
+
+1. Run the app by clicking the Start Debugging (play) button in the above toolbar. 
+2. Open <MainProject>\Views\AboutPage.xaml.
+   Don't stop the app - keep it running while making changes.
+3. Change something! Hint: change the Accent color on line 14 from "#96d1ff" to "Pink". Save the file.
+4. Watch the About screen update on the device or emulator, with the logo background now pink.
+
+Keep going and try more changes!
+
+QuickStart Guide
+----------------
+
+Learn more of the fundamentals for building apps with Xamarin here: https://aka.ms/xamarin-quickstart
+
+Your App Shell
+--------------
+
+This template uses Shell, an app container that reduces the complexity of your apps by providing fundamental features including:
+
+- A single place to describe the app's visual hierarchy.
+- Common navigation such as a flyout menu and tabs.
+- A URI-based navigation scheme that permits navigation to any page in the application.
+- An integrated search handler.
+
+Open AppShell.xaml to begin exploring. To learn more about Shell visit: https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/introduction
+
+
+
+
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:CollegeVS"
+			 mc:Ignorable="d"
+             x:Class="CollegeVS.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+	<!--Common Styles Starts-->
+	<ContentPage.Content>
+
+		<Grid Margin="20">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+
+			</Grid.RowDefinitions>
+			<Label Text="CollegeVS" HorizontalTextAlignment="Center" TextColor="#10466C" FontSize="40" Padding="25,10,30,10" FontFamily="Lobster-Regular"/>
+				<StackLayout Spacing="20">
+					<AbsoluteLayout HorizontalOptions="Center" >
+						<Rectangle Fill="#10466C"
+                                WidthRequest="110"
+                                HeightRequest="110"
+                                   RadiusX="10"
+                                   RadiusY="10"/>
+						<Image Source="cvlogo.jpg" WidthRequest="100" HeightRequest="100" Margin="5" />
+
+					</AbsoluteLayout>
+
+
+					<Frame BorderColor="DarkGray" IsClippedToBounds="true" Padding="0" CornerRadius="20" HeightRequest="40">
+
+						<controls:CustomEntry BackgroundColor="LightGray" Text="" Placeholder="Username"  FontSize="18" HeightRequest="58"/>
+
+					</Frame>
+
+					<Frame BorderColor="DarkGray" IsClippedToBounds="true" Padding="0" CornerRadius="20"  HeightRequest="40">
+
+						<controls:CustomEntry BackgroundColor="LightGray" FontSize="18" Text="" Placeholder="Password" IsPassword="True"  />
+
+					</Frame>
+
+					<StackLayout>
+
+						<Button CornerRadius="20" Text="Login" FontSize="Title" BackgroundColor="#10466C" TextColor="White" Command="{Binding LoginCommand}" Padding="0"  />
+
+					</StackLayout>
+					<Label Text="By creating an account and using our website you acknowledge that you have read and agreed to our Cookie Policy, Terms of Service, Privacy Policy, and End User License Agreement." FontSize="16"  Padding="30,0,30,0"/>
+				</StackLayout>
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

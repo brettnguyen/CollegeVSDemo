@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <LangVersion>8.0</LangVersion>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61EB1E39-4F6C-4FDF-9CD0-AE36D77EB24C}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TemplateGuid>{89a4fe7c-635d-49c9-8d8c-5cd363c0d68d}</TemplateGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CollegeVS.iOS</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>CollegeVS.iOS</AssemblyName>
+    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
+    <ProvisioningType>automatic</ProvisioningType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>Apple Development: komoru8@gmail.com (WPNFG3QCW5)</CodesignKey>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>Apple Development: Brett Nguyen (8397A6W2J7)</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>None</MtouchLink>
+    <MtouchInterpreter>-all</MtouchInterpreter>
+    <CodesignProvision>iOS Team Provisioning Profile: *</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>ARM64</MtouchArch>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="LabelShadowEffect.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <None Include="Entitlements.plist" />
+    <None Include="Info.plist" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Renderers\PageImpInterfaceRendereHomeiOS.cs" />
+    <Compile Include="Renderers\PageImpInterfaceRendereProfileiOS.cs" />
+    <Compile Include="Renderers\PageImpInterfaceRendereHighlightiOS.cs" />
+    <Compile Include="Renderers\PageImpInterfaceRendereOtherUseriOS.cs" />
+    <Compile Include="Renderers\PageImpInterfaceRendereSchooliOS.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <BundleResource Include="Resources\icon_about.png" />
+    <BundleResource Include="Resources\icon_about%402x.png" />
+    <BundleResource Include="Resources\icon_about%403x.png" />
+    <BundleResource Include="Resources\icon_feed.png" />
+    <BundleResource Include="Resources\icon_feed%402x.png" />
+    <BundleResource Include="Resources\icon_feed%403x.png" />
+    <BundleResource Include="Resources\xamarin_logo.png" />
+    <BundleResource Include="Resources\xamarin_logo%402x.png" />
+    <BundleResource Include="Resources\xamarin_logo%403x.png" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <BundleResource Include="Resources\BlueBackArrow.png" />
+    <BundleResource Include="Resources\BlueCircle.png" />
+    <BundleResource Include="Resources\buffalo.jpg" />
+    <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\CameraNextButton.png" />
+    <BundleResource Include="Resources\CArrow.png" />
+    <BundleResource Include="Resources\CategoriesWhite.svg" />
+    <BundleResource Include="Resources\ChallengeIcon.png" />
+    <BundleResource Include="Resources\checkmark.png" />
+    <BundleResource Include="Resources\circle.jpg" />
+    <BundleResource Include="Resources\Circles.png" />
+    <BundleResource Include="Resources\Clock.png" />
+    <BundleResource Include="Resources\ClubsCamera.png" />
+    <BundleResource Include="Resources\clubsIcon.png" />
+    <BundleResource Include="Resources\comment.png" />
+    <BundleResource Include="Resources\CommentFinal.png" />
+    <BundleResource Include="Resources\CreateDareIcon.png" />
+    <BundleResource Include="Resources\cvlogo.jpg" />
+    <BundleResource Include="Resources\cvlogoinv.png" />
+    <BundleResource Include="Resources\CVLogoINVCopy.png" />
+    <BundleResource Include="Resources\DareCamera.png" />
+    <BundleResource Include="Resources\DareFlame.png" />
+    <BundleResource Include="Resources\DareRepIcon.png" />
+    <BundleResource Include="Resources\Darnell.jpeg" />
+    <BundleResource Include="Resources\DetailsIcon.png" />
+    <BundleResource Include="Resources\DormsCamera.png" />
+    <BundleResource Include="Resources\DormsIcon.png" />
+    <BundleResource Include="Resources\FaceOffIcon.png" />
+    <BundleResource Include="Resources\FinalArrow.png" />
+    <BundleResource Include="Resources\Flag_BL.png" />
+    <BundleResource Include="Resources\FoodCamera.png" />
+    <BundleResource Include="Resources\foodIcon.png" />
+    <BundleResource Include="Resources\GrayArrow.png" />
+    <BundleResource Include="Resources\GrayCircle.png" />
+    <BundleResource Include="Resources\GreenFinalArrow.png" />
+    <BundleResource Include="Resources\HatINV.png" />
+    <BundleResource Include="Resources\headerIcon.png" />
+    <BundleResource Include="Resources\HeartFilled.png" />
+    <BundleResource Include="Resources\HeartUnfilled.png" />
+    <BundleResource Include="Resources\HomeIcon.png" />
+    <BundleResource Include="Resources\ImageCameraButton.png" />
+    <BundleResource Include="Resources\ImageIcon.png" />
+    <BundleResource Include="Resources\IncomingDare.png" />
+    <BundleResource Include="Resources\invertshield.png" />
+    <BundleResource Include="Resources\launch_screen.axml" />
+    <BundleResource Include="Resources\LeaderboardIcon.png" />
+    <BundleResource Include="Resources\Lines.png" />
+    <BundleResource Include="Resources\NewDareIcon.png" />
+    <BundleResource Include="Resources\OtherCamera.png" />
+    <BundleResource Include="Resources\OtherIcon.png" />
+    <BundleResource Include="Resources\OutgoingDare.png" />
+    <BundleResource Include="Resources\parties.svg" />
+    <BundleResource Include="Resources\PartyCamera.png" />
+    <BundleResource Include="Resources\PartyIcon.png" />
+    <BundleResource Include="Resources\Points.png" />
+    <BundleResource Include="Resources\PointsINV.png" />
+    <BundleResource Include="Resources\PostIcon.png" />
+    <BundleResource Include="Resources\profile_hat_BL.png" />
+    <BundleResource Include="Resources\ProfileCircle.png" />
+    <BundleResource Include="Resources\ProfileHatWhite.svg" />
+    <BundleResource Include="Resources\ProfileIcon.png" />
+    <BundleResource Include="Resources\ProfileINV.png" />
+    <BundleResource Include="Resources\Ranking.png" />
+    <BundleResource Include="Resources\rankingINV.png" />
+    <BundleResource Include="Resources\share.png" />
+    <BundleResource Include="Resources\ShareFinal.png" />
+    <BundleResource Include="Resources\SlotMachine.png" />
+    <BundleResource Include="Resources\Sort.png" />
+    <BundleResource Include="Resources\SportsCamera.png" />
+    <BundleResource Include="Resources\sportsIcon.png" />
+    <BundleResource Include="Resources\status.png" />
+    <BundleResource Include="Resources\SteveHarvey.jpg" />
+    <BundleResource Include="Resources\tab_about.png" />
+    <BundleResource Include="Resources\tab_feed.png" />
+    <BundleResource Include="Resources\test.mp4" />
+    <BundleResource Include="Resources\TitleIcon.png" />
+    <BundleResource Include="Resources\TransparentClubs.png" />
+    <BundleResource Include="Resources\TransparentDorms.png" />
+    <BundleResource Include="Resources\TransparentFood.png" />
+    <BundleResource Include="Resources\TransparentOther.png" />
+    <BundleResource Include="Resources\TransparentParties.png" />
+    <BundleResource Include="Resources\TransparentSports.png" />
+    <BundleResource Include="Resources\Trash.png" />
+    <BundleResource Include="Resources\Upvote_Engaged.png" />
+    <BundleResource Include="Resources\Upvote_Unengaged.png" />
+    <BundleResource Include="Resources\UserIcon.png" />
+    <BundleResource Include="Resources\UserIconINV.png" />
+    <BundleResource Include="Resources\WhiteBackArrow.png" />
+    <BundleResource Include="Resources\WhiteFlag.png" />
+    <BundleResource Include="Resources\WhiteLines.png" />
+    <BundleResource Include="Resources\WhiteSort.png" />
+    <BundleResource Include="Resources\Harvard.jpg" />
+    <BundleResource Include="NewUpvote.json" />
+    <BundleResource Include="Resources\SUNYPlattsburgh.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Elasticsearch.Net">
+      <Version>7.15.0</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.DeviceOrientation">
+      <Version>1.0.7</Version>
+    </PackageReference>
+    <PackageReference Include="Plugin.Permissions">
+      <Version>6.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="SlideOverKit">
+      <Version>2.1.6.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xam.Plugin.Media">
+      <Version>5.0.1</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.CommunityToolkit">
+      <Version>1.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.CommunityToolkit.Markup">
+      <Version>1.2.0</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+    <PackageReference Include="Xamarin.Forms.PancakeView">
+      <Version>2.3.0.759</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Plugin.SharedTransitions">
+      <Version>2.4.0</Version>
+    </PackageReference>
+    <PackageReference Include="CardsView">
+      <Version>2.8.0</Version>
+    </PackageReference>
+    <PackageReference Include="Resizetizer.NT">
+      <Version>0.3.0</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie">
+      <Version>4.0.11</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\CollegeVS\CollegeVS.csproj">
+      <Project>{9681E0AA-CBBB-42D1-B777-133CA3710A1C}</Project>
+      <Name>CollegeVS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Renderers\" />
+  </ItemGroup>
+</Project>

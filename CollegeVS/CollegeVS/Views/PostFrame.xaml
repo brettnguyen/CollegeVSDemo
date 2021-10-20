@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+			 xmlns:controls="clr-namespace:CollegeVS.CustomControls"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:Views="clr-namespace:CollegeVS.Views"
+			 Shell.NavBarIsVisible="False"
+             x:Class="CollegeVS.Views.PostFrame">
+	<ContentPage.Content>
+		<controls:KeyboardView>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="90" />
+				<RowDefinition Height="50" />
+				<RowDefinition Height="50" />
+				<RowDefinition Height="50" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="80" />
+				<RowDefinition Height="115" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="65" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="65" />
+			</Grid.ColumnDefinitions>
+
+			<Image Aspect="AspectFit" Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="3" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Source="{Binding PhotoPath}"></Image>
+
+			<ImageButton VerticalOptions="Center" Grid.Row="0" Grid.Column="0"  Source="BackButton.png" Margin="15,40,0,0"
+                         Command="{Binding GoBackCommand}"
+                         ></ImageButton>
+
+			<ImageButton VerticalOptions="End" Grid.Row="0" Grid.Column="2"  Source="cameraNextButton.png" Margin="0,40,15,0"></ImageButton>
+			<ImageButton Grid.Row="1" Grid.Column="2"  Source="cameradarebutton.png" Margin="0,0,15,0"></ImageButton>
+			<ImageButton Grid.Row="2" Grid.Column="2"  Source="cameraFilterButtons.png" Margin="0,0,15,0"></ImageButton>
+			<ImageButton Grid.Row="3" Grid.Column="2"  Source="ChooseFromGalleryButton2.png" Margin="0,0,15,0" Command="{Binding PickPhotoCommand}"></ImageButton>
+
+			<yummy:PancakeView Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" CornerRadius="10"
+                VerticalOptions="EndAndExpand" Margin="20,0,20,0">
+				<Editor  AutoSize="TextChanges" MaxLength="200" BackgroundColor="#8C000000"  Keyboard="Chat" TextColor="White" HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand" Placeholder="Post Title" PlaceholderColor="White"  ></Editor>
+			</yummy:PancakeView>
+
+			<yummy:PancakeView Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Margin="20,0,20,20" 
+                               HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"
+                               
+                               CornerRadius="10"
+                               >
+
+				<Views:BottomHalfOfCreatePostPage />
+
+			</yummy:PancakeView>
+
+
+
+		</controls:KeyboardView>
+	</ContentPage.Content>
+</ContentPage>

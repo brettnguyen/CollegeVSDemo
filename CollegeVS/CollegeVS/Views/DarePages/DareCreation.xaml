@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+              xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="Transparent"
+            
+              Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             Shell.NavBarHasShadow="False"
+   
+    x:Class="CollegeVS.Views.DareCreation">
+     <ContentView.Content>
+      
+            <StackLayout HorizontalOptions="Center">
+            <Grid IsVisible="{OnPlatform Android='false',iOS='true'}">
+               
+               
+                <Frame BackgroundColor="White"  HasShadow="False" Padding="0" WidthRequest="140" HeightRequest="3" HorizontalOptions="Start" VerticalOptions="Start"></Frame>
+
+                   
+                        <Grid Grid.Row="0" Padding="0,8,0,0" Margin="0,0,0,65" RowSpacing="0" >
+                          
+                            <Grid.RowDefinitions >
+                    
+                    
+                                  
+                    <RowDefinition  Height="1.5*"/>
+                               <RowDefinition  Height="1.5*"/>
+                               <RowDefinition  Height="1.5*"/>
+                               <RowDefinition  Height="1.5*"/>
+                               <RowDefinition  Height="1.5*"/>
+
+                                  
+                  
+                                      
+                
+                              
+
+                      
+
+
+                             
+              
+                    
+
+                </Grid.RowDefinitions>
+                           
+
+                            <Grid HorizontalOptions="Center">
+                                
+                            <AbsoluteLayout   HorizontalOptions="Center" >
+                               
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer  NumberOfTapsRequired="1" Tapped="PartyDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+
+                                  
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"  CornerRadius="15" BackgroundColor="#10466C">
+
+                                        
+                                        <Button  Padding="0" Text="Parties" TextColor="White" BackgroundColor="Transparent" BorderColor="Red" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75"  CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout  Style="{StaticResource DareStackStyle}" >
+                                   
+                                    <Frame HasShadow="False" Style="{StaticResource DareFrameStyleTwo}"  BackgroundColor="Red" Padding="3">
+                                       
+                                        <Frame HasShadow="False" Style="{StaticResource DareFrameStyleThree}"  Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            
+                                            <Image   Source="thepartyicon.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"  />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                             
+                            </AbsoluteLayout>
+                                  
+
+                                </Grid>
+
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="1" >
+                            <AbsoluteLayout >
+                               
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="FoodDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"   CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Food" TextColor="White" BorderColor="Yellow" BorderWidth="3" BackgroundColor="Transparent" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource DareStackStyle}">
+                                    <Frame  Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="Yellow" Padding="3">
+                                        <Frame  Style="{StaticResource DareFrameStyleThree}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            <ImageButton  Source="thefoodicon" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"   />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                               
+                            </AbsoluteLayout>
+                                </Grid>
+
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="2">
+                            <AbsoluteLayout   >
+                               
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="SportsDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"  CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Sports" TextColor="White" BackgroundColor="Transparent" BorderColor="Blue" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource DareStackStyle}" >
+                                    <Frame Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="Blue" Padding="3">
+                                        <Frame  Style="{StaticResource DareFrameStyleThree}"   Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            <ImageButton  Source="thesportsicon" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"  />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                              
+                            </AbsoluteLayout>
+                                </Grid>
+
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="3" >
+                            <AbsoluteLayout  >
+                                
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ClubsDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"   CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button  Text="Clubs" TextColor="White" BackgroundColor="Transparent" BorderColor="Orange" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource DareStackStyle}">
+                                    <Frame Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="Orange" Padding="3">
+                                        <Frame  Style="{StaticResource DareFrameStyleThree}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            <ImageButton  Source="clubs.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"  />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                               
+                            </AbsoluteLayout>
+                                </Grid>
+
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="4" >
+                            <AbsoluteLayout >
+                               
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="DormsDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"  CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Dorms" TextColor="White" BackgroundColor="Transparent" BorderColor="Green" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False"/>
+                                    </Frame>
+                                </StackLayout>
+                                    <StackLayout Style="{StaticResource DareStackStyle}">
+                                        <Frame Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="Green" Padding="3">
+                                            <Frame  Style="{StaticResource DareFrameStyleThree}"  Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                                <ImageButton  Source="thedormicon" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}" />
+                                            </Frame>
+                                        </Frame>
+                                    </StackLayout>
+                                
+                            </AbsoluteLayout>
+                                </Grid>
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="5" >
+                            <AbsoluteLayout  >
+                                <AbsoluteLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Randomizer_Tapped"></TapGestureRecognizer>
+                                </AbsoluteLayout.GestureRecognizers>
+                                <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"   CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Randomizer" TextColor="White" BackgroundColor="Transparent" BorderColor="#C4C4C4" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False"/>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource DareStackStyle}">
+                                    <Frame Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="#C4C4C4" Padding="3">
+                                        <Frame  Style="{StaticResource DareFrameStyleThree}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            <Image Source="Other.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"/>
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                            </AbsoluteLayout>
+                                </Grid>
+
+                        </Grid>
+             
+          
+            </Grid>
+
+                <Grid IsVisible="{OnPlatform Android='true',iOS='false'}">
+              
+               
+                <Frame Padding="0" BackgroundColor="White" WidthRequest="140" HeightRequest="3" HorizontalOptions="Start" VerticalOptions="Start"></Frame>
+
+                   
+                        <Grid Grid.Row="0" Padding="0,8,0,0" Margin="0,8,0,20"  >
+                          <Grid.RowDefinitions >
+                    
+                    
+                                  
+                    <RowDefinition  Height="1.3*"/>
+                               <RowDefinition  Height="1.3*"/>
+                               <RowDefinition  Height="1.3*"/>
+                               <RowDefinition  Height="1.3*"/>
+                               <RowDefinition  Height="1.3*"/>
+                            
+                                  
+                  
+                                      
+                
+                              
+
+                      
+
+
+                             
+              
+                    
+
+                </Grid.RowDefinitions>
+
+                 
+
+                           <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="0">
+                            <AbsoluteLayout  Grid.Row="0" HorizontalOptions="Center" >
+                               
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer  NumberOfTapsRequired="1" Tapped="PartyDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+
+                                  
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"  CornerRadius="15" BackgroundColor="#10466C">
+
+                                        
+                                        <Button  Padding="0" Text="Parties" TextColor="White" BackgroundColor="Transparent" BorderColor="Red" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75"  CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout  Style="{StaticResource DareStackStyle}" >
+                                   
+                                    <Frame HasShadow="False" Style="{StaticResource DareFrameStyleTwo}"  BackgroundColor="Red" Padding="3">
+                                       
+                                        <Frame HasShadow="False" Style="{StaticResource DareFrameStyleThree}"  Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            
+                                            <Image   Source="thepartyicon.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"  />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                             
+                            </AbsoluteLayout>
+                           </Grid>
+                     
+
+                            <Grid  HorizontalOptions="Center" Grid.Column="0" Grid.Row="1" >
+                            <AbsoluteLayout >
+                               
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="FoodDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"   CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Food" TextColor="White" BorderColor="Yellow" BorderWidth="3" BackgroundColor="Transparent" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource DareStackStyle}">
+                                    <Frame  Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="Yellow" Padding="3">
+                                        <Frame  Style="{StaticResource DareFrameStyleThree}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            <ImageButton  Source="thefoodicon.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"   />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                               
+                            </AbsoluteLayout>
+                                </Grid>
+
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="2">
+                            <AbsoluteLayout   >
+                               
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="SportsDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"  CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Sports" TextColor="White" BackgroundColor="Transparent" BorderColor="Blue" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource DareStackStyle}" >
+                                    <Frame Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="Blue" Padding="3">
+                                        <Frame  Style="{StaticResource DareFrameStyleThree}"   Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            <ImageButton  Source="thesportsicon.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"  />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                              
+                            </AbsoluteLayout>
+                                </Grid>
+
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="3" >
+                            <AbsoluteLayout  >
+                                
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ClubsDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"   CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Clubs" TextColor="White" BackgroundColor="Transparent" BorderColor="Orange" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False" />
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource DareStackStyle}">
+                                    <Frame Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="Orange" Padding="3">
+                                        <Frame  Style="{StaticResource DareFrameStyleThree}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            <ImageButton Margin="2" Source="Clubs.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"  />
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                               
+                            </AbsoluteLayout>
+                                </Grid>
+
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="4" >
+                            <AbsoluteLayout >
+                               
+                                    <AbsoluteLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="DormsDare_Tapped"></TapGestureRecognizer>
+                                    </AbsoluteLayout.GestureRecognizers>
+                                    <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"  CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Dorms" TextColor="White" BackgroundColor="Transparent" BorderColor="Green" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False"/>
+                                    </Frame>
+                                </StackLayout>
+                                    <StackLayout Style="{StaticResource DareStackStyle}">
+                                        <Frame Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="Green" Padding="3">
+                                            <Frame  Style="{StaticResource DareFrameStyleThree}"  Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                                <ImageButton  Source="thedormicon.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}" />
+                                            </Frame>
+                                        </Frame>
+                                    </StackLayout>
+                                
+                            </AbsoluteLayout>
+                                </Grid>
+                            <Grid HorizontalOptions="Center" Grid.Column="0" Grid.Row="5" >
+                            <AbsoluteLayout  >
+                                <AbsoluteLayout.GestureRecognizers>
+                                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Randomizer_Tapped"></TapGestureRecognizer>
+                                </AbsoluteLayout.GestureRecognizers>
+                                <StackLayout>
+                                    <Frame Padding="0" Style="{StaticResource DareFrameStyle}"   CornerRadius="15" BackgroundColor="#10466C">
+                                        <Button   Text="Randomizer" TextColor="White" BackgroundColor="Transparent" BorderColor="#C4C4C4" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="350" HeightRequest="75" CornerRadius="15" IsEnabled="False"/>
+                                    </Frame>
+                                </StackLayout>
+                                <StackLayout Style="{StaticResource DareStackStyle}">
+                                    <Frame Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="#C4C4C4" Padding="3">
+                                        <Frame  Style="{StaticResource DareFrameStyleThree}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                            <Image Source="Other.png" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"/>
+                                        </Frame>
+                                    </Frame>
+                                </StackLayout>
+                            </AbsoluteLayout>
+                                </Grid>
+
+                        </Grid>
+             
+           
+            </Grid>
+                </StackLayout>
+     
+    </ContentView.Content>
+</ContentView>

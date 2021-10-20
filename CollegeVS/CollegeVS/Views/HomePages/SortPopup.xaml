@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<t:SlidePopupView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollegeVS.Views.SortPopup"
+              xmlns:t="clr-namespace:SlideOverKit;assembly=SlideOverKit"
+               
+              >
+    <AbsoluteLayout>
+      
+            <Frame IsClippedToBounds="False" Margin="0,0,0,00"  x:Name="SortBack" BackgroundColor="Black" Opacity=".5" VerticalOptions="Fill" HorizontalOptions="Fill" AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="All" >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="SortBack_Tapped"/>
+                </Frame.GestureRecognizers>
+                </Frame>
+           <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+               AbsoluteLayout.LayoutFlags="PositionProportional">
+    <Frame  BackgroundColor="#1E1E1E" HeightRequest="375" WidthRequest="190" Padding="0" CornerRadius="10" HorizontalOptions="Center" VerticalOptions="Center">
+        <Grid HorizontalOptions="End" RowSpacing="0" Padding="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="370" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        
+            <StackLayout BackgroundColor="Transparent" Padding="0,-10,0,0" Spacing="0" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" >
+            
+                <StackLayout Spacing="10" Orientation="Horizontal" HorizontalOptions="End">
+                    
+
+                    <Label Text="Sort by:" TextColor="White" FontSize="24" Padding="0,0,0,5" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold" LineBreakMode="NoWrap" />
+                    <StackLayout Padding="0,-10,15,0">
+                        <Button HeightRequest="40" WidthRequest="40" x:Name="DoneButton" Text="x" TextColor="Gray" BackgroundColor="Transparent" FontAttributes="Bold" Padding="1" FontSize="26" HorizontalOptions="End" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Padding="0,0,15,0" Spacing="0">
+                    <StackLayout  WidthRequest="180"  Padding="30,0,0,0" IsClippedToBounds="True" Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Recent_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image  x:Name="RecentGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0"/>
+                        <Image x:Name="RecentBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="true"/>
+                        </AbsoluteLayout>
+                        <Image Source="recentclock.png" HeightRequest="30" WidthRequest="30"/>
+                        <AbsoluteLayout>
+                    <Label Text="Recent" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="RecentWhiteText" Text="Recent" TextColor="White" IsVisible="true"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+                    <StackLayout  Padding="29,5,0,0" WidthRequest="180" VerticalOptions="Center"  Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Highest_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image x:Name="HighestGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0"/>
+                            <Image x:Name="HighestBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="false"/>
+                        </AbsoluteLayout>
+                        <Image Source="theupvotearrow.png" HeightRequest="30" WidthRequest="30"/>
+                    <AbsoluteLayout>
+                    <Label Text="Highest" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="HighestWhiteText" Text="Highest" TextColor="White" IsVisible="false"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+                    <StackLayout Padding="29,5,0,0" WidthRequest="180"  Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Lowest_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image x:Name="LowestGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0"/>
+                            <Image x:Name="LowestBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="false"/>
+                        </AbsoluteLayout>
+                        <Image Source="theupvotearrow.png" HeightRequest="30" WidthRequest="30" Rotation="180" HorizontalOptions="Center"/>
+                         <AbsoluteLayout>
+                    <Label Text="Lowest" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="LowestWhiteText" Text="Lowest" TextColor="White" IsVisible="false"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+
+                    <StackLayout Padding="29,5,0,0" WidthRequest="180"  Orientation="Horizontal" HorizontalOptions="Center">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Parties_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image x:Name="PartiesGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="true"/>
+                            <Image x:Name="PartiesBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="false"/>
+                        </AbsoluteLayout>
+                        <Image Source="clearbackgroundparty.png" HeightRequest="30" WidthRequest="30"/>
+                    <AbsoluteLayout>
+                    <Label Text="Parties" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="PartiesWhiteText" Text="Parties" TextColor="White" IsVisible="false"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+                <StackLayout Padding="29,5,3,0" WidthRequest="180"  Orientation="Horizontal" HorizontalOptions="Center" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Sports_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image x:Name="SportsGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0"/>
+                            <Image x:Name="SportsBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="false"/>
+                        </AbsoluteLayout>
+                        <Image Source="clearbackgroundsports.png" HeightRequest="30" WidthRequest="30"/>
+                     <AbsoluteLayout>
+                    <Label Text="Sports" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="SportsWhiteText" Text="Sports" TextColor="White" IsVisible="false"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+                    <StackLayout Padding="29,5,17,0" WidthRequest="180"  Orientation="Horizontal" HorizontalOptions="Center" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Food_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image x:Name="FoodGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0"/>
+                            <Image x:Name="FoodBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="false"/>
+                        </AbsoluteLayout>
+                        <Image Source="clearbackgroundfood.png" HeightRequest="30" WidthRequest="30"/>
+                     <AbsoluteLayout>
+                    <Label Text="Food" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="FoodWhiteText" Text="Food" TextColor="White" IsVisible="false"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+                    <StackLayout Padding="29,5,4,0" WidthRequest="180"  Orientation="Horizontal" HorizontalOptions="Center" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Dorms_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image x:Name="DormsGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0"/>
+                            <Image x:Name="DormsBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="false"/>
+                        </AbsoluteLayout>
+                        <Image Source="clearbackgrounddorms.png" HeightRequest="30" WidthRequest="30"/>
+                   <AbsoluteLayout>
+                    <Label Text="Dorms" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="DormsWhiteText" Text="Dorms" TextColor="White" IsVisible="false"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+                    <StackLayout Padding="29,5,10,0" WidthRequest="180"  Orientation="Horizontal" HorizontalOptions="Center" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Clubs_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image x:Name="ClubsGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0"/>
+                            <Image x:Name="ClubsBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="false"/>
+                        </AbsoluteLayout>
+                        <Image Source="clearbackgroundclubs.png" HeightRequest="30" WidthRequest="30"/>
+                <AbsoluteLayout>
+                    <Label Text="Clubs" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="ClubsWhiteText" Text="Clubs" TextColor="White" IsVisible="false"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+                    <StackLayout Padding="29,5,10,0" WidthRequest="180"  Orientation="Horizontal" HorizontalOptions="Center" >
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Other_Tapped" NumberOfTapsRequired="1"/>
+                        </StackLayout.GestureRecognizers>
+
+                        <AbsoluteLayout Padding="0,10,0,0">
+                            <Image x:Name="OtherGray" Source="thegraycircle.png" Opacity=".4" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0"/>
+                            <Image x:Name="OtherBlue" Source="whitecircle.png" HeightRequest="13" WidthRequest="13" Margin="0,0,15,0" IsVisible="false"/>
+                        </AbsoluteLayout>
+                        <Image Source="clearbackgroundother.png" HeightRequest="30" WidthRequest="30"/>
+                     <AbsoluteLayout>
+                    <Label Text="Other" TextColor="Gray"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            <Label x:Name="OtherWhiteText" Text="Other" TextColor="White" IsVisible="false"  FontSize="18" HorizontalOptions="Center" FontAttributes="Bold"/>
+                            </AbsoluteLayout>
+                </StackLayout>
+                </StackLayout>
+
+
+            </StackLayout>
+      
+    </Grid>
+    </Frame>
+               </Grid>
+       
+        </AbsoluteLayout>
+</t:SlidePopupView>

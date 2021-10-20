@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollegeVS.Views.BottomHalfOfCreatePostPage">
+  <ContentView.Content>
+        <Grid BackgroundColor="#4D000000" Padding="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="20"/>
+				<RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Switch Grid.Row="0" Grid.Column="0"  OnColor="#10466C" ></Switch>
+            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" TextColor="White" Text="Post Anonymous" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" ></Label>
+
+			<ImageButton x:Name="parties" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" BorderColor ="Yellow" BorderWidth="0" Clicked="Parties_Clicked" BackgroundColor="Transparent" CornerRadius="200"  Padding="0" Source="PartyCamera.png" Margin="4,0,2,0"></ImageButton>
+			<ImageButton x:Name="food"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"   BorderColor ="Yellow" BorderWidth="0" Clicked="Food_Clicked" Command="{Binding CategoryClickedCommand}" CommandParameter="food" BackgroundColor="Transparent" CornerRadius="200"  Source="FoodCamera.png" Margin="7,0,0,0"></ImageButton>
+			<ImageButton x:Name="sports"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="2" BorderColor ="Yellow" BorderWidth="0" Clicked="Sports_Clicked" Command="{Binding CategoryClickedCommand}" CommandParameter="sports" BackgroundColor="Transparent" CornerRadius="200"  Source="SportsCamera.png" Margin="7,0,0,0"></ImageButton>
+			<ImageButton x:Name="clubs"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="3" BorderColor ="Yellow" BorderWidth="0" Clicked="Clubs_Clicked" Command="{Binding CategoryClickedCommand}" CommandParameter="clubs" BackgroundColor="Transparent" CornerRadius="200"  Source="ClubsCamera.png" Margin="7,0,0,0"></ImageButton>
+			<ImageButton x:Name="dorms"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="4" BorderColor ="Yellow" BorderWidth="0" Clicked="Dorms_Clicked" Command="{Binding CategoryClickedCommand}" CommandParameter="dorms" BackgroundColor="Transparent" CornerRadius="200"  Source="DormsCamera.png" Margin="7,0,0,0"></ImageButton>
+			<ImageButton x:Name="other"  Grid.Row="1" Grid.RowSpan="2" Grid.Column="5" BorderColor ="Yellow" BorderWidth="0" Clicked="Other_Clicked" Command="{Binding CategoryClickedCommand}" CommandParameter="other" BackgroundColor="Transparent" CornerRadius="200"  Source="OtherCamera.png" Margin="7,0,0,0"></ImageButton>
+      
+        </Grid>
+    </ContentView.Content>
+</ContentView>

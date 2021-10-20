@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="CollegeVS.Views.CLGVSDaresList">
+
+
+	<ContentPage.Content>
+		<Grid Padding="0"  BackgroundColor="Transparent" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}">
+			<ListView x:Name="ListDares"
+                              ItemsSource="{Binding .}"
+                                  HasUnevenRows="True"
+                                  SelectionMode="None"
+                               
+                                 >
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<AbsoluteLayout>
+								<StackLayout Padding="7,7,0,0">
+									<Button Padding="60,0,0,0"  Text="{Binding DareTitle}" TextColor="White" BackgroundColor="#10466C" BorderColor="{Binding BorderColor}" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="350" HeightRequest="65" CornerRadius="15"/>
+								</StackLayout>
+								<StackLayout Padding="14,14,0,0">
+									<Frame CornerRadius="150" BackgroundColor="{Binding BackgroundColor}" Padding="3">
+										<Frame  CornerRadius="100" Padding="0" IsClippedToBounds="True" HorizontalOptions="Start" BackgroundColor="white"  VerticalOptions="Center" WidthRequest="45" HeightRequest="45">
+											<Image Source="{Binding DareImagePath}" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="35"/>
+										</Frame>
+									</Frame>
+								</StackLayout>
+								<StackLayout Orientation="Horizontal" Padding="14,80,0,20">
+									<Label Text="{Binding DareTXUserName}" Padding="0,0,51,0" FontSize="16" ></Label>
+									<Button Text="Accept" TextColor="White" BackgroundColor="Green" Clicked="DareAccepted" BorderWidth="3" TextTransform="None" FontSize="16" WidthRequest="100" HeightRequest="40" CornerRadius="15"></Button>
+									<Button Text="Reject" TextColor="White" BackgroundColor="Red"  BorderWidth="3" TextTransform="None" FontSize="16"  WidthRequest="100" HeightRequest="40" CornerRadius="15"></Button>
+								</StackLayout>
+							</AbsoluteLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+		</Grid>
+	</ContentPage.Content>
+
+</ContentPage>

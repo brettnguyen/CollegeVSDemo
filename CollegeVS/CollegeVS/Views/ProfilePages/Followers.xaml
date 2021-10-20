@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls1="clr-namespace:CollegeVS"
+    x:Class="CollegeVS.Views.Followers">
+    <ContentView.Content>
+        <StackLayout Padding="0,10,0,0">
+
+             <Frame  HasShadow="False" IsClippedToBounds="True" VerticalOptions="Center"   HorizontalOptions="Center" WidthRequest="400" HeightRequest="45" BackgroundColor="White" Padding="2" CornerRadius="20">
+                                    <controls1:CustomSearchBar Margin="0,0,0,0" PlaceholderColor="Gray" TextColor="Black" BackgroundColor="White" Placeholder="Search"/>
+                                </Frame>
+         <CollectionView Margin="10,10,10,0" BackgroundColor="Transparent"  ItemsSource="{Binding Followers}" 
+                      SelectionMode="Single"
+                         
+                            ItemSizingStrategy="MeasureAllItems">
+               <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical"  ItemSpacing="15"/>
+                                </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate  >
+                           
+                                <Grid  >
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                         <ColumnDefinition Width="auto"/>
+                                         <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                           
+                                           
+                                    </Grid.RowDefinitions>
+                                    <Frame HasShadow="False" Grid.Column="0" Grid.Row="0" CornerRadius="{OnPlatform Android='100',iOS='20'}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Start" BackgroundColor="Transparent"  VerticalOptions="Center" Style="{StaticResource HomeProImageStyle}" >
+                                                        <Image Source="{Binding FollowerProfilePic}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Start"
+                                                   Aspect="Fill" 
+                                                                     /> 
+                                                    </Frame>
+                                <Label  TextColor="White" FontSize="14" FontAttributes="Bold" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" HorizontalTextAlignment="Start" Text="{Binding FollowerUsername}"/>
+                                    <Label Padding="0,10,0,0" FontSize="13" FontAttributes="Bold" Opacity=".7" TextColor="White" Grid.Column="1" Grid.Row="0" HorizontalOptions="Start" HorizontalTextAlignment="Start"  VerticalOptions="Center" Text="{Binding FollowerRealName}"/>
+                                   
+                   <Button HorizontalOptions="End" Grid.Column="2" IsVisible="{Binding Visible }" Text="Remove" TextColor="White" FontAttributes="Bold" TextTransform="None" VerticalOptions="Center" HeightRequest="30" Padding="0" CornerRadius="5" WidthRequest="95" BackgroundColor="DarkRed"/>
+                                         <Button HorizontalOptions="End" IsVisible="{Binding VisibleTwo}" Grid.Column="2" Text="Follow Back" TextColor="White" FontAttributes="Bold" TextTransform="None" VerticalOptions="Center" HeightRequest="30" Padding="0" CornerRadius="5" WidthRequest="95" BackgroundColor="#50ABDE"/>
+                             
+</Grid>
+                           
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                     </CollectionView>
+            </StackLayout>
+    </ContentView.Content>
+</ContentView>

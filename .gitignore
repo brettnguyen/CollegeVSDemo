@@ -1,0 +1,10 @@
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+packages
+CollegeVS/.vs/CollegeVS/v16/.suo
+CollegeVS/.vs/CollegeVS/v15/.suo
+CollegeVS/.vs/CollegeVS/DesignTimeBuild/.dtbcache.v2
+

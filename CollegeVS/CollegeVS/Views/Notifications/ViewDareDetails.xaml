@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+              xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+               xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="Black"
+             x:Class="CollegeVS.Views.ViewDareDetails"
+               xmlns:controls="clr-namespace:CollegeVS"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+             Shell.PresentationMode="ModalAnimated"
+             >
+             
+    <ContentPage.Content >
+        <yummy:PancakeView  BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                    <yummy:GradientStop Color="White" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <Grid RowSpacing="0" >
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+
+                <Grid Grid.Row="0"  VerticalOptions="Start" BackgroundColor="#10466C"   Padding="0"  >
+
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="10,0,0,0">
+                        <ImageButton Source="wbackarrow.png" HeightRequest="20" Padding="0" Rotation="270" WidthRequest="20" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackArrow_Clicked" />
+                    </StackLayout>
+                   
+
+
+
+
+
+                    <StackLayout BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="40">
+                        <Label Text="Refrence" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="End" VerticalTextAlignment="End" TextColor="White" FontSize="24"/>
+
+                    </StackLayout>
+                </Grid>
+
+                <Grid Grid.Row="2" VerticalOptions="Center" >
+
+             
+                        <RelativeLayout>
+
+                        <ffimageloading:CachedImage  x:Name="RefrenceFile" Source="SUNYPlattsburgh.jpg" BackgroundColor="Transparent" Aspect="Fill"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"  LoadingDelay="0"
+                                                                           DownsampleToViewSize="True"/>
+
+                        </RelativeLayout>
+
+                   
+
+                </Grid>
+                <Grid Grid.Row="3"  VerticalOptions="End"  Padding="0,0,0,0">
+
+                        <Frame HasShadow="False" BackgroundColor="#223c5b" Margin="0,0,0,0" CornerRadius="0" VerticalOptions="Center" HorizontalOptions="Center" Padding="5,0,5,0"  HeightRequest="150" >
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal">
+                                <Label Text="Details:" TextColor="White" FontSize="18" FontAttributes="Bold" />
+                                    
+                                    </StackLayout>
+                        <Frame HasShadow="False" BackgroundColor="#4a6488" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="100" Margin="0,0,0,5" Padding="0,0,0,0"  >
+
+                            <StackLayout Padding="5,0,0,0" IsEnabled="False">
+
+
+                                <controls:CustomEdit BackgroundColor="Transparent" x:Name="Details"  Text="Grab a drink"  AutoSize="TextChanges"  TextColor="White"  Style="{StaticResource ViewDetailsStyle}"  MaxLength="240"/>
+                            </StackLayout>
+                        </Frame>
+                                </StackLayout>
+                            </Frame>
+                    
+
+
+                  
+
+                </Grid>
+
+
+            </Grid>
+
+        </yummy:PancakeView>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<t:SlideMenuView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:t="clr-namespace:SlideOverKit;assembly=SlideOverKit"
+             x:Class="CollegeVS.Views.RankAndAccoladesMenu">
+
+    <AbsoluteLayout>
+        <Grid>
+            
+            <Frame BackgroundColor="Transparent" Margin="5" Padding="00" VerticalOptions="Center" HeightRequest="400" >
+                <Grid Padding="0,0,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="100"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+
+
+                    </Grid.RowDefinitions>
+
+                        <StackLayout HorizontalOptions="Center" >
+                            <Label Text=" Statistics" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="18" TextColor="White" HorizontalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Padding="0,-6,0,0" HorizontalOptions="End">
+                            <Button x:Name="Close" BackgroundColor="Transparent" VerticalOptions="Start" HeightRequest="30" WidthRequest="30" HorizontalOptions="End" Text="x" FontSize="24" Padding="2" FontAttributes="Bold" TextColor="LightGray" Clicked="Close_Clicked"/>
+                        </StackLayout>
+                    
+                    <StackLayout Grid.Row="1" Spacing="2" Padding="0,0,0,0"  HorizontalOptions="Start">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Accolades:" FontSize="22" Opacity=".8" FontAttributes="Bold" TextColor="White" />
+                            <StackLayout VerticalOptions="Center" Padding="-7,0,0,0">
+                                <Image Source="whitelogo.png" Opacity=".8" BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Start" Margin="0,0,0,0" HeightRequest="35" WidthRequest="35"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <CollectionView x:Name="ListAccolades">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate >
+                                    <StackLayout Orientation="Horizontal" Padding="0">
+
+                                        <Frame HasShadow="False" Padding="0" HorizontalOptions="Center" VerticalOptions="Start" HeightRequest="60" WidthRequest="60" CornerRadius="100" BackgroundColor="White">
+                                            <Image Source="{Binding Image}" Margin="10" Aspect="Fill" />
+                                        </Frame>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="2" HorizontalOptions="Start">
+                        <StackLayout Opacity=".8" Orientation="Horizontal">
+                            <Label Text="Rank:" FontSize="22" FontAttributes="Bold" TextColor="White"/>
+
+                            <Image Source="rankingiconwhite.png" HorizontalOptions="Start" VerticalOptions="Start" HeightRequest="25" WidthRequest="25"/>
+                    
+                            <Label Text="1401/9000 Students" TextColor="White" FontAttributes="Italic,Bold" FontSize="18" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="3" HorizontalOptions="Start" Padding="0">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Points:" FontSize="22" FontAttributes="Bold" TextColor="White" Opacity=".8"/>
+                        <Image Source="pointsicon.png" Opacity=".8" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25"/>
+                     
+                            <Label Text="5000 Total" TextColor="White" Opacity=".8" FontSize="18" FontAttributes="Italic,Bold" VerticalTextAlignment="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout Grid.Row="4" Opacity=".8" HorizontalOptions="Start">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="Bio:" FontSize="22" FontAttributes="Bold"  TextColor="White"/>
+                        <Image Source="whiteiconstatus.png" VerticalOptions="Center" HorizontalOptions="Start" HeightRequest="25" WidthRequest="25"/>
+                        </StackLayout>
+                        <Label Text="Whats up peoples of the app" TextColor="White"  FontAttributes="Italic,Bold"  FontSize="18" Margin="0,0,0,0"  Padding="5,5,0,0"/>
+                    </StackLayout>
+
+
+                </Grid>
+            </Frame>
+        </Grid>
+       
+    </AbsoluteLayout>
+</t:SlideMenuView>

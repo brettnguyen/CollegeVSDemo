@@ -1,0 +1,317 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="CustomEditor.cs" />
+    <Compile Remove="ViewModels\Page1.xaml.cs" />
+    <Compile Remove="ViewModels\RegisterPage2.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ViewModels\Page1.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="appsettings.json" />
+    <None Remove="Resources\Fonts\Lobster-Regular.ttf" />
+
+    <None Remove="video.mp4" />
+
+    <None Remove="Xamarin.Plugin.SharedTransitions" />
+    <None Remove="Controls\" />
+    <None Remove="CardsView" />
+
+    <None Remove="Resizetizer.NT" />
+    <None Remove="Images\" />
+    <None Remove="Images\inv.svg" />
+    <None Remove="Images\thehome.svg" />
+    <None Remove="Images\dares.svg" />
+    <None Remove="Images\theprofile.svg" />
+    <None Remove="Images\theflame.svg" />
+    <None Remove="Images\recentclock.svg" />
+    <None Remove="Images\theupvotearrow.svg" />
+    <None Remove="Images\thepartyicon.svg" />
+    <None Remove="Images\thefoodicon.svg" />
+    <None Remove="Images\thedormicon.svg" />
+    <None Remove="Images\thesportsicon.svg" />
+    <None Remove="Images\thegraycircle.svg" />
+    <None Remove="Images\thebluecircle.svg" />
+    <None Remove="Images\wbackarrow.svg" />
+    <None Remove="Images\bbackarrow.svg" />
+    <None Remove="Images\notificationsflag.svg" />
+    <None Remove="Images\optionslines.svg" />
+    <None Remove="Images\sorticon.svg" />
+    <None Remove="Images\rankingiconwhite.svg" />
+    <None Remove="Images\iconchallenge.svg" />
+    <None Remove="Images\iconleaderboard.svg" />
+    <None Remove="Images\likeupvote.svg" />
+    <None Remove="Images\shareicon.svg" />
+    <None Remove="Images\commenticon.svg" />
+    <None Remove="Images\clearbackgroundclubs.svg" />
+    <None Remove="Images\clearbackgrounddorms.svg" />
+    <None Remove="Images\clearbackgroundfood.svg" />
+    <None Remove="Images\clearbackgroundother.svg" />
+    <None Remove="Images\clearbackgroundparty.svg" />
+    <None Remove="Images\clearbackgroundsports.svg" />
+    <None Remove="Images\pointsicon.svg" />
+    <None Remove="Images\rankingiconblue.svg" />
+    <None Remove="Images\bluepointsicon.svg" />
+    <None Remove="Images\iconstatus.svg" />
+    <None Remove="Images\thetitleicon.svg" />
+    <None Remove="Images\refrenceimagicon.svg" />
+    <None Remove="Images\icondetails.svg" />
+    <None Remove="Com.Airbnb.Xamarin.Forms.Lottie" />
+    <None Remove="Images\iconcircles.svg" />
+    <None Remove="Views\Comment\" />
+    <None Remove="DeviceSizes\" />
+    <None Remove="Views\AnimationTriggers\" />
+    <None Remove="Images\theuser.svg" />
+    <None Remove="Images\whitecircle.svg" />
+    <None Remove="Images\whitedetails.svg" />
+    <None Remove="Images\whiterefimage.svg" />
+    <None Remove="Images\whitetitle.svg" />
+    <None Remove="Images\whiteusericon.svg" />
+    <None Remove="Images\whitelogo.svg" />
+    <None Remove="Images\whiteiconstatus.svg" />
+    <None Remove="Images\sortarrow.svg" />
+    <None Remove="Images\postcamera.svg" />
+    <None Remove="Images\clubs.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\Lobster-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Elasticsearch.Net" Version="7.15.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+    <PackageReference Include="Microsoft.UI.Xaml" Version="2.7.0" />
+    <PackageReference Include="Plugin.DeviceOrientation" Version="1.0.7" />
+    <PackageReference Include="Plugin.MediaManager" Version="1.0.9" />
+    <PackageReference Include="Plugin.MediaManager.Forms" Version="1.0.9" />
+    <PackageReference Include="Plugin.Permissions" Version="6.0.1" />
+    <PackageReference Include="SlideOverKit" Version="2.1.6.2" />
+    <PackageReference Include="Xam.Plugin.Media" Version="5.0.1" />
+    <PackageReference Include="Xamarin.CommunityToolkit" Version="1.2.0" />
+    <PackageReference Include="Xamarin.CommunityToolkit.Markup" Version="1.2.0" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />  
+    <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
+    <PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.4.0" />
+    <PackageReference Include="CardsView" Version="2.8.0" />
+    <PackageReference Include="Resizetizer.NT" Version="0.3.0"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+<PrivateAssets>all</PrivateAssets>
+</PackageReference>
+    <PackageReference Include="Com.Airbnb.Xamarin.Forms.Lottie" Version="4.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v10.0\Mono.Android.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common">
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v1.0\Facades\System.Drawing.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="video.mp4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\BottomHalfOfCreatePostPageDare.xaml.cs">
+      <DependentUpon>BottomHalfOfCreatePostPageDare.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\LoginPages\ForgotPassword.xaml.cs">
+      <DependentUpon>ForgotPassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Views\HomePages\Leaderboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Customs\ExpandableView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BottomHalfOfCreatePostPageDare.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\BottomHalfOfCreatePostPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePages\Challenge.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Notifications\CheckDareView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\CLGVSDaresList.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\ClubsDarePost.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\ClubsDareReview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\ClubsReferenceDarePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Notifications\DareNotifications.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\DarePostBox.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\DareReview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\DormsDarePost.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\DormsDareReview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\DormsReferenceDarePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\FoodDarePost.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\FoodDareReview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\FoodReferenceDarePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPages\ForgotUsername.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPages\ForgotPassword.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HighlightPage\HighlightPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomePages\Leaderboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Notifications\Notifications.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProfilePages\OtherUserProfile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Notifications\OutgoingDare.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PostFrame.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProfilePages\ProfilePic.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\Randomizer.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\ReferenceDarePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPages\Register.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\LoginPages\RegisterPage2.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Sent.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\SportsDarePost.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\SportsDareReview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\SportsReferenceDarePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Notifications\ViewDareDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\DarePages\SentIncoming.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controls\" />
+    <Folder Include="Images\" />
+    <Folder Include="Views\Comment\" />
+    <Folder Include="DeviceSizes\" />
+    <Folder Include="Views\AnimationTriggers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <SharedImage Include="Images\inv.svg" />
+    <SharedImage Include="Images\thehome.svg" BaseSize="20,20" />
+    <SharedImage Include="Images\dares.svg" BaseSize="6,6" />
+    <SharedImage Include="Images\theprofile.svg" BaseSize="20,20" />
+    <SharedImage Include="Images\theflame.svg" BaseSize="20,20" />
+    <SharedImage Include="Images\recentclock.svg" />
+    <SharedImage Include="Images\theupvotearrow.svg" />
+    <SharedImage Include="Images\thepartyicon.svg" />
+    <SharedImage Include="Images\thefoodicon.svg" />
+    <SharedImage Include="Images\thedormicon.svg" />
+    <SharedImage Include="Images\thesportsicon.svg" />
+    <SharedImage Include="Images\thegraycircle.svg" />
+    <SharedImage Include="Images\thebluecircle.svg" />
+    <SharedImage Include="Images\wbackarrow.svg" />
+    <SharedImage Include="Images\bbackarrow.svg" />
+    <SharedImage Include="Images\notificationsflag.svg" />
+    <SharedImage Include="Images\optionslines.svg" />
+    <SharedImage Include="Images\sorticon.svg" />
+    <SharedImage Include="Images\rankingiconwhite.svg" />
+    <SharedImage Include="Images\iconchallenge.svg" />
+    <SharedImage Include="Images\iconleaderboard.svg" />
+    <SharedImage Include="Images\likeupvote.svg" />
+    <SharedImage Include="Images\shareicon.svg" />
+    <SharedImage Include="Images\commenticon.svg" />
+    <SharedImage Include="Images\clearbackgroundclubs.svg" />
+    <SharedImage Include="Images\clearbackgrounddorms.svg" />
+    <SharedImage Include="Images\clearbackgroundfood.svg" />
+    <SharedImage Include="Images\clearbackgroundother.svg" />
+    <SharedImage Include="Images\clearbackgroundparty.svg" />
+    <SharedImage Include="Images\clearbackgroundsports.svg" />
+    <SharedImage Include="Images\pointsicon.svg" />
+    <SharedImage Include="Images\rankingiconblue.svg" />
+    <SharedImage Include="Images\bluepointsicon.svg" />
+    <SharedImage Include="Images\iconstatus.svg" />
+    <SharedImage Include="Images\thetitleicon.svg" />
+    <SharedImage Include="Images\refrenceimagicon.svg" />
+    <SharedImage Include="Images\icondetails.svg" />
+    <SharedImage Include="Images\iconcircles.svg" />
+    <SharedImage Include="Images\theuser.svg" />
+    <SharedImage Include="Images\whitecircle.svg" />
+    <SharedImage Include="Images\whitedetails.svg" />
+    <SharedImage Include="Images\whiterefimage.svg" />
+    <SharedImage Include="Images\whitetitle.svg" />
+    <SharedImage Include="Images\whiteusericon.svg" />
+    <SharedImage Include="Images\whitelogo.svg" />
+    <SharedImage Include="Images\whiteiconstatus.svg" />
+    <SharedImage Include="Images\sortarrow.svg" />
+    <SharedImage Include="Images\postcamera.svg" BaseSize="20,20" />
+    <SharedImage Include="Images\clubs.svg" />
+  </ItemGroup>
+</Project>

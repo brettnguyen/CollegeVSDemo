@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<y:MenuContainerPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:CollegeVS="clr-namespace:CollegeVS"
+               xmlns:y="clr-namespace:SlideOverKit;assembly=SlideOverKit"
+          xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="#10466C"
+                      
+             xmlns:viewModels="clr-namespace:CollegeVS.ViewModels;assembly=CollegeVS"
+             xmlns:models="clr-namespace:CollegeVS.Models;assembly=CollegeVS"
+               xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                         Padding="0"
+             x:Class="CollegeVS.Views.CLGVSProfile"
+          
+            Shell.TabBarBackgroundColor="#10466C"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False" 
+             >
+            
+                       
+    
+    <ContentPage.Content>
+        <yummy:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                    <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <StackLayout Spacing="0" Padding="0,0,0,0">
+                
+                <StackLayout BindableLayout.ItemsSource="{Binding Info}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:ProfileGalleryModel">
+                            <StackLayout>
+                                <Grid Padding="0,0,0,5"  BackgroundColor="#10466C" HeightRequest="75" HorizontalOptions="Fill"   >
+
+                               
+                                    <StackLayout VerticalOptions="Start" Grid.Row="0">
+                                
+                                    <Label Opacity=".9" Text="{Binding College}" LineBreakMode="WordWrap" FontAttributes="Bold"  Style="{StaticResource ProfileLabelStyleTwo}"  TextColor="White" HorizontalOptions="Center" Padding="0,0,0,0"/>
+                                        </StackLayout>
+
+                                        <StackLayout VerticalOptions="End" Spacing="0">
+                                            <Label Opacity="1" Text="{Binding Username}" FontAttributes="Bold"   Style="{StaticResource ProfileLabelStyleTwo}"   TextColor="White" HorizontalOptions="Center" Padding="0"/>
+                                    <!-- Place {Binding @Username} -->
+
+
+                                    </StackLayout>
+
+                            </Grid>
+                            <Grid Padding="10,3,10,0"    >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                    <RowDefinition Height="auto"/>
+                                </Grid.RowDefinitions>
+                               
+                                <StackLayout Grid.Row="0" HorizontalOptions="Start" VerticalOptions="Center" Grid.Column="0" Padding="0,-7,0,0" >
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ViewProfilePic_Tapped"/>
+                                    </StackLayout.GestureRecognizers>
+                                  
+                                        <Frame Style="{StaticResource ProfileFrameStyle}" HorizontalOptions="Center" HasShadow="False" BackgroundColor="#10466C" Padding="3" Margin="0,0,0,0">
+                                            <Frame Style="{StaticResource ProfileFrameStyleTwo}" Padding="0" HasShadow="False" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" >
+                                                <Image Source="{Binding ProfilePicture}" Margin="0" Aspect="Fill" BackgroundColor="Transparent" />
+                                            </Frame>
+                                        </Frame>
+                           
+                                </StackLayout>
+                                <StackLayout  Grid.Row="1" Grid.Column="0" HorizontalOptions="Start" WidthRequest="65" VerticalOptions="End">
+                                                <Label Opacity=".8" Padding="0,0,0,0" Text="{Binding Name}" LineBreakMode="WordWrap" Style="{StaticResource ProfileLabelStyle}"  HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold"/>
+                                </StackLayout>
+                                
+                                    <StackLayout Grid.Column="0" Padding="0,0,0,0" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Horizontal" Spacing="0" >
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Followers_Tapped"/>
+                                        </StackLayout.GestureRecognizers>
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Orientation="Vertical" Spacing="0">
+                                                        <Label Opacity="1" Text="{Binding Followers}" LineBreakMode="NoWrap" HorizontalTextAlignment="Center"  Style="{StaticResource ProfileButtonStyle}"  TextColor="White" BackgroundColor="Transparent" Padding="1" FontAttributes="Bold"/>
+                                            <Label Opacity=".7"  Text="Followers" LineBreakMode="NoWrap" TextColor="White" BackgroundColor="Transparent" TextTransform="None" Style="{StaticResource ProfileButtonStyle}"  FontAttributes="Bold" Padding="0"    />
+                                
+                                        </StackLayout>
+
+                                        <Frame Margin="10,0,10,0" HasShadow="False"  Padding="0,0,0,0" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="30" WidthRequest="3" CornerRadius="1"/>
+                                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Padding="0,0,0,0" Orientation="Vertical" Spacing="0">
+                                             <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Following_Tapped"/>
+                                        </StackLayout.GestureRecognizers>
+                                               <Label Opacity="1" Text="{Binding Following}" HorizontalTextAlignment="Center"  Style="{StaticResource ProfileButtonStyle}"  TextColor="White" BackgroundColor="Transparent" Padding="1" FontAttributes="Bold"/>
+                                            <Label Opacity=".7" Text="Following" LineBreakMode="NoWrap" TextColor="White" BackgroundColor="Transparent" TextTransform="None"  Style="{StaticResource ProfileButtonStyle}"  FontAttributes="Bold" Padding="0"    />
+                                         
+                                        </StackLayout>
+                                    </StackLayout>
+
+                                    <StackLayout Margin="0,0,0,0" Padding="0,0,0,0" Grid.Row="1" VerticalOptions="End" HorizontalOptions="Center">
+                                        <StackLayout.GestureRecognizers>
+                                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="EditProfile_Tapped"/>
+                                        </StackLayout.GestureRecognizers>
+                                    <Frame x:Name="EditProfile"  HorizontalOptions="Center" VerticalOptions="Start"  Style="{StaticResource EditProfileButtonStyle}" >
+                                        <Label HorizontalOptions="Center" VerticalTextAlignment="Center" Text="Edit Profile" FontAttributes="Bold" Style="{StaticResource EditProfileLabelStyle}"/>
+                                        </Frame>
+                                        </StackLayout>
+
+
+
+
+
+                                <StackLayout Spacing="0" Margin="0,0,0,0" HorizontalOptions="End"  VerticalOptions="Start">
+                                   <StackLayout.GestureRecognizers>
+                                       <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="MenuRank_Tapped"/>
+                                   </StackLayout.GestureRecognizers>
+
+
+
+
+                                        <Label Opacity=".8" Style="{StaticResource ProfileLabelStyleTwo}"  Text="Rank" HorizontalOptions="Center" FontAttributes="Bold"  TextColor="White"/>
+                                        
+                                        <Image Margin="0,0,0,0" x:Name="MenuRank" Source="rankingiconblue.png" HorizontalOptions="Center" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent" />
+                                      <Label Opacity=".8" Style="{StaticResource ProfileLabelStyleTwo}"  Text="1400" HorizontalOptions="Center" FontAttributes="Bold"  TextColor="White"/>
+                                        <Label Opacity=".5" Padding="0,0,2,0" FontAttributes="Bold" Text="Tap for info" Style="{StaticResource ProfileLabelStyle}"  TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                                   
+                                </StackLayout>
+                            </Grid>
+                            </StackLayout>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+                
+      
+                    <Frame HasShadow="False" VerticalOptions="Start" HorizontalOptions="Fill" HeightRequest="8" Padding="0" CornerRadius="1" IsClippedToBounds="True" BackgroundColor="#10466C">
+
+                    </Frame>
+                    <CollectionView x:Name="ListImages"
+                             ItemsSource="{Binding .}"
+                                    Margin="0,-1,0,0"
+                                    HorizontalOptions="Center"
+                                  
+                            ItemsLayout="VerticalGrid, 3"
+                             SelectionMode="Single"
+                            ItemSizingStrategy="MeasureAllItems">
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate  >
+                                <ContentView  >
+
+                                    <Grid Padding="0,1,1,0">
+                                      
+                                      
+
+                                                <ffimageloading:CachedImage  LoadingDelay="0"  HeightRequest="150" HorizontalOptions="Fill"
+                                                                     CacheDuration="0"   FadeAnimationEnabled="False"  FadeAnimationForCachedImages="False" FadeAnimationDuration="0"
+                                                        DownsampleToViewSize="True"
+                                                       Source="{Binding GalleryImage}" Aspect="Fill" >
+
+                                                </ffimageloading:CachedImage>
+                                           
+                                    
+                                    </Grid>
+
+                                </ContentView>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+
+
+
+
+
+
+
+
+
+
+            </StackLayout>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</y:MenuContainerPage>

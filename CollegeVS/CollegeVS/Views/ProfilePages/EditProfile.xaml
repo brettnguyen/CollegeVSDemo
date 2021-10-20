@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             BackgroundColor="#10466C"
+              xmlns:controls="clr-namespace:CollegeVS"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             x:Class="CollegeVS.Views.EditProfile" Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+			 >
+    
+    <ContentPage.Content>
+        <yummy:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                    <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <StackLayout Padding="0">
+                <StackLayout  BackgroundColor="#10466C"  HeightRequest="45" Padding="0" >
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="10,12,0,0">
+                        <ImageButton Source="wbackarrow.png" HeightRequest="20" Rotation="270" WidthRequest="20" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackArrow_Clicked" />
+                    </StackLayout>
+                </StackLayout>
+                <Frame HasShadow="False" CornerRadius="{OnPlatform Android='100',iOS='55'}" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#10466C" Padding="3">
+                    <Frame HasShadow="False" CornerRadius="{OnPlatform Android='100',iOS='50'}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" WidthRequest="100" HeightRequest="100">
+                        <Image Source="UserIcon.png" Aspect="AspectFill" BackgroundColor="Transparent"/>
+                    </Frame>
+                </Frame>
+                <StackLayout Spacing="-10">
+
+
+                    <Button Text="Change Photo" FontAttributes="Bold" FontSize="17" TextTransform="None" CornerRadius="5" VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="180" HeightRequest="30" Padding="0,0,0,0" BackgroundColor="#10466C" Command ="{Binding GoToEditProfile}"/>
+                </StackLayout>
+                <StackLayout Margin="10,0,10,0">
+                <Label Text="Edit Name:" FontAttributes="Bold" FontSize="18" TextColor="#10466C" HorizontalOptions="Start" VerticalOptions="Center" Padding="5,0,0,0"/>
+                    <StackLayout Spacing="10">
+                        <Frame CornerRadius="10" BackgroundColor="#4a6488" Padding="0">
+                <controls:CustomEntry Text="" TextColor="White" BackgroundColor="Transparent"  PlaceholderColor="LightGray" Placeholder="Username" FontSize="18" FontAttributes="Bold"/>
+         </Frame>
+                        <Frame Padding="0" CornerRadius="10" BackgroundColor="#4a6488">
+                <controls:CustomEntry Text=""  TextColor="White" BackgroundColor="Transparent"  PlaceholderColor="LightGray" Placeholder="Real Name" FontSize="18" FontAttributes="Bold"/>
+                            </Frame>
+           </StackLayout>
+                    </StackLayout>
+                <Grid Margin="10,0,10,0" Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+
+
+                    </Grid.ColumnDefinitions>
+                   
+                    <StackLayout IsVisible="{OnPlatform Android='true',iOS='false'}" Grid.Column="0" HorizontalOptions="Center">
+                        <Label  Text="Display real name:" TextColor="#10466C" FontAttributes="Bold" FontSize="18"  Padding="4"/>
+                        <Switch  HorizontalOptions="Start" OnColor="#10466C"
+        ThumbColor="LightGray" IsToggled="true"  />
+                    </StackLayout>
+
+                         <StackLayout IsVisible="{OnPlatform Android='false',iOS='true'}" Grid.Column="0" HorizontalOptions="Center">
+                        <Label  Text="Display real name:" TextColor="#10466C" FontAttributes="Bold" FontSize="18"  Padding="4"/>
+                             <Frame HasShadow="False" Padding="0" HorizontalOptions="Start" CornerRadius="15" >
+                        <Switch  HorizontalOptions="Start" OnColor="#10466C"
+        ThumbColor="LightGray" IsToggled="true"  />
+                                 </Frame>
+                    </StackLayout>
+                      
+                    <StackLayout IsVisible="{OnPlatform Android='true',iOS='false'}" Grid.Column="2" HorizontalOptions="Center">
+                        <Label  Text="Alumni:" TextColor="#10466C" FontAttributes="Bold" FontSize="18" Padding="4"/>
+                        <Switch  OnColor="#10466C"
+        ThumbColor="LightGray" IsToggled="false"  />
+                    </StackLayout>
+
+                    <StackLayout IsVisible="{OnPlatform Android='false',iOS='true'}" Grid.Column="2" HorizontalOptions="Center">
+                        <Label  Text="Alumni:" TextColor="#10466C" FontAttributes="Bold" FontSize="18" Padding="4"/>
+                        <Frame HasShadow="False" Padding="0" HorizontalOptions="Start" CornerRadius="15" >
+                        <Switch HorizontalOptions="Start" OnColor="#10466C"
+        ThumbColor="LightGray" IsToggled="false"  />
+                            </Frame>
+                    </StackLayout>
+                </Grid>
+                <StackLayout Margin="10,0,10,0">
+                <Label Text="Edit Bio:" FontAttributes="Bold" FontSize="18" TextColor="#10466C" HorizontalOptions="Start" VerticalOptions="Center" Padding="5,10,0,0"/>
+                <Frame HasShadow="False" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="0" CornerRadius="10" >
+                    <controls:CustomEdit TextColor="White" BackgroundColor="Transparent"  PlaceholderColor="LightGray" Text=""  FontSize="18" FontAttributes="Bold" MaxLength="240" AutoSize="TextChanges" Placeholder="Bio"  Margin="5,0,0,0" />
+                </Frame>
+                    </StackLayout>
+            </StackLayout>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

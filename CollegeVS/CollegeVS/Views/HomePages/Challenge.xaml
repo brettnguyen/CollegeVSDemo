@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                       xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+            xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:controls="clr-namespace:CollegeVS"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="#10466C"
+             x:Class="CollegeVS.Views.Challenge"
+             Shell.PresentationMode="ModalAnimated"
+         
+             >
+    <ContentPage.Content>
+        <yummy:PancakeView Margin="{OnPlatform Android='0',iOS='0,0,0,-55'}"  BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                    <yummy:GradientStop Color="LightBlue" Offset="1.20"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <StackLayout>
+                
+            <Grid Grid.Row="0" HorizontalOptions="FillAndExpand" VerticalOptions="Start" HeightRequest="50" BackgroundColor="#10466C" >
+               
+                   
+                 
+                    <StackLayout VerticalOptions="Center" Padding="10,0,0,0">
+                        <ImageButton x:Name="Challengebutton" Source="wbackarrow.png" Rotation="270" HeightRequest="20" WidthRequest="20"  BackgroundColor="Transparent" HorizontalOptions="Start" Clicked="Challengebutton_Clicked"/>
+                    </StackLayout>
+
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label Text="Challenges" Padding="5" HorizontalOptions="Center" FontAttributes="Bold" TextColor="White" FontSize="26"/>
+                        </StackLayout>
+                    
+                
+
+
+            </Grid>
+                <StackLayout Padding="0,10,0,0" Spacing="0">
+          <Frame BackgroundColor="Transparent" HasShadow="False" Style="{StaticResource ChallengeFrameStyle}"  Padding="0">
+              <StackLayout>
+                        <CollectionView x:Name="ListChallenges"
+                              ItemsSource="{Binding .}"
+                                Margin="{OnPlatform Android='10,0,10,0',iOS='15,0,15,0'}"
+                                        
+                                  SelectionMode="None"
+                              BackgroundColor="Transparent">
+                            <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical"  ItemSpacing="10"/>
+                                </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Style="{StaticResource ChallengeStackStyle}"  Margin="0,0,0,0">
+                             <Grid Margin="0,0,0,0" >
+                                 <StackLayout HorizontalOptions="Start">
+                                <Label Text="{Binding Challenge}" TextColor="White"   Style="{StaticResource ChallengeLabelStyle}"  FontAttributes="Bold">
+                                    
+                                    </Label>
+                                     </StackLayout>
+                                 <StackLayout HorizontalOptions="End">
+                                       <Label Text="{Binding Numbers}" TextColor="White" FontAttributes="Bold"  Style="{StaticResource ChallengeLabelStyle}" >
+                                           
+                                           </Label>
+                                 </StackLayout>
+                                   
+                            </Grid>
+                             <StackLayout HorizontalOptions="Center">
+                                    <Frame HasShadow="False" BackgroundColor="#10466C" Padding="0" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource ChallengeFrameStyleTwo}" WidthRequest="400"  Margin="0,0,0,0" CornerRadius="10"/>
+                                </StackLayout>
+
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    
+                  <StackLayout VerticalOptions="Center" Orientation="Vertical" HorizontalOptions="Center" Spacing="0" >
+                        <Label Text="Total Challenge Points:" TextColor="White" HorizontalOptions="Center" HorizontalTextAlignment="Center" FontAttributes="Bold"  Style="{StaticResource ChallengeLabelStyleTwo}"  >                            
+                            </Label>
+                        <Label Text="xxxx" HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" Style="{StaticResource ChallengeLabelStyleTwo}"  >
+                            </Label>
+                    </StackLayout>
+                  </StackLayout>
+               </Frame>
+                        </StackLayout>
+                   
+                   
+                </StackLayout>
+       
+
+        </yummy:PancakeView>
+       
+    </ContentPage.Content>
+</ContentPage>

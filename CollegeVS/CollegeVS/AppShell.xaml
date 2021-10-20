@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:CollegeVS.Views"
+        xmlns:views="clr-namespace:CollegeVS.Views"
+       Title="CollegeVS"
+       BackgroundColor="Transparent"
+ xmlns:y="clr-namespace:SlideOverKit;assembly=SlideOverKit"
+       x:Class="CollegeVS.AppShell"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+       FlyoutBackgroundColor="#4a6488"
+             >
+   
+                                         
+  
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+ 
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                
+                    <Setter Property="Shell.BackgroundColor" Value="Transparent" />
+                <Setter Property="Shell.ForegroundColor" Value="White" />
+				<Setter Property="Shell.TitleColor" Value="White" />
+				<Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#223c5b" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="Transparent"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+				<Setter Property="Shell.TabBarTitleColor" Value="White"/>
+                
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            
+        </ResourceDictionary>
+    </Shell.Resources>
+ 
+    
+   
+    <Shell.FlyoutHeader>
+        <views:RightSideMasterPage></views:RightSideMasterPage>
+    </Shell.FlyoutHeader>
+        
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <StackLayout Padding="0,5,0,0">
+                <Button Text="{Binding Title}" IsEnabled="False" FontSize="19" TextColor="#10466C" BorderColor="#10466C" BorderWidth="3" FontAttributes="Bold" BackgroundColor="#C05B60" HorizontalOptions="Center" TextTransform="None" Style="{StaticResource FlyoutButtonStyle}"  Padding="1" CornerRadius="10"></Button>
+            </StackLayout>
+
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Padding="0,5,0,0" Spacing="0">
+                <Button Text="{Binding Text}" FontSize="19" TextColor="#10466C" BorderColor="#10466C" BorderWidth="3" FontAttributes="Bold" BackgroundColor="#C9E8FA" HorizontalOptions="Center" TextTransform="None" Style="{StaticResource FlyoutButtonStyle}"     Padding="1" CornerRadius="10"></Button>
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+    
+    <MenuItem Text="Account Information"/>
+    <MenuItem Text="Notification Settings"/>
+    <MenuItem Text="Privacy Policy"/>
+    <MenuItem Text="Terms of Service"/>
+    <MenuItem Text="End User License Agreement"/>
+    <MenuItem Text="Contact Information"/>
+    <MenuItem Text="Data Policy"/>
+    <MenuItem Text="About CV"/>
+    <MenuItem Text="Feedback/Report Problem"/>
+    <MenuItem Text="FAQ"/>
+   
+
+    <ShellContent Title="Logout"   Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}"  />
+
+    <TabBar  >
+
+		<Tab Title="Home" Route="Home" Icon="thehome.png">
+            
+			<ShellContent Route="CLGVSHome" ContentTemplate="{DataTemplate local:CLGVSHome}" />
+            
+		</Tab>
+        <Tab Title="Dares" Route="Dares" Icon="dares.png" >
+
+
+           
+            
+            <ShellContent  x:Name="CreateSentIncoming"  Route="CreateSentIncoming"   ContentTemplate="{DataTemplate local:CreateSentIncoming}" />
+  <ShellContent  x:Name="SentIncoming" Route="SentIncoming"  IsVisible="False"  ContentTemplate="{DataTemplate local:SentIncoming}"/>
+           
+
+
+        </Tab>
+	
+		<Tab Title="Post" Route="Post" Icon="postcamera.png">
+			<ShellContent ContentTemplate="{DataTemplate local:Post}" />
+
+
+		</Tab>
+		
+
+		<Tab Title="Highlight" Route="Highlight" Icon="theflame.png">
+			<ShellContent  ContentTemplate="{DataTemplate local:HighlightPage}" />
+		</Tab>
+        
+        	<Tab  Title="Profile" Route="Profile" Icon="theprofile.png">
+			<ShellContent ContentTemplate="{DataTemplate local:CLGVSProfile}" />
+          
+        </Tab>
+
+	</TabBar>
+
+    
+    
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!--
+        If you would like to navigate to this content you can do so by calling
+        await Shell.Current.GoToAsync("//LoginPage");
+    -->
+
+
+</Shell>

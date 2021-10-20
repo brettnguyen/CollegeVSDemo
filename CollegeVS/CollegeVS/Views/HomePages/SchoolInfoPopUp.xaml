@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<t:SlidePopupView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+     xmlns:t="clr-namespace:SlideOverKit;assembly=SlideOverKit"
+    x:Class="CollegeVS.Views.SchoolInfoPopUp">
+    <AbsoluteLayout>
+        <Frame IsClippedToBounds="False" Margin="0,0,0,00"  x:Name="SortBack" BackgroundColor="Black" Opacity=".3" VerticalOptions="Fill" HorizontalOptions="Fill"  AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="All" >
+        
+            </Frame>
+        <Grid AbsoluteLayout.LayoutBounds="0.5, 0.5, -1, -1"
+               AbsoluteLayout.LayoutFlags="PositionProportional" >
+            
+            <Frame  BackgroundColor="#1E1E1E" CornerRadius="10" Padding="0" HeightRequest="220" WidthRequest="190" HorizontalOptions="Center" VerticalOptions="Center" >
+
+                <StackLayout Opacity=".8" Padding="0,20,0,0" VerticalOptions="Start" HorizontalOptions="Center">
+                  
+                          
+                    
+                   <Label TextColor="White" FontAttributes="Bold" FontSize="16" Text="School Ranking:"/>
+              
+                       
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                   <Image  Source="rankingiconwhite.png" HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent"/>
+                         <Label TextColor="White" FontAttributes="Bold" FontSize="16" Text="2nd"/>
+                        </StackLayout>
+                     
+                 <Frame Padding="0" HeightRequest="2" BackgroundColor="Gray" WidthRequest="100"/>
+                       <Label TextColor="White" FontSize="16" FontAttributes="Bold" Text="Active Students:"/>
+                    <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                     <Image  Source="theprofile.png" HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent"/>
+                        <Label TextColor="White" FontAttributes="Bold" FontSize="16" Text="6k"/>
+                        </StackLayout>
+                    <Frame Padding="0" HeightRequest="2" BackgroundColor="Gray" WidthRequest="100"/>
+                  
+                                      <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="White" FontAttributes="Bold" FontSize="16" Text="Total Points:"/>
+                    <StackLayout  HorizontalOptions="Center" Orientation="Horizontal">
+                     <Image Source="pointsicon.png" HeightRequest="25" WidthRequest="25" BackgroundColor="Transparent"/>
+                        <Label TextColor="White" FontAttributes="Bold" FontSize="16" Text="20k"/>
+                        </StackLayout>
+   
+                </StackLayout>
+                </Frame>
+                   <Label  x:Name="DoneButton" Padding="0,-9,12,0" Text="x" TextColor="Gray" BackgroundColor="Transparent" FontAttributes="Bold"  FontSize="30" HorizontalOptions="End" >
+                       <Label.GestureRecognizers>
+                           <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Done_Tapped"/>
+                       </Label.GestureRecognizers>
+                       </Label>
+       </Grid>
+   </AbsoluteLayout>
+</t:SlidePopupView>

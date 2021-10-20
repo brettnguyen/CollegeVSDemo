@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollegeVS.Views.ProfilePic"
+             NavigationPage.HasNavigationBar="False"
+			 Shell.FlyoutBehavior="Disabled"
+           Shell.NavBarIsVisible="True"
+			 Shell.NavBarHasShadow="False"
+			 Shell.BackgroundColor="Black"
+			 Shell.ForegroundColor="White"
+			 Shell.TabBarIsVisible="False"
+             BackgroundColor="Black"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             ios:Page.UseSafeArea="true"
+             >
+    <ContentPage.Content>
+        <StackLayout Spacing="30" VerticalOptions="Center">
+           
+
+            <Frame  Padding="0"  HorizontalOptions="Center" BackgroundColor="white"  VerticalOptions="Center" WidthRequest="400" HeightRequest="400">
+                <Image x:Name="ProfilePicture"  BackgroundColor="Transparent" Aspect="Fill" />
+            </Frame>
+            <Button x:Name="ChangePhoto" Text="Change Photo" TextColor="Gray" FontSize="Medium" BorderColor="Gray" BorderWidth="2" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="200" HeightRequest="40" TextTransform="None" Padding="3" />
+        </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

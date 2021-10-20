@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      Shell.TabBarIsVisible="False"
+     xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+            Shell.NavBarHasShadow="False"
+    BackgroundColor="#10466C"
+   Shell.NavBarIsVisible="False"
+    Shell.TabBarBackgroundColor="#10466C"
+    xmlns:viewmodels="clr-namespace:CollegeVS.ViewModels"
+     xmlns:models="clr-namespace:CollegeVS.Models"
+      xmlns:views="clr-namespace:CollegeVS.Views"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:controls="clr-namespace:CollegeVS.Controls"
+    x:Class="CollegeVS.Views.FollowingFollowers">
+   <ContentPage.Resources>
+       <DataTemplate x:Key="FollowingTemplate">
+           <StackLayout>
+           <Label Text="{Binding Nothing}" IsVisible="false"/>
+               <views:Followers></views:Followers>
+          
+               </StackLayout>
+       </DataTemplate>
+           <DataTemplate x:Key="FollowersTemplate">
+               <StackLayout>
+                    <Label Text="{Binding Nothing}" IsVisible="false"/>
+                 <views:Following></views:Following>
+                   </StackLayout>
+       </DataTemplate>
+
+       <controls:FollowingFollowersDataTemplateSelector x:Key="FollowinFollowersSelector"
+                                             FollowingTemp="{StaticResource FollowingTemplate}"
+                                             FollowersTemp="{StaticResource FollowersTemplate}" />
+   </ContentPage.Resources>
+    <ContentPage.Content>
+       <yummy:PancakeView Margin="{OnPlatform Android='0',iOS='0,0,0,-55'}"  BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+           
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                    <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+                </yummy:GradientStopCollection>
+
+            </yummy:PancakeView.BackgroundGradientStops>
+           <StackLayout Spacing="0">
+           <Grid VerticalOptions="Start" BackgroundColor="#10466C"  HeightRequest="50" Padding="0" >
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="10,12,0,0">
+                            <ImageButton Source="wbackarrow.png" HeightRequest="20" Rotation="270" WidthRequest="20" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackArrow_Clicked" />
+                        </StackLayout>
+                         <StackLayout Padding="0,10,0,0" HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label Text="@Username" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="End" VerticalTextAlignment="End" TextColor="White" FontSize="24"/>
+                            </StackLayout>
+                    </Grid>
+               <Grid BackgroundColor="#10466C" HeightRequest="30">
+                   <Grid.ColumnDefinitions>
+                       <ColumnDefinition Width="*"/>
+                       <ColumnDefinition Width="*"/>
+                   </Grid.ColumnDefinitions>
+                   <StackLayout HorizontalOptions="Center" Grid.Column="0">
+                       <StackLayout.GestureRecognizers>
+                           <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Followers_Tapped"/>
+                       </StackLayout.GestureRecognizers>
+                       <Label Text="Followers" x:Name="TheFollower" TextColor="LightGray" FontAttributes="Bold"/>
+                   </StackLayout>
+                    <StackLayout HorizontalOptions="Center" Grid.Column="1">
+                        <StackLayout.GestureRecognizers>
+                           <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Following_Tapped"/>
+                       </StackLayout.GestureRecognizers>
+                       <Label Text="Following" x:Name="TheFollowing" TextColor="White" FontAttributes="Bold"/>
+                   </StackLayout>
+                   </Grid>
+              
+               <IndicatorView Padding="0,0,0,0" BackgroundColor="LightGray"  x:Name="indicatorView"
+          IndicatorColor="LightGray"
+          SelectedIndicatorColor="White"
+                              Margin="0,0,0,0"
+           HeightRequest="3"   HorizontalOptions="Center"
+          >
+                      <IndicatorView.IndicatorTemplate>
+            <DataTemplate>
+                <StackLayout Margin="0,0,0,0" Padding="0,0,0,0">
+                    
+                <Frame BackgroundColor="Transparent" HeightRequest="10" WidthRequest="400" HasShadow="False" Padding="0"/>
+                       </StackLayout>
+                      
+            </DataTemplate>
+        </IndicatorView.IndicatorTemplate>
+                      </IndicatorView>
+
+           <CarouselView x:Name="TheCarousel"
+                                 ItemsSource="{Binding Info}"
+                         ItemTemplate="{StaticResource FollowinFollowersSelector}"
+                          IsBounceEnabled="False"
+                         IndicatorView="indicatorView"
+                          IsScrollAnimated="True"
+                            ItemsUpdatingScrollMode="KeepItemsInView"
+                                      Loop="False"
+                         HorizontalScrollBarVisibility="Always"
+                         Scrolled="TheCarousel_Scrolled"
+                        Position="1"
+                              >
+   
+                        <CarouselView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" SnapPointsType="MandatorySingle" />
+                            </CarouselView.ItemsLayout>
+
+             
+               </CarouselView>
+                  
+                  
+                   
+           </StackLayout>
+           </yummy:PancakeView>
+        
+    </ContentPage.Content>
+   
+</ContentPage>

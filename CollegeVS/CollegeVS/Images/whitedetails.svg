@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   sodipodi:docname="whitedetails.svg"
+   inkscape:version="1.1 (c4e8f9e, 2021-05-24)"
+   id="svg2060"
+   version="1.1"
+   viewBox="0 0 76.999977 76.999977"
+   height="76.999977mm"
+   width="76.999977mm"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs2054" />
+  <sodipodi:namedview
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     inkscape:window-maximized="0"
+     inkscape:window-y="25"
+     inkscape:window-x="26"
+     inkscape:window-height="727"
+     inkscape:window-width="1275"
+     inkscape:snap-global="false"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="447.14286"
+     inkscape:cx="245.71429"
+     inkscape:zoom="0.35"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata2057">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-40.601204,-30.017872)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <rect
+       ry="2.2678576"
+       rx="2.2678576"
+       y="34.017857"
+       x="44.601189"
+       height="69.000008"
+       width="69.000008"
+       id="rect2623"
+       style="fill:none;stroke:#ffffff;stroke-width:7.99997;stroke-opacity:1" />
+    <rect
+       ry="2.2678576"
+       rx="2.2678576"
+       y="45.614845"
+       x="55.936905"
+       height="7.0662665"
+       width="7.885716"
+       id="rect2625"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.99997" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.99997"
+       id="rect2625-2"
+       width="7.885716"
+       height="7.0662665"
+       x="55.936909"
+       y="58.999184"
+       rx="2.2678576"
+       ry="2.2678576" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.99997"
+       id="rect2625-8"
+       width="7.885716"
+       height="7.0662665"
+       x="55.936909"
+       y="72.050995"
+       rx="2.2678576"
+       ry="2.2678576" />
+    <rect
+       ry="2.2678576"
+       rx="2.2678576"
+       y="85.102806"
+       x="55.936905"
+       height="7.0662665"
+       width="7.885716"
+       id="rect2625-8-0"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.99997" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.99997"
+       id="rect2625-4"
+       width="35.485722"
+       height="7.0662665"
+       x="70.722626"
+       y="45.448582"
+       rx="2.2678576"
+       ry="2.2678576" />
+    <rect
+       ry="2.2678576"
+       rx="2.2678576"
+       y="59.165451"
+       x="70.722626"
+       height="7.0662665"
+       width="35.485722"
+       id="rect2625-4-5"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.99997" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.99997"
+       id="rect2625-4-5-7"
+       width="35.485722"
+       height="7.0662665"
+       x="70.722618"
+       y="72.46666"
+       rx="2.2678576"
+       ry="2.2678576" />
+    <rect
+       ry="2.2678576"
+       rx="2.2678576"
+       y="84.936539"
+       x="70.722626"
+       height="7.0662665"
+       width="35.485722"
+       id="rect2625-4-5-7-4"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:7.99997" />
+  </g>
+</svg>

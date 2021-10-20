@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+              xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="Transparent"
+             x:Class="CollegeVS.Views.OutgoingDare"
+               Shell.FlyoutItemIsVisible="False"
+              Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+             Shell.PresentationMode="NotAnimated"
+           
+             >
+   
+
+    <ContentView.Content>
+        
+            <Grid HorizontalOptions="Center">
+    
+           
+                 <Frame Padding="0" BackgroundColor="White" HasShadow="False" WidthRequest="140" HeightRequest="3" HorizontalOptions="Center" VerticalOptions="Start"></Frame>
+                
+                <Grid Grid.Row="0"   HorizontalOptions="Center" Padding="0,10,0,0"  BackgroundColor="Transparent" >
+
+                    <CollectionView x:Name="ListDares"
+                              ItemsSource="{Binding .}"
+                                  
+                                  SelectionMode="None"
+                               BackgroundColor="Transparent"
+                              
+                              
+                                >
+                         <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical"  ItemSpacing="7"/>
+                                </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                      
+                            <DataTemplate>
+                              
+                             <StackLayout Padding="0,15,0,0">
+                 <AbsoluteLayout Padding="0,0,0,0" HorizontalOptions="Center">
+                                        <StackLayout IsEnabled="False" >
+                                            <Button Padding="0,0,0,0"  Text="{Binding DareTitle}" TextColor="White" BackgroundColor="#10466C" BorderColor="{Binding BorderColor}" BorderWidth="3" TextTransform="None" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource OutgoingStyle}" CornerRadius="15"/>
+                                        </StackLayout>
+                                        <StackLayout AbsoluteLayout.LayoutBounds="0.05,0.5,-1,-1" AbsoluteLayout.LayoutFlags="PositionProportional" VerticalOptions="Center">
+                                            <Frame HasShadow="False" Style="{StaticResource DareFrameStyleTwo}" BackgroundColor="{Binding BackgroundColor}" Padding="3">
+                                                <Frame HasShadow="False" Style="{StaticResource DareFrameStyleThree}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Start" BackgroundColor="white"  VerticalOptions="Center" >
+                                                    <Image Source="{Binding DareImagePath}" HorizontalOptions="Center" VerticalOptions="Center" Style="{StaticResource DareImageStyle}"/>
+                                                </Frame>
+                                            </Frame>
+                                        </StackLayout>
+                                 
+                                    </AbsoluteLayout>
+                       <StackLayout HorizontalOptions="Center" Orientation="Horizontal" >
+                                            <Label Text="{Binding DareTXUserName}" FontAttributes="Bold" TextColor="white" Padding="0,0,51,0" FontSize="16" ></Label>
+                                            <AbsoluteLayout >
+                                                <Button Text="{Binding CheckChoice}" IsVisible= "{Binding VisibleOne }"  BorderColor="Transparent" FontAttributes="Bold" TextColor="White" BackgroundColor="{Binding BackgroundColorChoice}"  BorderWidth="3" Padding="1" TextTransform="None" FontSize="16" Style="{StaticResource OutgoingStyleTwo}" HeightRequest="30" CornerRadius="15" Clicked="Check_Clicked" >
+
+                                                </Button>
+                                                 <Button Text="{Binding CheckChoice}"  IsVisible= "{Binding VisibleTwo }"  BorderColor="Transparent" FontAttributes="Bold" TextColor="White" BackgroundColor="{Binding BackgroundColorChoice}"  BorderWidth="3" Padding="1" TextTransform="None" FontSize="16" Style="{StaticResource OutgoingStyleTwo}" HeightRequest="30" CornerRadius="15" >
+
+                                                </Button>
+
+                                            </AbsoluteLayout>
+
+                                                 
+
+                                        </StackLayout>
+                </StackLayout>
+                               
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Grid>
+     
+    </ContentView.Content>
+</ContentView>

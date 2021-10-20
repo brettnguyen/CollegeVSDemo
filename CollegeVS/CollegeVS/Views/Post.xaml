@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+			 xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+ios:Page.UseSafeArea="true"
+			 xmlns:controls="clr-namespace:CollegeVS.CustomControls"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:Views="clr-namespace:CollegeVS.Views"
+			 xmlns:renderers="clr-namespace:CollegeVS.Renderers;assembly=CollegeVS"
+			 Shell.NavBarIsVisible="False"
+			 Shell.TabBarIsVisible="False"
+			 Shell.ForegroundColor="White"
+			 Shell.BackgroundColor="Black"
+             x:Class="CollegeVS.Views.Post">
+	<Shell.BackButtonBehavior>
+		<BackButtonBehavior TextOverride="Back" Command="{Binding GoBackCommand}"></BackButtonBehavior>
+	</Shell.BackButtonBehavior>
+	<ContentPage.Content>
+
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="90" />
+				<RowDefinition Height="50" />
+				<RowDefinition Height="50" />
+				<RowDefinition Height="50" />
+				<RowDefinition Height="*" />
+				<RowDefinition Height="40" />
+				<RowDefinition Height="120" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="65" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="65" />
+			</Grid.ColumnDefinitions>
+			<RelativeLayout 
+				Grid.Row="0" Grid.Column="0"
+				Grid.RowSpan="7"
+				Grid.ColumnSpan="3">
+				<xct:MediaElement
+                    x:Name="previewVideo"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+					 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
+                                            Aspect="AspectFill"
+					
+					AutoPlay="True"
+					IsLooping="True"
+					ShowsPlaybackControls="False"
+                                      
+                    />
+				<Image
+                    x:Name="previewPicture"
+				HorizontalOptions="FillAndExpand"
+				VerticalOptions="FillAndExpand"
+				RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+					 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
+                                            Aspect="Fill"
+				
+                                      
+                    />
+			</RelativeLayout>
+
+			<renderers:CameraView 
+				Camera="Front"
+				Grid.Row="0" Grid.Column="0" Grid.RowSpan="7" Grid.ColumnSpan="3"
+                x:Name="cameraView"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"/>
+
+			<Frame
+				x:Name="Capture"
+				HeightRequest="40"
+				   WidthRequest="40"
+				   HorizontalOptions="Center"
+				   BackgroundColor="#FBFAFB"
+				   Margin="0,0,0,40"
+				   CornerRadius="40"
+				IsVisible="False"
+			   Grid.Row="6"
+			   Grid.Column="1">
+				<ImageButton
+					Source="cvlogoinv.png"
+					HorizontalOptions="Center"
+					BackgroundColor="#FBFAFB"
+					Padding="0"
+                    x:Name="doCameraThings"
+					IsVisible="False"
+                    IsEnabled="True"/>
+			</Frame>
+
+			<Button
+				x:Name="Exit"
+				IsVisible="False"
+				Text="x" 
+				TextColor="LightGray"
+				FontSize="36" 
+				BackgroundColor="Transparent" 
+				HorizontalOptions="Start" 
+				VerticalOptions="Start" 
+				Padding="5" 
+				FontAttributes="Bold"
+				Clicked="CloseImage"
+				Grid.Row="0" Grid.Column="0" 
+				/>
+			<ImageButton x:Name="Dare" Grid.Row="2" Grid.Column="2" Grid.RowSpan="1" Clicked="Dare_Clicked"  BackgroundColor="Transparent" Source="DareCamera.png"  Margin="0,0,15,0" IsVisible="False"></ImageButton>
+			<!--<ImageButton x:Name="Filters" Grid.Row="2" Grid.Column="2"  Source="cameraFilterButtons.png" Margin="0,0,15,0" IsVisible="False"></ImageButton>
+			<ImageButton x:Name="Gallery" Grid.Row="3" Grid.Column="2"  Source="ChooseFromGalleryButton2.png" Margin="0,0,15,0" IsVisible="False" Command="{Binding PickPhotoCommand}"></ImageButton>-->
+			<ImageButton x:Name="Next" VerticalOptions="End" Grid.Row="4" Grid.Column="2" BackgroundColor="Transparent" Clicked="Post_Clicked" Source="CameraNextButton.png" Margin="0,40,25,0" IsVisible="False"></ImageButton>
+
+
+			<yummy:PancakeView x:Name="EditorPancakeView" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" CornerRadius="10"
+                VerticalOptions="EndAndExpand" Margin="20,0,20,0" IsVisible="False">
+				<Editor AutoSize="TextChanges" MaxLength="200" BackgroundColor="#8C000000"  Keyboard="Chat" TextColor="White" HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand" Placeholder="Post Title" PlaceholderColor="White"></Editor>
+			</yummy:PancakeView>
+
+			<yummy:PancakeView x:Name="BottomPancakeView" IsVisible="False" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Margin="20,0,20,20" 
+                               HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"
+                               
+                               CornerRadius="10"
+                               >
+
+				<Views:BottomHalfOfCreatePostPage  />
+
+			</yummy:PancakeView>
+
+			<yummy:PancakeView x:Name="BottomPancakeViewDare" IsVisible="False" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Margin="20,0,20,20" 
+                               HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand"
+                               
+                               CornerRadius="10"
+                               >
+
+				<Views:BottomHalfOfCreatePostPageDare  />
+
+			</yummy:PancakeView>
+
+
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

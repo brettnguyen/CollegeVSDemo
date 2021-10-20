@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          
+     xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+            Shell.NavBarHasShadow="False"
+    BackgroundColor="#10466C"
+   Shell.NavBarIsVisible="False"
+ 
+    Shell.TabBarIsVisible="True"
+    xmlns:viewmodels="clr-namespace:CollegeVS.ViewModels"
+     xmlns:models="clr-namespace:CollegeVS.Models"
+      xmlns:views="clr-namespace:CollegeVS.Views"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                    xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:controls="clr-namespace:CollegeVS.Controls"
+    x:Class="CollegeVS.Views.CreateSentIncoming">
+  <ContentPage.Resources>
+       <DataTemplate x:Key="CreateTemplate">
+           <StackLayout>
+           <Label Text="{Binding Nothing}" IsVisible="false"/>
+               <views:DareCreation></views:DareCreation>
+          
+               </StackLayout>
+       </DataTemplate>
+           <DataTemplate x:Key="SentDareTemplate">
+               <StackLayout>
+                  
+                    <Label Text="{Binding Nothing}" IsVisible="false"/>
+               <views:OutgoingDare/>
+                   </StackLayout>
+       </DataTemplate>
+
+      <DataTemplate x:Key="IncomingTemplate">
+               <StackLayout>
+                   
+                    <Label Text="{Binding Nothing}" IsVisible="false"/>
+                <views:DareNotifications/>
+                   </StackLayout>
+       </DataTemplate>
+
+      
+
+       <controls:CreateSentIncomingDataTemplateSelector x:Key="CreateSentIncomingSelector"
+                                            CreateTemp="{StaticResource CreateTemplate}"
+                                             SentDareTemp="{StaticResource SentDareTemplate}"
+                                                        IncomingTemp="{StaticResource IncomingTemplate}"/>
+   </ContentPage.Resources>
+    <ContentPage.Content>
+       <yummy:PancakeView Margin="{OnPlatform Android='0',iOS='0,0,0,-55'}"  BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+           
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                    <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+                </yummy:GradientStopCollection>
+
+            </yummy:PancakeView.BackgroundGradientStops>
+           <StackLayout Spacing="0">
+          
+            <Grid Grid.Row="0" BackgroundColor="#10466C" Padding="0,0,0,0" Style="{StaticResource DareBarStyle}" VerticalOptions="Start" HorizontalOptions="Fill">
+                  <Frame BackgroundColor="Transparent" Padding="0" HasShadow="False" WidthRequest="140" HorizontalOptions="Start">
+                       <Frame.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Create_Tapped" />
+                        </Frame.GestureRecognizers>
+                    <StackLayout  x:Name="Create" Opacity=".6"  Spacing="0" Padding="50,0,0,0" HorizontalOptions="Start" VerticalOptions="Center">
+                        
+                        <Image Source="CreateDareIcon.png" Style="{StaticResource DareBarStyleTwo}" />
+                        
+
+                        <Label x:Name="CreateDare" TextColor="White"  Text="Create" Style="{StaticResource DareBarStyleThree}" FontAttributes="Bold"  />
+                       
+                          
+                    </StackLayout>
+                      </Frame>
+                <Frame HorizontalOptions="Center" Padding="0" BackgroundColor="Transparent" HasShadow="False" WidthRequest="140">
+                    <Frame.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Sent_Tapped"/>
+                        </Frame.GestureRecognizers>
+                    <StackLayout x:Name="Sent" Opacity=".6" Padding="0,0,0,0" Spacing="0" HorizontalOptions="Center" VerticalOptions="Center">
+                       
+                        <Image Source="OutgoingDare.png"   Style="{StaticResource DareBarStyleTwo}" />
+                       
+                        <Label Text="Sent"  x:Name="SentDare" TextColor="White" Style="{StaticResource DareBarStyleThree}" FontAttributes="Bold"  />
+                      
+                    </StackLayout>
+
+                    </Frame>
+
+                <Frame HorizontalOptions="End" Padding="0" BackgroundColor="Transparent" WidthRequest="140">
+                    <Frame.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Incoming_Tapped" />
+                        </Frame.GestureRecognizers>
+                    <StackLayout x:Name="Incoming" Opacity=".6" Spacing="0" HorizontalOptions="End" VerticalOptions="Center" Padding="0,0,40,0">
+                          
+                        <Image Source="IncomingDare.png"  Style="{StaticResource DareBarStyleTwo}"  />
+                        
+                        <Label x:Name="IncomingDare" TextColor="White"  Text="Incoming" Style="{StaticResource DareBarStyleThree}" FontAttributes="Bold" />
+                             
+                    </StackLayout>
+                   </Frame>
+                </Grid>
+              <StackLayout>
+         
+                 
+           <CarouselView x:Name="TheCarousel"
+                               ItemsSource="{Binding Info}"
+                         ItemTemplate="{StaticResource CreateSentIncomingSelector}"
+                          IsBounceEnabled="False"
+                       
+                          IsScrollAnimated="True"
+                            ItemsUpdatingScrollMode="KeepItemsInView"
+                                      Loop="False"
+                         HorizontalScrollBarVisibility="Never"
+                       
+                         Scrolled="TheCarousel_Scrolled"
+                              >
+   
+                        <CarouselView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="0" SnapPointsType="MandatorySingle" />
+                            </CarouselView.ItemsLayout>
+
+           
+               </CarouselView>
+                  </StackLayout>
+                  
+                   
+           </StackLayout>
+           </yummy:PancakeView>
+        
+    </ContentPage.Content>
+</ContentPage>

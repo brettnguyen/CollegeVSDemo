@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CollegeVS"
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="#10466C"
+             x:Class="CollegeVS.Views.RegisterPage2" 
+			 Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+                    Shell.NavBarHasShadow="False"
+             
+			 Shell.ForegroundColor="#10466C"
+             >
+
+    <ContentPage.Content>
+        <yummy:PancakeView Margin="{OnPlatform Android='0',iOS='0,0,0,-55'}" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                    <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <Grid Margin="0"  >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+
+                </Grid.RowDefinitions>
+
+                <StackLayout Spacing="30">
+                    <Grid BackgroundColor="#10466C"   Padding="0,0,0,0" HeightRequest="50" >
+
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="5,0,0,0">
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="BackArrow_Tapped"/> 
+                            </StackLayout.GestureRecognizers>
+                            <Image Source="wbackarrow.png" HeightRequest="20" Rotation="270" WidthRequest="20" Margin="0,0,0,0" VerticalOptions="Center" BackgroundColor="Transparent"  />
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label Text="Join CollegeVS"  HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="White"/>
+                        </StackLayout>
+                    </Grid>
+
+
+
+                    <StackLayout Spacing="25 " Margin="20,0,20,0">
+                               <StackLayout Spacing="{OnPlatform Android='5',iOS='10'}">
+                <Label Text="Birthdate:" Opacity=".8" TextColor="White" FontAttributes="Bold" FontSize="18"  Padding="10,0,0,-3"/>
+                        <Grid IsClippedToBounds="True">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Frame HasShadow="False" Grid.Column="0"  Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="-3" CornerRadius="{OnPlatform Android='10',iOS='16'}" HorizontalOptions="Start" VerticalOptions="Center" HeightRequest="40" WidthRequest="140">
+                                    <controls:CustomPicker Style="{StaticResource RegisterStylePicker}" Grid.Column="0" x:Name="Month" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TitleColor="LightGray" TextColor="White"  Title="Month" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                </Frame>
+                                <Polygon IsVisible="false" Grid.Column="0" Points="0,0 15,0, 7,13" Fill="#10466C" Margin="10" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Frame HasShadow="False" Grid.Column="1" Opacity=".9" BackgroundColor="#4a6488"  IsClippedToBounds="true" Padding="-3" CornerRadius="{OnPlatform Android='10',iOS='16'}" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="40" WidthRequest="140">
+                                    <controls:CustomPicker HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Style="{StaticResource RegisterStylePicker}"  Grid.Column="1" x:Name="Day" TitleColor="LightGray" TextColor="White"   Title="Day" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,0,0,0" />
+                                </Frame>
+                                <Polygon IsVisible="false" Grid.Column="1" Points="0,0 15,0, 7,13" Fill="#10466C" Margin="10" HorizontalOptions="End" VerticalOptions="Center"/>
+                                <Frame HasShadow="False" Grid.Column="2"  Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="-3" CornerRadius="{OnPlatform Android='10',iOS='16'}" HorizontalOptions="End" VerticalOptions="Center" HeightRequest="40" WidthRequest="140">
+                                    <controls:CustomPicker HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Style="{StaticResource RegisterStylePicker}"  Grid.Column="2" x:Name="Year" TitleColor="LightGray" TextColor="White" Title="Year" BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" />
+                                </Frame>
+                                <Polygon IsVisible="false" Grid.Column="2" Points="0,0 15,0, 7,13" Fill="#10466C" Margin="10" HorizontalOptions="End" VerticalOptions="Center"/>
+                            </Grid>
+
+                        </Grid>
+                            </StackLayout>
+                        <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="0" CornerRadius="10" HeightRequest="40">
+
+                        <controls:CustomSearchBar TextColor="White" BackgroundColor="Transparent" Style="{StaticResource RegisterStyleSearch}" PlaceholderColor="LightGray"   x:Name="CollegeSearch" Placeholder="Search/choose your college" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                    </Frame>
+                 
+                    <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="0" CornerRadius="10" HeightRequest="150">
+                        <StackLayout Padding="8,0,0,0">
+                            <controls:CustomEdit BackgroundColor="Transparent" Text=""  TextColor="White"  PlaceholderColor="LightGray"  Placeholder="Bio. Tell us about yourself? (Optional)" WidthRequest="340" Style="{StaticResource RegisterStyleEditor}"  MaxLength="300" AutoSize="TextChanges"  HorizontalOptions="Start" VerticalOptions="Start"/>
+                        </StackLayout>
+                    </Frame>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Orientation="Horizontal">
+                        <Label VerticalTextAlignment="Center" Opacity=".8" Grid.Column="0" FontAttributes="Bold" Style="{StaticResource RegisterLabelStyle}" Text="Alumni" TextColor="White" HorizontalOptions="Start"  VerticalOptions="Start" Padding="4"/>
+
+                        <Switch Grid.Column="1" OnColor="#10466C" IsVisible="{OnPlatform Android='true',iOS='false'}"
+        ThumbColor="LightGray" IsToggled="false" HorizontalOptions="Start" VerticalOptions="Center" />
+                        <Frame BackgroundColor="White" Style="{StaticResource RegisterFrameStyleTwo}" HasShadow="False" Padding="0" CornerRadius="16" IsVisible="{OnPlatform Android='false',iOS='true'}" >
+                        <Switch Margin="0,0,0,0" Grid.Column="1" OnColor="#10466C"
+        ThumbColor="LightGray" IsToggled="false" HorizontalOptions="Start" VerticalOptions="Center" />
+                            </Frame>
+                            </StackLayout>
+                    </Grid>
+
+                    <Button Text="Create Account" Style="{StaticResource RegisterButtonStyle}"  BackgroundColor="#10466C" TextColor="White" HorizontalOptions="Center" CornerRadius="20" TextTransform="None" Command="{Binding ReturnToLogin}"/>
+
+
+                </StackLayout>
+                </StackLayout>
+            </Grid>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+</ContentPage>

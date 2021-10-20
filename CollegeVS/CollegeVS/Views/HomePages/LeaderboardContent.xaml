@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+
+    x:Class="CollegeVS.Views.LeaderboardContent">
+    <ContentView.Content>
+        
+        <AbsoluteLayout>
+            
+         <Frame HasShadow="False" Padding="0" BorderColor="#10466C" HorizontalOptions="Center" VerticalOptions="Center"  Opacity=".9" BackgroundColor="White" CornerRadius="10">
+           
+                                            <xct:Expander x:Name="ExpanderLeader" PropertyChanged="Expander_PropertyChanged" Padding="0">
+                                             
+                                                 <xct:Expander.Header>
+                                            <StackLayout Padding="8">
+                                                
+                                                
+                                               
+
+
+                                                        <Grid  VerticalOptions="Center">
+
+                                                            
+                                                                    <Grid   >
+                                                                        <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Orientation="Horizontal">
+                                                                            
+                                                                            <Label Margin="5,0,0,0" Text="{Binding Number}" FontSize="30" TextColor="#10466C" FontAttributes="Bold" />
+                                                                  <Image Source="profile_hat_BL.png" HeightRequest="30" WidthRequest="30" BackgroundColor="Transparent"/>
+                                                                                <Label Text="{Binding CollegeName}" LineBreakMode="WordWrap" FontSize="18" TextColor="#10466C" Padding="0" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Start"/>
+
+                                                                            
+                                                                        </StackLayout>
+
+
+                                                                        <StackLayout VerticalOptions="Center" HorizontalOptions="End">
+                                                                            <Frame HasShadow="False" Padding="1" BackgroundColor="#10466C" CornerRadius="10">
+                                                                                <Frame HasShadow="False" Padding="0" BorderColor="#10466C" BackgroundColor="White" CornerRadius="10">
+                                                                                    <Label Text="{Binding CollegePoints}" FontSize="18" TextColor="#10466C" BackgroundColor="Transparent"  Padding="0" Margin="0,0,0,0" FontAttributes="Bold" VerticalOptions="Center"  HorizontalTextAlignment="Center" HeightRequest="25" WidthRequest="120" />
+                                                                                </Frame>
+                                                                            </Frame>
+                                                                        </StackLayout>
+
+                                                                          <StackLayout VerticalOptions="Center" Padding="0,0,10,0" HorizontalOptions="End">
+                                                                            <Image x:Name="BlueArrow" Source="bbackarrow.png" Rotation="90" HeightRequest="15" WidthRequest="15" BackgroundColor="Transparent"/>
+                                                                        </StackLayout>
+
+                                                                    </Grid>
+                                                              
+                                                                    
+                                                             
+                                                        </Grid>
+
+
+
+                                                
+                                            </StackLayout>
+                                   
+                                                     </xct:Expander.Header >
+                                                
+                                                                   <xct:Expander.ContentTemplate  >
+                                                                     
+                                <DataTemplate >
+                                    
+                                    <StackLayout x:Name="LeaderboardInfo" HorizontalOptions="Center" Orientation="Vertical">
+                                       
+                                                                        <StackLayout  HorizontalOptions="Center" Spacing="20" Orientation="Horizontal">
+                                                                            <StackLayout>
+
+                                                                                <Image Source="clearbackgroundparty.png" HeightRequest="30" WidthRequest="30"/>
+                                                                                <Label Text="{Binding PartyPoints}" TextColor="#10466C" FontAttributes="Bold" FontSize="16">
+
+                                                                                </Label>
+                                                                            </StackLayout>
+                                                                            <StackLayout>
+
+                                                                                <Image Source="clearbackgroundsports.png" HeightRequest="30" WidthRequest="30"/>
+                                                                                <Label Text="{Binding SportsPoints}" TextColor="#10466C" FontAttributes="Bold" FontSize="16"/>
+                                                                            </StackLayout>
+                                                                            <StackLayout>
+
+                                                                                <Image Source="clearbackgrounddorms.png" HeightRequest="30" WidthRequest="30"/>
+                                                                                <Label Text="{Binding DormsPoints}" TextColor="#10466C" FontAttributes="Bold" FontSize="16"/>
+                                                                            </StackLayout>
+                                                                            <StackLayout>
+
+                                                                                <Image Source="clearbackgroundfood.png" HeightRequest="30" WidthRequest="30"/>
+                                                                                <Label Text="{Binding FoodPoints}" TextColor="#10466C" FontAttributes="Bold" FontSize="16"/>
+                                                                            </StackLayout>
+                                                                            <StackLayout>
+
+                                                                                <Image Source="clearbackgroundclubs.png" HeightRequest="30" WidthRequest="30"/>
+                                                                                <Label Text="{Binding ClubsPoints}" TextColor="#10466C" FontAttributes="Bold" FontSize="16"/>
+                                                                            </StackLayout>
+                                                                            <StackLayout>
+
+                                                                                <Image Source="clearbackgroundother.png" HeightRequest="30" WidthRequest="30"/>
+                                                                                <Label Text="{Binding OtherPoints}" TextColor="#10466C" FontAttributes="Bold" FontSize="16"/>
+                                                                            </StackLayout>
+                                                                        </StackLayout>
+                                                                        <StackLayout HorizontalOptions="Center" Orientation="Horizontal">
+                                                                            <Label Text="Challenge Points:" FontSize="18" TextColor="#10466C" FontAttributes="Bold"/>
+                                                                            <Label Text="{Binding ChallengePoints}" FontSize="18" TextColor="#10466C" FontAttributes="Bold" VerticalTextAlignment="Center"/>
+                                                                        </StackLayout>
+
+                                                                    </StackLayout>
+                                    </DataTemplate>
+                                                          </xct:Expander.ContentTemplate>
+                                               </xct:Expander>
+                                            </Frame>
+       
+                <Frame x:Name="ExitExpander" Padding="0"    AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="All" BackgroundColor="Transparent">
+                      <Frame.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ExitExpander_Tapped"/>
+                    </Frame.GestureRecognizers>
+                    </Frame>
+           
+
+            
+            </AbsoluteLayout>
+    </ContentView.Content>
+</ContentView>

@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+              xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="#10466C"
+             x:Class="CollegeVS.Views.ReferenceDarePage"
+              xmlns:controls="clr-namespace:CollegeVS"
+             Shell.NavBarIsVisible="False"
+             Shell.TabBarIsVisible="False"
+        
+             >
+    <ContentPage.Content>
+        <yummy:PancakeView Margin="{OnPlatform Android='0',iOS='0,0,0,-75'}" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                    <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <ScrollView Margin="0,0,0,0">
+            <Grid RowSpacing="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+
+                <Grid Grid.Row="0"  VerticalOptions="Start" BackgroundColor="#10466C"   Padding="0,0,0,0"  >
+
+                    <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="10,0,0,0">
+                        <ImageButton Source="wbackarrow.png" HeightRequest="20" Padding="0" Rotation="270" WidthRequest="20" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackArrow_Clicked" />
+                    </StackLayout>
+                     <StackLayout Padding="0,0,0,0" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Transparent" >
+                        <Label Text="Refrence" HorizontalOptions="Center" FontAttributes="Bold" VerticalOptions="End" VerticalTextAlignment="End" TextColor="White" FontSize="22"/>
+
+                    </StackLayout>
+                    <StackLayout HorizontalOptions="End" VerticalOptions="Center" Padding="0,0,10,0" Orientation="Horizontal">
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Next_Tapped" />
+                        </StackLayout.GestureRecognizers>
+
+                        <AbsoluteLayout>
+                            <Label x:Name="Next" Text="Next"  FontAttributes="Bold" FontSize="18" TextColor="White"/>
+                        <Label x:Name="Skip" Text="Skip"  FontAttributes="Bold" FontSize="18" TextColor="White"/>
+                            </AbsoluteLayout>
+                        <Image Source="wbackarrow.png" HeightRequest="20" Rotation="90" WidthRequest="20" VerticalOptions="Center" BackgroundColor="Transparent"/>
+                    </StackLayout>
+
+                </Grid>
+
+
+
+                <Grid Grid.Row="1" BackgroundColor="#10466C" >
+
+                   
+                </Grid>
+
+                <Grid Grid.Row="2" VerticalOptions="Center" >
+                    
+                    <StackLayout VerticalOptions="Center">
+                       
+                        <Label Text="Choose Reference Image/Video" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="LightGray" WidthRequest="150" FontAttributes="Bold" FontSize="16"/>
+
+                        <ImageButton Source="ImageCameraButton.png" HeightRequest="70" WidthRequest="70" Padding="0" BackgroundColor="Transparent" />
+                        <Label Text="(Tap to choose)" HorizontalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="Center" TextColor="LightGray" WidthRequest="150" FontAttributes="Bold" FontSize="16"/>
+
+                    </StackLayout>
+                    <RelativeLayout>
+
+                        <ffimageloading:CachedImage  x:Name="RefrenceFile"  BackgroundColor="Transparent" Aspect="Fill"  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"  LoadingDelay="0"
+                                                                           DownsampleToViewSize="True"/>
+
+                    </RelativeLayout>
+
+                </Grid>
+                <Grid Grid.Row="2"  VerticalOptions="End"  Padding="0,0,0,0">
+                    <ContentView BackgroundColor="#223c5b" Margin="0,0,0,0" HeightRequest="160">
+
+                        <Frame HasShadow="False" BackgroundColor="#4a6488" Opacity=".9" Margin="10,15,10,15" CornerRadius="10" VerticalOptions="Fill" HorizontalOptions="Fill"  Padding="0" HeightRequest="130" >
+
+                            <StackLayout Padding="5,0,0,0">
+
+
+                                <controls:CustomEdit PropertyChanged="Details_PropertyChanged" x:Name="Details"  TextColor="White" Placeholder="Write dare details here!" PlaceholderColor="LightGray" FontAttributes="Bold" AutoSize="TextChanges" Text="" BackgroundColor="Transparent" Style="{StaticResource DarePostEditorStyle}"  MaxLength="200"/>
+                            </StackLayout>
+                        </Frame>
+
+                    </ContentView>
+
+
+                   
+
+                </Grid>
+
+
+            </Grid>
+                </ScrollView>
+        </yummy:PancakeView>
+
+    </ContentPage.Content>
+</ContentPage>

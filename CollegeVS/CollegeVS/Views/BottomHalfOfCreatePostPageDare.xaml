@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CollegeVS.Views.BottomHalfOfCreatePostPageDare">
+	<ContentView.Content>
+		<AbsoluteLayout HeightRequest="120">
+			<StackLayout Padding="7,7,0,0">
+				<Button Padding="60,0,0,0"  Text="{Binding DareTitle}" TextColor="White" BackgroundColor="#4D104CC6" BorderColor="{Binding BorderColor}" BorderWidth="3" TextTransform="None" FontSize="32" HorizontalOptions="Start" VerticalOptions="Center" WidthRequest="350" HeightRequest="90" CornerRadius="15"/>
+			
+			</StackLayout>
+			<StackLayout Padding="14,25,0,0">
+				<Frame CornerRadius="150" BackgroundColor="{Binding BackgroundColor}" Padding="3">
+					<Frame  CornerRadius="100" Padding="0" IsClippedToBounds="True" HorizontalOptions="Start" BackgroundColor="white"  VerticalOptions="Center" WidthRequest="45" HeightRequest="45">
+						<Image Source="{Binding DareImagePath}" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="35"/>
+					</Frame>
+				</Frame>
+			</StackLayout>
+		</AbsoluteLayout>
+	</ContentView.Content>
+</ContentView>

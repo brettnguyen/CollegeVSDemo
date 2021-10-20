@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 xmlns:controls="clr-namespace:CollegeVS"
+              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+              xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="#10466C"
+             x:Class="CollegeVS.Views.Register" 
+			 Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="False"
+              Shell.NavBarHasShadow="False"
+            
+			 Shell.ForegroundColor="#10466C"
+             Shell.TabBarIsVisible="False"
+             >
+
+    <ContentPage.Content>
+    
+            <yummy:PancakeView Margin="{OnPlatform Android='0',iOS='0,0,0,-55'}" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+                <yummy:PancakeView.BackgroundGradientStops>
+                    <yummy:GradientStopCollection>
+
+                        <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                        <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                    </yummy:GradientStopCollection>
+                </yummy:PancakeView.BackgroundGradientStops>
+                <Grid Margin="0"   >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+
+                    </Grid.RowDefinitions>
+
+                    <StackLayout Spacing="{OnPlatform Android='20',iOS='35'} ">
+                        <Grid BackgroundColor="#10466C"  Padding="0,0,0,0" HeightRequest="50" >
+                        <StackLayout HorizontalOptions="Start" VerticalOptions="Center" Padding="5,0,0,0">
+                            <ImageButton Source="wbackarrow.png" Opacity=".9"  HeightRequest="20" Rotation="270" WidthRequest="20" Margin="0,0,0,0" VerticalOptions="Center" BackgroundColor="Transparent" Clicked="BackArrow_Clicked" />
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Label Text="Join CollegeVS" Opacity=".9" HorizontalOptions="Center" VerticalOptions="Center" VerticalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" TextColor="White"/>
+                        </StackLayout>
+                    </Grid>
+                    <StackLayout Style="{StaticResource RegisterStyle}" Margin="20,0,20,0">
+                        <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488"  IsClippedToBounds="true" Padding="0" CornerRadius="10" HeightRequest="40">
+
+                            <controls:CustomEntry BackgroundColor="Transparent" PlaceholderColor="LightGray" TextColor="White"  MaxLength="24"  Text="" Placeholder="First Name"  Style="{StaticResource RegisterStyleText}" HeightRequest="58" Margin="10,0,0,-2" />
+
+                        </Frame>
+
+
+                        <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="0" CornerRadius="10"  HeightRequest="40">
+
+                            <controls:CustomEntry BackgroundColor="Transparent" PlaceholderColor="LightGray" TextColor="White" MaxLength="24"  Style="{StaticResource RegisterStyleText}"  Text="" Placeholder="Last Name" Margin="10,0,0,-2"  />
+
+                        </Frame>
+
+                        <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="0" CornerRadius="10"  HeightRequest="40">
+
+                            <controls:CustomEntry BackgroundColor="Transparent" PlaceholderColor="LightGray" TextColor="White" MaxLength="80" Style="{StaticResource RegisterStyleText}"  Text="" Placeholder="Email" Keyboard="Email" Margin="10,0,0,-2"  />
+
+                        </Frame>
+
+                        <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488"  IsClippedToBounds="true" Padding="0" CornerRadius="10" HeightRequest="40">
+
+                            <controls:CustomEntry BackgroundColor="Transparent" PlaceholderColor="LightGray" TextColor="White" MaxLength="16" Text="" Placeholder="Username"  Style="{StaticResource RegisterStyleText}"  HeightRequest="58" Margin="10,0,0,-2" />
+
+                        </Frame>
+
+                        <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="0" CornerRadius="10"  HeightRequest="40">
+
+                            <controls:CustomEntry BackgroundColor="Transparent" PlaceholderColor="LightGray" TextColor="White" MaxLength="12" Style="{StaticResource RegisterStyleText}"  Text="" Placeholder="Password" IsPassword="True" Margin="10,0,0,-2"  />
+
+                        </Frame>
+                        <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="0" CornerRadius="10" HeightRequest="40">
+
+                            <controls:CustomEntry BackgroundColor="Transparent" PlaceholderColor="LightGray" TextColor="White" MaxLength="12" Text="" Placeholder="Re-type Password" IsPassword="True"  Style="{StaticResource RegisterStyleText}"  HeightRequest="58" Margin="10,0,0,-2" />
+
+                        </Frame>
+                        
+                  <StackLayout Spacing="30">
+                    <StackLayout Spacing="{OnPlatform Android='-10',iOS='0'} " Orientation="Horizontal">
+                            <Label LineBreakMode="WordWrap" Style="{StaticResource RegisterLabelStyle}" Opacity=".8" Text="Display first and last name on CollegeVS" TextColor="White" HorizontalOptions="Start"  VerticalOptions="Start" Padding="4"/>
+                            <Switch Margin="5,0,0,0" IsVisible="{OnPlatform Android='true',iOS='false'}" OnColor="#10466C"
+        ThumbColor="LightGray" IsToggled="true" HorizontalOptions="Start" VerticalOptions="Center" />
+
+                        <Frame Style="{StaticResource RegisterFrameStyle}"  HasShadow="False" IsVisible="{OnPlatform Android='false',iOS='true'}" Padding="0,0,0,0" BackgroundColor="White" CornerRadius="16">
+                        <Switch  OnColor="#10466C"
+        ThumbColor="LightGray" IsToggled="true" HorizontalOptions="Start" VerticalOptions="Center" />
+                            </Frame>
+                        </StackLayout>
+
+                        <Button Style="{StaticResource RegisterButtonStyle}"  x:Name="Next" Text="Next" BackgroundColor="#10466C" TextColor="White" HorizontalOptions="Center"  CornerRadius="10" TextTransform="None" Clicked="Next_Clicked"/>
+                      </StackLayout>
+
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+            </yummy:PancakeView>
+        
+     
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="120mm"
+   height="120mm"
+   viewBox="0 0 120 120"
+   version="1.1"
+   id="svg3172"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="LeaderboardIcon.svg">
+  <defs
+     id="defs3166" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.175"
+     inkscape:cx="921.99395"
+     inkscape:cy="352.85069"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:snap-global="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1274"
+     inkscape:window-height="729"
+     inkscape:window-x="76"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata3169">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-59.249763,6.7389417)">
+    <circle
+       r="60"
+       cy="53.261059"
+       cx="119.24976"
+       id="path5060"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0" />
+    <g
+       style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+       id="g2612"
+       transform="matrix(0.817673,0.48853459,-0.42537657,0.85338582,93.520554,-18.941668)">
+      <g
+         style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+         id="g2594">
+        <path
+           style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+           class="st0"
+           d="M 68.2,49.2 C 80.4,39.7 83.4,20.7 75.4,3.8 l -25,14.4 z M 69,41.4 56.5,19.8 73,10.3 c 5.8,11.7 4,24.8 -4,31.1 z"
+           id="path2592" />
+      </g>
+      <g
+         style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+         id="g2598">
+        <path
+           style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+           class="st0"
+           d="M 33.4,27.2 8.4,41.6 C 19,57.1 36.9,64 51.3,58.2 Z M 15.1,43 31.6,33.5 44.1,55.2 C 34.6,58.8 22.5,53.8 15.1,43 Z"
+           id="path2596" />
+      </g>
+      <g
+         style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+         id="g2602">
+        <path
+           style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+           class="st0"
+           d="M 63.7,13 C 62.5,10.9 61.3,9 59.9,7.1 l -41,23.7 c 1,2.1 2,4.2 3.2,6.3 9.5,16.6 24.6,26.3 35.9,24.1 l 12.8,22.3 8,-4.6 -12.7,-22.2 c 8,-8.5 7.4,-26.9 -2.4,-43.7 z"
+           id="path2600" />
+      </g>
+      <g
+         style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+         id="g2606">
+        <rect
+           style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+           x="60.599998"
+           y="76.199997"
+           transform="matrix(0.866,-0.5,0.5,0.866,-29.9741,47.9348)"
+           class="st0"
+           width="27.700001"
+           height="7.3000002"
+           id="rect2604" />
+      </g>
+      <g
+         style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+         id="g2610">
+        <rect
+           style="fill:#10466c;fill-opacity:1;stroke-width:0.278031"
+           x="59.099998"
+           y="82.300003"
+           transform="matrix(0.866,-0.5,0.5,0.866,-31.7127,49.7467)"
+           class="st0"
+           width="35.700001"
+           height="3.5999999"
+           id="rect2608" />
+      </g>
+    </g>
+  </g>
+</svg>

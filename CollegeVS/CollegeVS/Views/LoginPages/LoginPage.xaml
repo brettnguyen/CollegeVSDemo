@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:CollegeVS"
+			 xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="False"
+			 mc:Ignorable="d"
+             x:Class="CollegeVS.Views.LoginPage"
+             Shell.NavBarIsVisible="False"  BackgroundColor="Transparent"
+			 Shell.TabBarIsVisible="False"
+			 Shell.FlyoutBehavior="Disabled"
+			 Shell.NavBarHasShadow="False"
+             
+    Shell.PresentationMode="ModalNotAnimated"
+                xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             >
+
+
+    <ContentPage.Content>
+
+        <yummy:PancakeView Margin="{OnPlatform Android='0',iOS='0,0,0,-55'}" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+           
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+                   
+                    <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+					 
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+                  
+
+               
+                    
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <Grid Margin="20" VerticalOptions="Center" BackgroundColor="Transparent" >
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="Auto"/>
+
+			</Grid.RowDefinitions>
+            
+		
+			<StackLayout Spacing="-10"  BackgroundColor="Transparent" >
+
+				<StackLayout Spacing="20" >
+					
+                        <Frame HasShadow="False" Style="{StaticResource LogFrameStyle}"  Padding="0" >
+                            <Frame HasShadow="False" Style="{StaticResource LogFrameStyleTwo}" Opacity=".915" Padding="0" >
+                            <Image Source="inv.png"  Margin="20" Aspect="Fill"/>
+
+                        </Frame>
+                        </Frame>
+
+                        <Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488"  IsClippedToBounds="true" Padding="0" CornerRadius="10" HeightRequest="40">
+
+						<controls:CustomEntry PlaceholderColor="LightGray" BackgroundColor="Transparent" Text="" TextColor="White" Placeholder="Username"  FontSize="18" HeightRequest="58" Margin="10,0,0,-2" />
+
+					</Frame>
+
+					<Frame HasShadow="False" Opacity=".9" BackgroundColor="#4a6488" IsClippedToBounds="true" Padding="0" CornerRadius="10"  HeightRequest="40">
+
+						<controls:CustomEntry BackgroundColor="Transparent" PlaceholderColor="LightGray" TextColor="White" FontSize="18" Text="" Placeholder="Password" IsPassword="True" Margin="10,0,0,-2"  />
+
+					</Frame>
+
+					<StackLayout>
+
+						<Button  Text="Login"  Style="{StaticResource LoginButtonStyle}"  CornerRadius="10"  Padding="0" TextTransform="None" Command="{Binding LoginCommand}" />
+
+					</StackLayout>
+					<StackLayout>
+						<Grid  >
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*"/>
+								<ColumnDefinition Width="auto"/>
+							</Grid.ColumnDefinitions>
+							<!-- Place new controls here -->
+
+							<Label Grid.Column="0" Opacity=".8" Text="Forgot Password?" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="Transparent" TextTransform="None" Padding="0" Style="{StaticResource NormalTitleStyle}"  TextColor="White" >
+								<Label.GestureRecognizers>
+									<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ForgotPass_Tapped"></TapGestureRecognizer>
+								</Label.GestureRecognizers>
+								</Label>
+							<Label Grid.Column="1" Text="-" TextColor="White"/>
+							<Label Grid.Column="2" Opacity=".8" Text="Forgot Username?" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="Transparent" TextTransform="None" Padding="0"  TextColor="White" Style="{StaticResource NormalTitleStyle}" >
+								<Label.GestureRecognizers>
+									<TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ForgotUser_Tapped"></TapGestureRecognizer>
+								</Label.GestureRecognizers></Label>
+						</Grid>
+					</StackLayout>
+					<Button x:Name="Register" Text=" Create an Acount" CornerRadius="10" Style="{StaticResource RegisterButtonStyle}"  TextTransform="None"  Clicked="Register_Clicked"/>
+
+					<Label Opacity=".8" Text="By creating an account and using our website you acknowledge that you have read and agreed to our Cookie Policy, Terms of Service, Privacy Policy, and End User License Agreement." TextColor="White"  Style="{StaticResource NormalTitleStyle}" Padding="30,0,30,0"/>
+
+				</StackLayout>
+			</StackLayout>
+
+		</Grid>
+        </yummy:PancakeView>
+    </ContentPage.Content>
+    
+
+</ContentPage>

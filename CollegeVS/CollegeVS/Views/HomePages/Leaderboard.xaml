@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:CollegeVS"
+ xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+               xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+			 iOS:Page.UseSafeArea="True"
+             BackgroundColor="#10466C"
+              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:views="clr-namespace:CollegeVS.Views"
+             x:Class="CollegeVS.Views.Leaderboard"
+             Shell.PresentationMode="ModalAnimated"
+            
+             >
+    <ContentPage.Content>
+        <yummy:PancakeView Margin="{OnPlatform Android='0',iOS='0,0,0,-55'}" BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0"  >
+
+            <yummy:PancakeView.BackgroundGradientStops>
+                <yummy:GradientStopCollection>
+
+                     <yummy:GradientStop Color="LightBlue" Offset="1.00"/>
+                    <yummy:GradientStop Color="#10469C" Offset="0.0"/>
+
+
+
+
+
+                </yummy:GradientStopCollection>
+            </yummy:PancakeView.BackgroundGradientStops>
+            <RelativeLayout>
+                <Grid Padding="0"  BackgroundColor="Transparent" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}">
+                    <StackLayout Orientation="Vertical" >
+                        <Grid BackgroundColor="#10466C" HeightRequest="50" >
+                            <StackLayout VerticalOptions="Center" Padding="10,0,0,0">
+                                <ImageButton x:Name="CloseLeaderboard" Source="wbackarrow.png" BackgroundColor="Transparent" HorizontalOptions="Start" VerticalOptions="Start" Rotation="270" HeightRequest="20" WidthRequest="20"  Clicked="CloseLeaderboard_Clicked"/>
+                            </StackLayout>
+                            <Label Text="Leaderboard" FontSize="24" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <StackLayout  Spacing="10">
+                            <StackLayout>
+                                <Frame  HasShadow="False" IsClippedToBounds="True" VerticalOptions="Center"  HorizontalOptions="Center" WidthRequest="400" HeightRequest="45" Opacity=".9" BackgroundColor="#4a6488" Padding="2" CornerRadius="10">
+                                    <controls:CustomSearchBar BackgroundColor="Transparent" PlaceholderColor="LightGray" Placeholder="Search"/>
+                                </Frame>
+
+                            </StackLayout>
+                            
+                            <CollectionView x:Name="LeaderboardPosts"
+                                  ItemsSource="{Binding .}"
+                                  Margin="5,0,5,0"
+                                  SelectionMode="None"
+                                  BackgroundColor="Transparent"
+                                      
+                                 >
+                                <CollectionView.ItemsLayout>
+                                    <LinearItemsLayout Orientation="Vertical"  ItemSpacing="10"/>
+                                </CollectionView.ItemsLayout>
+                                <CollectionView.ItemTemplate>
+                                    
+                                    <DataTemplate>
+                                        <StackLayout>
+                                       <Label Text="{Binding Number}" IsVisible="false"/>
+                                        <views:LeaderboardContent></views:LeaderboardContent>
+                                            </StackLayout>
+                                                   
+
+                                      
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+
+
+                        </StackLayout>
+                    </StackLayout>
+                </Grid>
+            </RelativeLayout>
+
+        </yummy:PancakeView>
+
+    </ContentPage.Content>
+</ContentPage>
