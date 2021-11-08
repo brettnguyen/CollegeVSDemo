@@ -3,7 +3,7 @@
     <Files>
       <File FileName="CollegeVS/ViewModels/CLGVSHomeViewModel.cs" Line="26" Column="29" />
       <File FileName="CollegeVS/Models/HomeModel.cs" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="150" Column="153" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" />
       <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" />
       <File FileName="CollegeVS/Views/LoginPages/LoginPage.xaml.cs" />
       <File FileName="CollegeVS/ViewModels/LoginViewModel.cs" />
@@ -12,7 +12,7 @@
       <File FileName="CollegeVS.Android/MainActivity.cs" />
       <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" />
       <File FileName="CollegeVS/AppShell.xaml.cs" Line="12" Column="55" />
-      <File FileName="CollegeVS/AppShell.xaml" Line="2" Column="30" />
+      <File FileName="CollegeVS/AppShell.xaml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -42,9 +42,8 @@
                 <Node name="Post.xaml" expanded="True" />
                 <Node name="SearchPage.xaml" expanded="True" />
               </Node>
-              <Node name="AppShell.xaml" expanded="True">
-                <Node name="AppShell.xaml.cs" selected="True" />
-              </Node>
+              <Node name="AppShell.xaml" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
             <Node name="CollegeVS.Android" expanded="True" />
           </Node>
