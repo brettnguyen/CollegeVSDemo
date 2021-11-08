@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+<shared:SharedTransitionShell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:CollegeVS.Views"
         xmlns:views="clr-namespace:CollegeVS.Views"
        Title="CollegeVS"
        BackgroundColor="Transparent"
+       xmlns:shared="clr-namespace:Plugin.SharedTransitions;assembly=Plugin.SharedTransitions"
  xmlns:y="clr-namespace:SlideOverKit;assembly=SlideOverKit"
        x:Class="CollegeVS.AppShell"
     xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
@@ -138,4 +139,4 @@
     -->
 
 
-</Shell>
+</shared:SharedTransitionShell>
