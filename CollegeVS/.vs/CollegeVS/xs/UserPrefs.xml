@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{A5AE350C-4CD8-45B5-857B-C1753B2A8299}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/Views/HomePages/CLGVSHome.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/AppShell.xaml.cs">
     <Files>
       <File FileName="CollegeVS/ViewModels/CLGVSHomeViewModel.cs" Line="26" Column="29" />
       <File FileName="CollegeVS/Models/HomeModel.cs" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="150" Column="153" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" />
       <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" />
       <File FileName="CollegeVS/Views/LoginPages/LoginPage.xaml.cs" />
       <File FileName="CollegeVS/ViewModels/LoginViewModel.cs" />
@@ -11,6 +11,8 @@
       <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml" />
       <File FileName="CollegeVS.Android/MainActivity.cs" />
       <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" />
+      <File FileName="CollegeVS/AppShell.xaml.cs" Line="12" Column="55" />
+      <File FileName="CollegeVS/AppShell.xaml" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -31,7 +33,6 @@
                 </Node>
                 <Node name="HomePages" expanded="True">
                   <Node name="CLGVSHome.xaml" expanded="True" />
-                  <Node name="Leaderboard.xaml" selected="True" />
                 </Node>
                 <Node name="LoginPages" expanded="True">
                   <Node name="LoginPage.xaml" expanded="True" />
@@ -41,6 +42,8 @@
                 <Node name="Post.xaml" expanded="True" />
                 <Node name="SearchPage.xaml" expanded="True" />
               </Node>
+              <Node name="AppShell.xaml" expanded="True" />
+              <Node name="Startup.cs" selected="True" />
             </Node>
             <Node name="CollegeVS.Android" expanded="True" />
           </Node>
@@ -50,7 +53,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.emulator-5554" />
+  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus_S_API_31" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
