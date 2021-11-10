@@ -3,13 +3,13 @@ using CollegeVS.Views;
 using System;
 using System.Collections.Generic;
 
-using Plugin.SharedTransitions;
+
 using Xamarin.Forms;
 using System.Diagnostics;
 
 namespace CollegeVS
 {
-	public partial class AppShell : SharedTransitionShell
+	public partial class AppShell
     {
         public AppShell()
         {
