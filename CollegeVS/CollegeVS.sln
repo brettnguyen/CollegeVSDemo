@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CollegeVS.iOS", "CollegeVS.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CollegeVS", "CollegeVS\CollegeVS.csproj", "{9681E0AA-CBBB-42D1-B777-133CA3710A1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedTransitions", "..\..\..\Xamarin.Plugin.SharedTransitions-master\src\SharedTransitions\SharedTransitions.csproj", "{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{9681E0AA-CBBB-42D1-B777-133CA3710A1C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{9681E0AA-CBBB-42D1-B777-133CA3710A1C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{9681E0AA-CBBB-42D1-B777-133CA3710A1C}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Release|iPhone.Build.0 = Release|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F6BD10B9-79A4-4A3A-9D05-DBC1B97ED90C}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,51 +1,41 @@
 ﻿<Properties StartupConfiguration="{A5AE350C-4CD8-45B5-857B-C1753B2A8299}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/AppShell.xaml.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="CollegeVS/ViewModels/CLGVSHomeViewModel.cs" Line="26" Column="29" />
-      <File FileName="CollegeVS/Models/HomeModel.cs" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" />
-      <File FileName="CollegeVS/Views/LoginPages/LoginPage.xaml.cs" />
-      <File FileName="CollegeVS/ViewModels/LoginViewModel.cs" />
-      <File FileName="CollegeVS/Startup.cs" />
-      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml" />
-      <File FileName="CollegeVS.Android/MainActivity.cs" />
-      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" />
-      <File FileName="CollegeVS/AppShell.xaml.cs" Line="12" Column="55" />
-      <File FileName="CollegeVS/AppShell.xaml" />
+      <File FileName="CollegeVS/AppShell.xaml" Line="17" Column="3" />
+      <File FileName="../../../Xamarin.Plugin.SharedTransitions-master/src/SharedTransitions/Platforms/Android/NavigationTransition.cs" Line="1" Column="1" />
+      <File FileName="../../../Xamarin.Plugin.SharedTransitions-master/src/SharedTransitions/Platforms/Android/NavigationTransitionListener.cs" Line="1" Column="1" />
+      <File FileName="../../../Xamarin.Plugin.SharedTransitions-master/src/SharedTransitions/Platforms/Android/Renderers/ITransitionRenderer.cs" Line="1" Column="1" />
+      <File FileName="../../../Xamarin.Plugin.SharedTransitions-master/src/SharedTransitions/Platforms/Android/Renderers/SharedTransitionPageRenderer.cs" Line="54" Column="1" />
+      <File FileName="../../../Xamarin.Plugin.SharedTransitions-master/src/SharedTransitions/Platforms/Android/Renderers/SharedTransitionNavigationPageRenderer.cs" Line="1" Column="1" />
+      <File FileName="../../../Xamarin.Plugin.SharedTransitions-master/src/SharedTransitions/Platforms/Android/Renderers/SharedTransitionShellItemRenderer.cs" Line="1" Column="1" />
+      <File FileName="CollegeVS/App.xaml.cs" Line="70" Column="4" />
+      <File FileName="CollegeVS/appsettings.json" Line="1" Column="1" />
+      <File FileName="CollegeVS.Android/MainApplication.cs" Line="19" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CollegeVS" expanded="True">
             <Node name="CollegeVS" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
-              </Node>
-              <Node name="DeviceSizes" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Comment" expanded="True" />
                 <Node name="HighlightPage" expanded="True">
                   <Node name="HighlightPage.xaml" expanded="True" />
-                </Node>
-                <Node name="HomePages" expanded="True">
-                  <Node name="CLGVSHome.xaml" expanded="True" />
                 </Node>
                 <Node name="LoginPages" expanded="True">
                   <Node name="LoginPage.xaml" expanded="True" />
                 </Node>
-                <Node name="Notifications" expanded="True" />
-                <Node name="ProfilePages" expanded="True" />
-                <Node name="Post.xaml" expanded="True" />
-                <Node name="SearchPage.xaml" expanded="True" />
               </Node>
+              <Node name="App.xaml" selected="True" />
               <Node name="AppShell.xaml" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
             <Node name="CollegeVS.Android" expanded="True" />
+            <Node name="SharedTransitions" expanded="True">
+              <Node name="Platforms" expanded="True">
+                <Node name="Android" expanded="True">
+                  <Node name="Renderers" expanded="True" />
+                </Node>
+              </Node>
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -53,7 +43,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus_S_API_31" />
+  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.emulator-5554" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

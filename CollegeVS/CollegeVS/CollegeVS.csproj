@@ -110,7 +110,6 @@
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2125" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />  
     <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
-    <PackageReference Include="Xamarin.Plugin.SharedTransitions" Version="2.4.0" />
     <PackageReference Include="CardsView" Version="2.8.0" />
     <PackageReference Include="Resizetizer.NT" Version="0.3.0"><IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 <PrivateAssets>all</PrivateAssets>
@@ -313,5 +312,8 @@
     <SharedImage Include="Images\sortarrow.svg" />
     <SharedImage Include="Images\postcamera.svg" BaseSize="20,20" />
     <SharedImage Include="Images\clubs.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Xamarin.Plugin.SharedTransitions-master\src\SharedTransitions\SharedTransitions.csproj" />
   </ItemGroup>
 </Project>
