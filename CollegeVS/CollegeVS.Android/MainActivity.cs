@@ -18,6 +18,7 @@ using Plugin.Permissions.Abstractions;
 using Plugin.Permissions;
 using AndroidX.Core.Content;
 using AndroidX.Core.App;
+using ContextMenu.Droid;
 
 namespace CollegeVS.Droid
 {
@@ -64,7 +65,7 @@ namespace CollegeVS.Droid
             global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-           
+            ContextMenuViewRenderer.Preserve();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             //Startup.Init();
             LoadApplication(new App());

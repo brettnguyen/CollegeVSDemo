@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:context="clr-namespace:ContextMenu.Views;assembly=ContextMenu"
+    xmlns:conv="clr-namespace:CollegeVS"
+    x:Class="CollegeVS.Views.Comment.OtherUser"
+     x:Name="ThisTemplate">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <conv:MenuFitWidthConverter x:Key="MenuFitWidthConverter" />
+           
+        </ResourceDictionary>
+    </ContentView.Resources>
+    
+                
+         <context:SideContextMenuView
+        IsAutoCloseEnabled="true"
+          
+                                     ForceCloseCommand="{Binding ForceCloseCommand}">
+
+        <context:SideContextMenuView.View  >
+            
+            
+                            <StackLayout Padding="0,0,70,0" BackgroundColor="Transparent" IsVisible="{Binding OtherEnable}" WidthRequest="{Binding Source={x:Reference ThisTemplate}, Path=Width, Converter={StaticResource MenuFitWidthConverter}, ConverterParameter='70'}" >
+                               
+                                            
+                                    <Grid Padding="10" BackgroundColor="Transparent">
+                                        <Grid.RowDefinitions>
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="45"/>
+                                            <ColumnDefinition Width="4*"/>
+
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackLayout BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Padding="0,3,0,0" HorizontalOptions="Start" VerticalOptions="Start" Orientation="Horizontal">
+                                            <Frame CornerRadius="{OnPlatform Android='100',iOS='23'}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="White"  VerticalOptions="Center" WidthRequest="45" HeightRequest="45">
+                                                <Image Source="{Binding OtherProfilePicture}"
+                                                    VerticalOptions="Center"
+                                                    HorizontalOptions="Start"
+                                                    BackgroundColor="Transparent"
+                             Aspect="Fill">
+                                                    <Image.GestureRecognizers>
+                                                                <TapGestureRecognizer NumberOfTapsRequired="1"   />
+                                                                </Image.GestureRecognizers>
+
+                                                </Image>
+                                            </Frame>
+
+                                        </StackLayout>
+                                        <StackLayout BackgroundColor="Transparent" VerticalOptions="Start" Spacing="0" Grid.Column="1">
+                                            <Label Text="{Binding OtherUsername}" TextColor="LightGray" FontSize="14" FontAttributes="Bold" />
+
+                                            <Label Padding="5,5,0,0" Text="{Binding OtherComment}" TextColor="LightGray" FontSize="12" LineBreakMode="WordWrap" />
+
+
+                                        </StackLayout>
+                                    </Grid>
+                                
+
+
+                            </StackLayout>
+                
+            </context:SideContextMenuView.View>
+                                        <context:SideContextMenuView.ContextTemplate>
+            <DataTemplate>
+                <Frame Margin="0, 0"
+                        Padding="0,0,0,0"
+                        CornerRadius="10"
+                       BackgroundColor="Transparent"
+                        IsClippedToBounds="true">
+                                                <StackLayout IsClippedToBounds="True" Spacing="0" WidthRequest="65" HorizontalOptions="Center" VerticalOptions="Center"   BackgroundColor="Gray">
+                                                    <StackLayout.GestureRecognizers>
+                                                        <TapGestureRecognizer  NumberOfTapsRequired="1" />
+                                                    </StackLayout.GestureRecognizers>
+                                                    <Label Text="!" TextColor="White" FontSize="32" Padding="0" Margin="0" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                                    <Label Text="Report" TextColor="White" FontSize="16" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+
+                                                </StackLayout>
+                    </Frame>
+                </DataTemplate>
+                                 </context:SideContextMenuView.ContextTemplate>
+                                 </context:SideContextMenuView>
+                          
+  
+</ContentView>

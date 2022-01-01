@@ -28,44 +28,16 @@ namespace CollegeVS.Views
 	public partial class CLGVSHome : MenuContainerPage
 	{
 
-		public ObservableCollection<HomeModel> Items { get; set; }
+	
 		public CLGVSHome()
 		{
 
 
 			InitializeComponent();
-			//this.BindingContext = new CLGVSHomeViewModel();
+			this.BindingContext = new HighlightViewModel();
 			//BindingContext = Startup.ServiceProvider.GetService<CLGVSHomeViewModel>();
 
-			Items = new ObservableCollection<HomeModel>()
-		{
-			new HomeModel(){
-				ProfilePicture = "UserIcon.png",
-				Username = "User Name",
-				PostImage = "Harvard.jpg",
-				PostDetail = "This is collegeVS",
-				PostUpvoteCount = 100,
-				PostCommentCount = "7",
-				PostTime = "2 weeks",
-				Seen = true,
-				Back = false,
-				College = "Harvard",
-				Category = "clearbackgrounddorms.png",},
-			new HomeModel(){
-				ProfilePicture = "UserIcon.png",
-				Username = "User Name",
-				PostImage = "Harvard.jpg",
-				PostDetail = "This is collegeVS",
-				PostUpvoteCount = 100,
-				PostCommentCount = "7",
-				PostTime = "2 weeks",
-				Seen = true,
-				Back = false,
-				College = "Harvard",
-				Category = "clearbackgrounddorms.png",},
 			
-		};
-			this.BindingContext = this;
 		
 			this.SlideMenu = new CommentSlideUp();
 
@@ -91,20 +63,7 @@ namespace CollegeVS.Views
 		//	BindingContext.
 		//}
 
-		void Upvote_Tapped(System.Object sender, System.EventArgs e)
-		{
-			HomeModel homeModel = ListPosts.CurrentItem as HomeModel;
-			homeModel.Seen = false;
-			homeModel.Back = true;
-		}
-
-		void Remove_Tapped(System.Object sender, System.EventArgs e)
-		{
-
-			HomeModel homeModel = ListPosts.CurrentItem as HomeModel;
-			homeModel.Seen = true;
-			homeModel.Back = false;
-		}
+		
 
 		void Sort_Clicked(object sender, EventArgs e)
 		{

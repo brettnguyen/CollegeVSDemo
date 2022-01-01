@@ -13,7 +13,7 @@
 			 Shell.NavBarHasShadow="False"
              
     Shell.PresentationMode="ModalNotAnimated"
-                xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+                xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:Comments="clr-namespace:CollegeVS.Views.Comment"
              >
 
 
@@ -44,7 +44,18 @@
             
 		
 			<StackLayout Spacing="-10"  BackgroundColor="Transparent" >
+				<CollectionView BackgroundColor="Transparent"   ItemsSource="{Binding Others}" TabIndex="0" >
+                    <CollectionView.ItemTemplate>
 
+                   
+
+                        <DataTemplate>
+                             <Comments:OtherUser></Comments:OtherUser>
+                        </DataTemplate>
+                    
+                        </CollectionView.ItemTemplate>
+
+                </CollectionView>
 				<StackLayout Spacing="20" >
 					
                         <Frame HasShadow="False" Style="{StaticResource LogFrameStyle}"  Padding="0" >

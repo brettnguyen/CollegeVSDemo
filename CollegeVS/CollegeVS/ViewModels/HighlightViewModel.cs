@@ -3,17 +3,24 @@ using System.Collections.Generic;
 using Lottie.Forms;
 using System.Collections.ObjectModel;
 using System.Linq;
+using SlideOverKit;
 using System.Windows.Input;
 using CollegeVS.Models;
 using Xamarin.Forms;
 
 namespace CollegeVS.ViewModels
 {
-    public class HighlightViewModel : BindableObject
+    public class HighlightViewModel : BaseViewModel
     {
 
         public ObservableCollection<HomeModel> highlights { get; set; }
 
+        private HomeModel currentItem;
+        public HomeModel CurrentItem
+        {
+            get { return currentItem; }
+            set { SetProperty(ref currentItem, value); }
+        }
         public ICommand SetStatusCommand { get; set; }
 
         public ICommand RemoveStatusCommand { get; set; }
@@ -31,21 +38,31 @@ namespace CollegeVS.ViewModels
         {
             highlights = new ObservableCollection<HomeModel>()
             {
-               new HomeModel()
-                {
-                    ProfilePicture = "UserIcon.png",
+             
+           new HomeModel(){
+                ProfilePicture = "UserIcon.png",
                 Username = "User Name",
                 PostImage = "Harvard.jpg",
                 PostDetail = "This is collegeVS",
                 PostUpvoteCount = 100,
                 PostCommentCount = "7",
                 PostTime = "2 weeks",
-
+                Seen = true,
+                Back = false,
                 College = "Harvard",
-                Category = "clearbackgrounddorms.png",
-              
-                },
-
+                Category = "clearbackgrounddorms.png",},
+            new HomeModel(){
+                ProfilePicture = "UserIcon.png",
+                Username = "User Name",
+                PostImage = "Harvard.jpg",
+                PostDetail = "This is collegeVS",
+                PostUpvoteCount = 100,
+                PostCommentCount = "7",
+                PostTime = "2 weeks",
+                Seen = true,
+                Back = false,
+                College = "Harvard",
+                Category = "clearbackgrounddorms.png",},
 
             };
             SetStatusCommand = new Command(SetStatus);
@@ -58,49 +75,34 @@ namespace CollegeVS.ViewModels
 
         void SetStatus()
         {
-            HomeModel selectedLike = highlights.Where(c => c.Seen == true)
-                .FirstOrDefault();
+            
 
-            if (selectedLike != null)
+            if (currentItem != null)
             {
                 // Change the value and update UI automatically
-                selectedLike.Seen = false;
+                currentItem.Seen = false;
+                currentItem.Back = true;
             }
 
 
 
 
-            HomeModel selectedunlike = highlights.Where(c => c.Back == false)
-                .FirstOrDefault();
-
-            if (selectedunlike != null)
-            {
-                // Change the value and update UI automatically
-                selectedunlike.Back = true;
-            }
+           
 
         }
 
 
         void RemoveStatus()
         {
-            HomeModel selectedunlike = highlights.Where(c => c.Back == true)
-                .FirstOrDefault();
 
-            if (selectedunlike != null)
+            if (currentItem != null)
             {
                 // Change the value and update UI automatically
-                selectedunlike.Back = false;
+                currentItem.Seen = true;
+                currentItem.Back = false;
             }
 
-            HomeModel selectedLike = highlights.Where(c => c.Seen == false)
-                .FirstOrDefault();
 
-            if (selectedLike != null)
-            {
-                // Change the value and update UI automatically
-                selectedLike.Seen = true;
-            }
         }
 
 

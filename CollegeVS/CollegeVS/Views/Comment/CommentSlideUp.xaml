@@ -4,12 +4,38 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CollegeVS.Views.CommentSlideUp"
               xmlns:t="clr-namespace:SlideOverKit;assembly=SlideOverKit"
-                 xmlns:views="clr-namespace:CollegeVS.Views"
+                 xmlns:Comments="clr-namespace:CollegeVS.Views.Comment"
                   xmlns:local="clr-namespace:CollegeVS.ViewModels"
+                 xmlns:conv="clr-namespace:CollegeVS"
+                 xmlns:context="clr-namespace:ContextMenu.Views;assembly=ContextMenu"
+                 xmlns:select="clr-namespace:CollegeVS.Controls"
                   xmlns:controls="clr-namespace:CollegeVS"
+                
              Style="{StaticResource MainSlideStyle}" >
+    <t:SlideMenuView.Resources>
+        <DataTemplate x:Key="CommentTemplate">
+           <StackLayout>
+           <Label Text="{Binding Nothing}" IsVisible="false"/>
+               <Comments:UserComment></Comments:UserComment>
+          
+               </StackLayout>
+       </DataTemplate>
+           <DataTemplate x:Key="OtherUserCommentTemplate">
+               <StackLayout>
+                    <Label Text="{Binding Nothing}" IsVisible="false"/>
+                <Comments:OtherUser></Comments:OtherUser>
+                   </StackLayout>
+       </DataTemplate>
 
- <ScrollView Orientation="Neither">
+       <select:CommentDataTemplateSelector x:Key="CommentDataSelector"
+                                             Comment="{StaticResource CommentTemplate}"
+                                             OtherUserComment="{StaticResource OtherUserCommentTemplate}" />
+    <ResourceDictionary>
+            <conv:MenuFitWidthConverter x:Key="MenuFitWidthConverter" />
+            
+        </ResourceDictionary>
+        </t:SlideMenuView.Resources>
+ <ScrollView  Orientation="Neither">
      
         <Grid>
             <Grid.GestureRecognizers>
@@ -34,142 +60,32 @@
 
 
 
-        
-                <ScrollView  Grid.Row="1"  Padding="0,0,0,0" Margin="0,0,0,0" VerticalScrollBarVisibility="Always"    >
-            <StackLayout>
+           <ScrollView  Grid.Row="1"  Padding="0,0,0,0" Margin="0,0,0,0" VerticalScrollBarVisibility="Always"    >
+            <StackLayout Spacing="0">
                 <StackLayout BackgroundColor="Transparent"  x:Name="ListComments" BindableLayout.ItemsSource="{Binding Items}" TabIndex="0" >
 
 
                     <BindableLayout.ItemTemplate>
 
                         <DataTemplate>
-                            <StackLayout BackgroundColor="Transparent" IsVisible="{Binding Enable}">
-                                <SwipeView BackgroundColor="Transparent" >
-                                    <SwipeView.RightItems>
-                                        <SwipeItems>
-                                            <SwipeItemView>
-                                                <StackLayout  WidthRequest="65" HorizontalOptions="Center" VerticalOptions="Center"   BackgroundColor="Red">
-                                                    <StackLayout.GestureRecognizers>
-                                                        <TapGestureRecognizer  NumberOfTapsRequired="1" Command="{Binding Path= BindingContext.DeleteCommentCommand, Source={x:Reference ListComments}}" CommandParameter="{Binding .}"/>
-                                                    </StackLayout.GestureRecognizers>
-                                                    <Image Source="Trash.png" HeightRequest="27" WidthRequest="27" BackgroundColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,5,0,0"/>
-                                                    <Label Text="Delete" TextColor="White" FontSize="16" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                            <Comments:UserComment>
+                            </Comments:UserComment>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </StackLayout>
 
-                                                </StackLayout>
-                                            </SwipeItemView>
-                                        </SwipeItems>
-                                    </SwipeView.RightItems>
-                                    <Grid Padding="10">
-                                        <Grid.RowDefinitions>
-
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="45"/>
-                                            <ColumnDefinition Width="auto"/>
-
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackLayout BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Padding="0,3,0,0" HorizontalOptions="Start" VerticalOptions="Start" Orientation="Horizontal">
-                                            <Frame CornerRadius="{OnPlatform Android='100',iOS='23'}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="White"  VerticalOptions="Center" WidthRequest="45" HeightRequest="45">
-                                                <Image Source="{Binding ProfilePicture}"
-                                                    VerticalOptions="Center"
-                                                    HorizontalOptions="Start"
-                                                    BackgroundColor="Transparent"
-                             Aspect="Fill">
-                                                    <Image.GestureRecognizers>
-                                                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="You_Tapped"/>
-                                                                </Image.GestureRecognizers>
-                                                </Image>
-                                            </Frame>
-
-                                        </StackLayout>
-                                        <StackLayout BackgroundColor="Transparent" VerticalOptions="Start" Spacing="0" Grid.Column="1">
-                                            <Label Text="{Binding Username}" TextColor="White" FontSize="16" FontAttributes="Bold" />
-
-                                            <Label Padding="5,5,0,0" Text="{Binding Comment}" TextColor="LightGray" FontSize="16" LineBreakMode="WordWrap" />
-
-
-                                        </StackLayout>
-                                    </Grid>
-                                </SwipeView>
-
-
-                            </StackLayout>
-
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-
-
-                </StackLayout>
-
-                <StackLayout BackgroundColor="Transparent" Padding="0,0,0,0"  BindableLayout.ItemsSource="{Binding Others}" TabIndex="0" >
+                 <StackLayout BackgroundColor="Transparent" Padding="0,0,0,0"  BindableLayout.ItemsSource="{Binding Others}" TabIndex="0" >
 
 
                     <BindableLayout.ItemTemplate>
 
                         <DataTemplate>
-                            <StackLayout BackgroundColor="Transparent" IsVisible="{Binding OtherEnable}">
-                                <SwipeView  BackgroundColor="Transparent" >
-                                    <SwipeView.RightItems>
-                                        <SwipeItems>
-                                            <SwipeItemView>
-                                                <StackLayout Spacing="0" WidthRequest="65" HorizontalOptions="Center" VerticalOptions="Center"   BackgroundColor="Gray">
-                                                    <StackLayout.GestureRecognizers>
-                                                        <TapGestureRecognizer  NumberOfTapsRequired="1"/>
-                                                    </StackLayout.GestureRecognizers>
-                                                    <Label Text="!" TextColor="White" FontSize="32" Padding="0" Margin="0" FontAttributes="Bold" VerticalTextAlignment="Center" VerticalOptions="Center" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
-                                                    <Label Text="Report" TextColor="White" FontSize="16" VerticalOptions="Center" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
-
-                                                </StackLayout>
-                                            </SwipeItemView>
-                                        </SwipeItems>
-                                    </SwipeView.RightItems>
-                                    <Grid Padding="10" BackgroundColor="Transparent">
-                                        <Grid.RowDefinitions>
-
-                                        </Grid.RowDefinitions>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="45"/>
-                                            <ColumnDefinition Width="auto"/>
-
-                                        </Grid.ColumnDefinitions>
-
-                                        <StackLayout BackgroundColor="Transparent" Grid.Column="0" Grid.Row="0" Padding="0,3,0,0" HorizontalOptions="Start" VerticalOptions="Start" Orientation="Horizontal">
-                                            <Frame CornerRadius="{OnPlatform Android='100',iOS='23'}" Padding="0" IsClippedToBounds="True" HorizontalOptions="Center" BackgroundColor="White"  VerticalOptions="Center" WidthRequest="45" HeightRequest="45">
-                                                <Image Source="{Binding OtherProfilePicture}"
-                                                    VerticalOptions="Center"
-                                                    HorizontalOptions="Start"
-                                                    BackgroundColor="Transparent"
-                             Aspect="Fill">
-                                                    <Image.GestureRecognizers>
-                                                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="User_Tapped"/>
-                                                                </Image.GestureRecognizers>
-
-                                                </Image>
-                                            </Frame>
-
-                                        </StackLayout>
-                                        <StackLayout BackgroundColor="Transparent" VerticalOptions="Start" Spacing="0" Grid.Column="1">
-                                            <Label Text="{Binding OtherUsername}" TextColor="LightGray" FontSize="16" FontAttributes="Bold" />
-
-                                            <Label Padding="5,5,0,0" Text="{Binding OtherComment}" TextColor="LightGray" FontSize="16" LineBreakMode="WordWrap" />
-
-
-                                        </StackLayout>
-                                    </Grid>
-                                </SwipeView>
-
-
-                            </StackLayout>
-
-                        </DataTemplate>
-                    </BindableLayout.ItemTemplate>
-
-
-                </StackLayout>
-            </StackLayout>
-
-        </ScrollView>
+                            <Comments:OtherUser></Comments:OtherUser>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                     </StackLayout>
+              </StackLayout>
+               </ScrollView>
            
             <StackLayout Style="{StaticResource CommentStyle}"  Spacing="0" Grid.Row="2" x:Name="EndStackLayout"  Padding="0"  BackgroundColor="#3E3E42" >
                 

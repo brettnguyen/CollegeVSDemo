@@ -1,51 +1,33 @@
 ﻿<Properties StartupConfiguration="{A5AE350C-4CD8-45B5-857B-C1753B2A8299}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/AppShell.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/ViewModels/CommentViewModel.cs">
     <Files>
-      <File FileName="CollegeVS/ViewModels/CLGVSHomeViewModel.cs" Line="26" Column="29" />
-      <File FileName="CollegeVS/Models/HomeModel.cs" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" />
+      <File FileName="CollegeVS/ViewModels/CommentViewModel.cs" Line="136" Column="19" />
+      <File FileName="CollegeVS/Views/Comment/UserComment.xaml" />
+      <File FileName="CollegeVS/Views/Comment/OtherUser.xaml" />
+      <File FileName="CollegeVS/Views/Comment/CommentSlideUp.xaml.cs" />
       <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" />
-      <File FileName="CollegeVS/Views/LoginPages/LoginPage.xaml.cs" />
-      <File FileName="CollegeVS/ViewModels/LoginViewModel.cs" />
-      <File FileName="CollegeVS/Startup.cs" />
-      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml" />
-      <File FileName="CollegeVS.Android/MainActivity.cs" />
-      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" />
-      <File FileName="CollegeVS/AppShell.xaml.cs" Line="12" Column="55" />
-      <File FileName="CollegeVS/AppShell.xaml" />
+      <File FileName="CollegeVS/Views/Comment/CommentSlideUp.xaml" Line="64" Column="36" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CollegeVS" expanded="True">
             <Node name="CollegeVS" expanded="True">
-              <Node name="Dependencies" expanded="True">
-                <Node name="PackageDependencies" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="CommentViewModel.cs" selected="True" />
               </Node>
-              <Node name="DeviceSizes" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Comment" expanded="True" />
-                <Node name="HighlightPage" expanded="True">
-                  <Node name="HighlightPage.xaml" expanded="True" />
+                <Node name="Comment" expanded="True">
+                  <Node name="CommentSlideUp.xaml" expanded="True" />
                 </Node>
                 <Node name="HomePages" expanded="True">
                   <Node name="CLGVSHome.xaml" expanded="True" />
                 </Node>
-                <Node name="LoginPages" expanded="True">
-                  <Node name="LoginPage.xaml" expanded="True" />
-                </Node>
-                <Node name="Notifications" expanded="True" />
                 <Node name="ProfilePages" expanded="True" />
-                <Node name="Post.xaml" expanded="True" />
-                <Node name="SearchPage.xaml" expanded="True" />
               </Node>
-              <Node name="AppShell.xaml" expanded="True" />
-              <Node name="Startup.cs" selected="True" />
             </Node>
             <Node name="CollegeVS.Android" expanded="True" />
+            <Node name="CollegeVS.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -53,10 +35,10 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus_S_API_31" />
+  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Pixel_3_XL_API_31" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.CollegeVS.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.8F0D0E4F-480E-4C86-AE7D-B083FC437B2D" />
+  <MonoDevelop.Ide.ItemProperties.CollegeVS.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.5F0E6B11-908B-47E8-863F-AC0B5E20AACB" />
 </Properties>

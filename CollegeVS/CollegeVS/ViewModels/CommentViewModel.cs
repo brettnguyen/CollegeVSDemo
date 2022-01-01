@@ -14,7 +14,20 @@ namespace CollegeVS.ViewModels
 {
   public class CommentViewModel : BindableObject
     {
-       
+
+        private ObservableCollection<CommentsSelectorModel> commentData;
+        public ObservableCollection<CommentsSelectorModel> CommentData
+        {
+            get { return commentData; }
+            set
+            {
+
+                commentData = value;
+                OnPropertyChanged();
+            }
+
+        }
+
         private ObservableCollection<OtherUserCommentsModel> others;
         public ObservableCollection<OtherUserCommentsModel> Others
         {
@@ -41,7 +54,9 @@ namespace CollegeVS.ViewModels
         }
         public ICommand AddCommentCommand { get; }
 
-        public ICommand DeleteCommentCommand { get; }
+        public ICommand DeleteCommentCommand { get; set; }
+
+        public ICommand ForceCloseCommand { get; set; }
 
         private string yourComment;
         public string YourComment { get { return yourComment; }
@@ -52,6 +67,21 @@ namespace CollegeVS.ViewModels
 
         public CommentViewModel()
         {
+
+            CommentData = new ObservableCollection<CommentsSelectorModel>
+            {
+                new CommentsSelectorModel()
+                {
+                    Nothing = "Nothing",
+
+                },
+
+                 new CommentsSelectorModel()
+                {
+                     Nothing = "Empty",
+                },
+            };
+
             YourComment = "";
             Others = new ObservableCollection<OtherUserCommentsModel>
             {
@@ -61,7 +91,50 @@ namespace CollegeVS.ViewModels
                     OtherUsername = "OtherUser",
                     OtherComment = "This is a comment",
                     OtherEnable ="True"
-                }
+                },
+                   new OtherUserCommentsModel()
+                {
+                    OtherProfilePicture = "UserIcon.png",
+                    OtherUsername = "OtherUser",
+                    OtherComment = "This is a comment",
+                    OtherEnable ="True"
+                },
+                      new OtherUserCommentsModel()
+                {
+                    OtherProfilePicture = "UserIcon.png",
+                    OtherUsername = "OtherUser",
+                    OtherComment = "This is a comment",
+                    OtherEnable ="True"
+                },
+                         new OtherUserCommentsModel()
+                {
+                    OtherProfilePicture = "UserIcon.png",
+                    OtherUsername = "OtherUser",
+                    OtherComment = "This is a comment",
+                    OtherEnable ="True"
+                },
+                            new OtherUserCommentsModel()
+                {
+                    OtherProfilePicture = "UserIcon.png",
+                    OtherUsername = "OtherUser",
+                    OtherComment = "This is a comment",
+                    OtherEnable ="True"
+                },
+                               new OtherUserCommentsModel()
+                {
+                    OtherProfilePicture = "UserIcon.png",
+                    OtherUsername = "OtherUser",
+                    OtherComment = "This is a comment",
+                    OtherEnable ="True"
+                },
+                                  new OtherUserCommentsModel()
+                {
+                    OtherProfilePicture = "UserIcon.png",
+                    OtherUsername = "OtherUser",
+                    OtherComment = "This is a comment",
+                    OtherEnable ="True"
+                },
+
 
             };
 

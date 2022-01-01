@@ -17,6 +17,7 @@ namespace CollegeVS.Views
 		{
 			
 			InitializeComponent();
+			//BindingContext = new CommentViewModel();
 			this.BindingContext = new LoginViewModel();
 			//this.BindingContext = Startup.ServiceProvider.GetService<LoginViewModel>();
 		}

@@ -9,7 +9,7 @@ using System.Diagnostics;
 
 namespace CollegeVS
 {
-	public partial class AppShell : SharedTransitionShell
+	public partial class AppShell : Shell
     {
         public AppShell()
         {

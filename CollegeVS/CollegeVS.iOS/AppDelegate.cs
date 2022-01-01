@@ -8,6 +8,7 @@ using Foundation;
 using UIKit;
 using FFImageLoading;
 using SlideOverKit.iOS;
+using ContextMenu.iOS;
 
 namespace CollegeVS.iOS
 {
@@ -30,7 +31,7 @@ namespace CollegeVS.iOS
             global::Xamarin.Forms.Forms.Init();
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             //ImageCircleRenderer.Init();
-
+            ContextMenuViewRenderer.Preserve();
             Startup.Init();
             LoadApplication(new App());
             

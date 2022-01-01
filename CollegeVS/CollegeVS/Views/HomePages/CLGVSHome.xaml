@@ -135,11 +135,11 @@
              
                        <AbsoluteLayout>
                     <CarouselView x:Name="ListPosts" 
-                                      ItemsSource="{Binding Items}"
-                                    
+                                      ItemsSource="{Binding highlights}"
+                                    CurrentItem="{Binding CurrentItem}"
                           IsBounceEnabled="False"
                               VerticalScrollBarVisibility="Never"
-                                  
+                               EmptyView="No Items Here"
                           IsScrollAnimated="False"
                             ItemsUpdatingScrollMode="KeepItemsInView"
                                       Loop="False"
@@ -157,7 +157,7 @@
                                     <AbsoluteLayout  >
                                      
                                     <AbsoluteLayout.GestureRecognizers>
-                                        <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Upvote_Tapped"/>
+                                        <TapGestureRecognizer NumberOfTapsRequired="2" />
                                     </AbsoluteLayout.GestureRecognizers>
 
 
@@ -243,7 +243,7 @@
 
                                                             <Image   IsVisible="{Binding Seen}"  Source="theupvotearrow.png"  Style="{StaticResource HomeStyleFour}"  Margin="0,0,2,0"  BackgroundColor="Transparent">
                                                                <Image.GestureRecognizers>
-                                                                   <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Upvote_Tapped" />
+                                                                   <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Path=BindingContext.SetStatusCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{Binding .}"  />
                                                                </Image.GestureRecognizers>
                                                                
                                                             </Image>
@@ -275,7 +275,7 @@
                                                                     </StackLayout>
                                                                 <Frame BackgroundColor="Transparent" IsVisible="{Binding Back}" Padding="0" HeightRequest="45" WidthRequest="45">
                                                                     <Frame.GestureRecognizers>
-                                                                        <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="Remove_Tapped"/>
+                                                                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Path=BindingContext.RemoveStatusCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{Binding .}"/>
                                                                     </Frame.GestureRecognizers>
                                                                     </Frame>
                                                                 </AbsoluteLayout>
