@@ -15,18 +15,7 @@ namespace CollegeVS.ViewModels
   public class CommentViewModel : BindableObject
     {
 
-        private ObservableCollection<CommentsSelectorModel> commentData;
-        public ObservableCollection<CommentsSelectorModel> CommentData
-        {
-            get { return commentData; }
-            set
-            {
-
-                commentData = value;
-                OnPropertyChanged();
-            }
-
-        }
+     
 
         private ObservableCollection<OtherUserCommentsModel> others;
         public ObservableCollection<OtherUserCommentsModel> Others
@@ -68,19 +57,7 @@ namespace CollegeVS.ViewModels
         public CommentViewModel()
         {
 
-            CommentData = new ObservableCollection<CommentsSelectorModel>
-            {
-                new CommentsSelectorModel()
-                {
-                    Nothing = "Nothing",
-
-                },
-
-                 new CommentsSelectorModel()
-                {
-                     Nothing = "Empty",
-                },
-            };
+          
 
             YourComment = "";
             Others = new ObservableCollection<OtherUserCommentsModel>
@@ -89,21 +66,21 @@ namespace CollegeVS.ViewModels
                 {
                     OtherProfilePicture = "UserIcon.png",
                     OtherUsername = "OtherUser",
-                    OtherComment = "This is a comment",
+                    OtherComment = "Marine biologist from the University of Florida amp avid Scottish kindrochit participant Looking for the next greatest algal bloom to tackle",
                     OtherEnable ="True"
                 },
                    new OtherUserCommentsModel()
                 {
                     OtherProfilePicture = "UserIcon.png",
                     OtherUsername = "OtherUser",
-                    OtherComment = "This is a comment",
+                    OtherComment = "Marine biologist from the University of Florida amp avid Scottish kindrochit participant Looking for the next greatest algal bloom to tackle",
                     OtherEnable ="True"
                 },
                       new OtherUserCommentsModel()
                 {
                     OtherProfilePicture = "UserIcon.png",
                     OtherUsername = "OtherUser",
-                    OtherComment = "This is a comment",
+                    OtherComment = "Marine biologist from the University of Florida amp avid Scottish kindrochit participant Looking for the next greatest algal bloom to tackle",
                     OtherEnable ="True"
                 },
                          new OtherUserCommentsModel()

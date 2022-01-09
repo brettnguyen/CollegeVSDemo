@@ -44,18 +44,7 @@
             
 		
 			<StackLayout Spacing="-10"  BackgroundColor="Transparent" >
-				<CollectionView BackgroundColor="Transparent"   ItemsSource="{Binding Others}" TabIndex="0" >
-                    <CollectionView.ItemTemplate>
-
-                   
-
-                        <DataTemplate>
-                             <Comments:OtherUser></Comments:OtherUser>
-                        </DataTemplate>
-                    
-                        </CollectionView.ItemTemplate>
-
-                </CollectionView>
+				
 				<StackLayout Spacing="20" >
 					
                         <Frame HasShadow="False" Style="{StaticResource LogFrameStyle}"  Padding="0" >
@@ -79,7 +68,7 @@
 
 					<StackLayout>
 
-						<Button  Text="Login"  Style="{StaticResource LoginButtonStyle}"  CornerRadius="10"  Padding="0" TextTransform="None" Command="{Binding LoginCommand}" />
+						<Button  Text="Login"  Style="{StaticResource LoginButtonStyle}"  CornerRadius="10"  Padding="0" TextTransform="None" Clicked="Login_Clicked" />
 
 					</StackLayout>
 					<StackLayout>

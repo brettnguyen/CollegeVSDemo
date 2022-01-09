@@ -155,6 +155,10 @@
       <SubType></SubType>
       <Generator></Generator>
     </AndroidResource>
+    <AndroidResource Include="Resources\Raw\XamarinForms101UsingEmbeddedImages.mp4">
+      <SubType></SubType>
+      <Generator></Generator>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\roundbtn.xml">
@@ -757,6 +761,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\NewUpvote.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Raw\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>

@@ -13,23 +13,9 @@
                 
              Style="{StaticResource MainSlideStyle}" >
     <t:SlideMenuView.Resources>
-        <DataTemplate x:Key="CommentTemplate">
-           <StackLayout>
-           <Label Text="{Binding Nothing}" IsVisible="false"/>
-               <Comments:UserComment></Comments:UserComment>
-          
-               </StackLayout>
-       </DataTemplate>
-           <DataTemplate x:Key="OtherUserCommentTemplate">
-               <StackLayout>
-                    <Label Text="{Binding Nothing}" IsVisible="false"/>
-                <Comments:OtherUser></Comments:OtherUser>
-                   </StackLayout>
-       </DataTemplate>
+     
 
-       <select:CommentDataTemplateSelector x:Key="CommentDataSelector"
-                                             Comment="{StaticResource CommentTemplate}"
-                                             OtherUserComment="{StaticResource OtherUserCommentTemplate}" />
+
     <ResourceDictionary>
             <conv:MenuFitWidthConverter x:Key="MenuFitWidthConverter" />
             
@@ -68,8 +54,7 @@
                     <BindableLayout.ItemTemplate>
 
                         <DataTemplate>
-                            <Comments:UserComment>
-                            </Comments:UserComment>
+                           <StackLayout></StackLayout>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                     </StackLayout>
@@ -80,7 +65,9 @@
                     <BindableLayout.ItemTemplate>
 
                         <DataTemplate>
-                            <Comments:OtherUser></Comments:OtherUser>
+                           <StackLayout>
+
+                           </StackLayout>
                             </DataTemplate>
                         </BindableLayout.ItemTemplate>
                      </StackLayout>

@@ -22,10 +22,10 @@ namespace CollegeVS.Views
 			//this.BindingContext = Startup.ServiceProvider.GetService<LoginViewModel>();
 		}
 
-		//async void Login_Clicked(object sender, EventArgs e)
-		//{
-		//	await Shell.Current.GoToAsync("//Home");
-		//}
+	async void Login_Clicked(object sender, EventArgs e)
+		{
+			await Shell.Current.GoToAsync("//Home");
+		}
 		async void Register_Clicked(object sender, EventArgs e)
 		{
 			await Shell.Current.GoToAsync("Register");

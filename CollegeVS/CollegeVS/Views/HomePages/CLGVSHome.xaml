@@ -30,8 +30,9 @@
             <AbsoluteLayout>
                     
 
+                
+                <Grid Padding="0" BackgroundColor="#10466C" >
 
-                <Grid Padding="0" BackgroundColor="#10466C" > 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
 
@@ -157,7 +158,8 @@
                                     <AbsoluteLayout  >
                                      
                                     <AbsoluteLayout.GestureRecognizers>
-                                        <TapGestureRecognizer NumberOfTapsRequired="2" />
+                                        <TapGestureRecognizer NumberOfTapsRequired="2" Command="{Binding Path=BindingContext.SetStatusCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{Binding .}" />
+                                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Path=BindingContext.StopCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{x:Reference previewVideo}"/>
                                     </AbsoluteLayout.GestureRecognizers>
 
 
@@ -167,13 +169,26 @@
                                            
 
                                       
-                                            <ffimageloading:CachedImage    Source="{Binding PostImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            <ffimageloading:CachedImage IsVisible="false"   Source="{Binding PostImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
                                      LoadingDelay="0"
                                                                            DownsampleToViewSize="True"
                                             Aspect="Fill"
                                       
                                     />
+                                       <xct:MediaElement
+                    
+                    x:Name="previewVideo"
+                    Aspect="AspectFill"
+                  Source="https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4"
+             
+                    ShowsPlaybackControls="False"
+         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
+                    BackgroundColor="Transparent"
+                    IsVisible="true">
+                                               
+                                                  </xct:MediaElement>
 
                                         <yummy:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}" Opacity="0.38"  >
@@ -296,7 +311,7 @@
 
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="End" Spacing="0">
-                                                            <ImageButton x:Name="Comment" Source="commenticon.png" Style="{StaticResource HomeButtonStyleFour}"    BackgroundColor="Transparent" Padding="5" Clicked="Comment_Clicked"/>
+                                                            <ImageButton x:Name="Comment" Source="commenticon.png" Style="{StaticResource HomeButtonStyleFour}"    BackgroundColor="Transparent" Padding="5" Clicked="Comment_Clicked" Command="{Binding Path=BindingContext.checkCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{Binding .}"/>
                                                             <Label Text="1K" TextColor="White" Style="{StaticResource HomeLabelStyle}" Padding="0" VerticalOptions="Center"  HorizontalOptions="Center" >
                                                                 <Label.Effects>
                                                                     <controls:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">

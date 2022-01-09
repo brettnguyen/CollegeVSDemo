@@ -2,12 +2,15 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Lottie.Forms;
+using Xamarin.CommunityToolkit.UI.Views;
+
 namespace CollegeVS.Models
 {
     public class HomeModel : INotifyPropertyChanged
 	{
 
 		
+
 
 		private bool seen;
 
@@ -62,6 +65,7 @@ namespace CollegeVS.Models
 
 
 		public string Title { get; set; }
+		public int commentid { get; set; }
 
 
 	}

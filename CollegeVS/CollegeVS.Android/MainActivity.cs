@@ -4,7 +4,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
-using Android.Widget;
+
 using Android.OS;
 
 using FFImageLoading.Forms.Platform;
@@ -62,15 +62,15 @@ namespace CollegeVS.Droid
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
 
-            global::Xamarin.Forms.Forms.SetFlags("Shell_Experimental", "Visual_Experimental", "CollectionView_Experimental", "FastRenderers_Experimental");
+         
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            ContextMenuViewRenderer.Preserve();
+          
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             //Startup.Init();
             LoadApplication(new App());
 
-            Forms.SetFlags("IndicatorView_Experimental");
+       
         }
 
 

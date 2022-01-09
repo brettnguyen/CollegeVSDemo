@@ -1,33 +1,30 @@
 ﻿<Properties StartupConfiguration="{A5AE350C-4CD8-45B5-857B-C1753B2A8299}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/ViewModels/CommentViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/Views/HomePages/CLGVSHome.xaml">
     <Files>
-      <File FileName="CollegeVS/ViewModels/CommentViewModel.cs" Line="136" Column="19" />
-      <File FileName="CollegeVS/Views/Comment/UserComment.xaml" />
-      <File FileName="CollegeVS/Views/Comment/OtherUser.xaml" />
-      <File FileName="CollegeVS/Views/Comment/CommentSlideUp.xaml.cs" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" />
-      <File FileName="CollegeVS/Views/Comment/CommentSlideUp.xaml" Line="64" Column="36" />
+      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="93" Column="50" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="161" Column="215" />
+      <File FileName="CollegeVS/Models/HomeModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CollegeVS" expanded="True">
             <Node name="CollegeVS" expanded="True">
-              <Node name="ViewModels" expanded="True">
-                <Node name="CommentViewModel.cs" selected="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Comment" expanded="True">
-                  <Node name="CommentSlideUp.xaml" expanded="True" />
-                </Node>
+                <Node name="Comment" expanded="True" />
                 <Node name="HomePages" expanded="True">
-                  <Node name="CLGVSHome.xaml" expanded="True" />
+                  <Node name="CLGVSHome.xaml" expanded="True" selected="True" />
                 </Node>
-                <Node name="ProfilePages" expanded="True" />
+                <Node name="LoginPages" expanded="True" />
+                <Node name="TestView.xaml" expanded="True" />
               </Node>
             </Node>
-            <Node name="CollegeVS.Android" expanded="True" />
-            <Node name="CollegeVS.iOS" expanded="True" />
+            <Node name="CollegeVS.Android" expanded="True">
+              <Node name="Assets" expanded="True" />
+              <Node name="Resources" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -35,7 +32,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Pixel_3_XL_API_31" />
+  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.emulator-5554" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
