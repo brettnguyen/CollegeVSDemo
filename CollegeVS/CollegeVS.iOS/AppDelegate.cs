@@ -9,6 +9,7 @@ using UIKit;
 using FFImageLoading;
 using SlideOverKit.iOS;
 using ContextMenu.iOS;
+using PanCardView.iOS;
 
 namespace CollegeVS.iOS
 {
@@ -32,6 +33,7 @@ namespace CollegeVS.iOS
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             //ImageCircleRenderer.Init();
             ContextMenuViewRenderer.Preserve();
+            CardsViewRenderer.Preserve();
             Startup.Init();
             LoadApplication(new App());
             

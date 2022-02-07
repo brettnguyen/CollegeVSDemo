@@ -13,6 +13,8 @@ namespace CollegeVS.Models
 
 		public string PostImage { get; set; }
 
+		
+
 		public string PostDetail { get; set; }
 
 		public int PostUpvoteCount { get; set; }

@@ -13,6 +13,7 @@ using Xamarin.Forms.Internals;
 using Xamarin.CommunityToolkit.ObjectModel;
 using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views;
+using PanCardView.EventArgs;
 
 namespace CollegeVS.ViewModels
 {
@@ -39,7 +40,9 @@ namespace CollegeVS.ViewModels
 
         public ICommand StopCommand { get; }
 
+        public Command<object> ItemAppearingCommand { get; set; }
 
+        public Command<object> ItemDisappearingCommand { get; set; }
 
 
 
@@ -50,7 +53,7 @@ namespace CollegeVS.ViewModels
         {
             highlights = new ObservableCollection<HomeModel>()
             {
-             
+
            new HomeModel(){
                 ProfilePicture = "UserIcon.png",
                 Username = "User Name",
@@ -67,7 +70,8 @@ namespace CollegeVS.ViewModels
             new HomeModel(){
                 ProfilePicture = "UserIcon.png",
                 Username = "User Name",
-                PostImage = "Harvard.jpg",
+                //PostImage = "Harvard.jpg",
+                PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
                 PostDetail = "This is collegeVS",
                 PostUpvoteCount = 100,
                 PostCommentCount = "7",
@@ -85,11 +89,49 @@ namespace CollegeVS.ViewModels
             checkCommand = new Command(check);
             StopCommand = new AsyncCommand<MediaElement>(InvokePlayPauseCommandAsync);
 
+            ItemAppearingCommand = new Command<object>(OnItemAppearing);
+            ItemDisappearingCommand = new Command<object>(OnItemDisapearing);
 
-
+          
         }
 
+        private void OnItemDisapearing(object obj)
+        {
+            if (obj is MediaElement mediaElement)
+            {
+                if (currentItem.PostVideo == null)
+                {
+                    mediaElement.Pause();
+                }
+            }
+            //if (obj is ItemDisappearingEventArgs itemDisappearingEventArgs)
+            // {
+            //if (itemDisappearingEventArgs.Item is HomeModel item)
+            //{
+            //    item.IsPlaying = false;
+            //}
+            // }
+        }
 
+        private void OnItemAppearing(object obj)
+        {
+            if (obj is MediaElement mediaElement)
+            {
+               
+                if (currentItem.PostVideo != null)
+                {
+                    
+                    mediaElement.Play();
+                }
+            }
+            //if (obj is ItemAppearingEventArgs itemAppearedEventArgs)
+            //{
+            //if (itemAppearedEventArgs.Item is HomeModel item)
+            //{
+            //  item.IsPlaying = true;
+            // }
+            // }
+        }
         private Task InvokePlayPauseCommandAsync(MediaElement mediaElement)
         {
             if (mediaElement.CurrentState == MediaElementState.Playing)
@@ -106,8 +148,14 @@ namespace CollegeVS.ViewModels
 
         void check(object obj)
         {
-            int index = highlights.IndexOf(obj);
-            int CommentID = highlights[index].commentid;
+            if (obj is MediaElement mediaElement)
+            {
+                if (currentItem.PostVideo != null)
+                {
+                    mediaElement.Pause();
+                }
+            }
+          
            
         }
         void SetStatus()
@@ -120,11 +168,6 @@ namespace CollegeVS.ViewModels
                 currentItem.Seen = false;
                 currentItem.Back = true;
             }
-
-
-
-
-           
 
         }
 
@@ -142,9 +185,57 @@ namespace CollegeVS.ViewModels
 
         }
 
+        public async void OnAppearing()
+        {
+            IsBusy = true;
 
+            CreateItems();
+            await Task.Delay(2500);
+            IsBusy = false;
+        }
+        public  void OnDisappearing()
+        {
+            highlights.Clear();
+        }
+        private void CreateItems()
+        {
+            highlights = new ObservableCollection<HomeModel>()
+            {
 
+           new HomeModel(){
+                ProfilePicture = "UserIcon.png",
+                Username = "User Name",
+                PostImage = "Harvard.jpg",
+                PostDetail = "This is collegeVS",
+                PostUpvoteCount = 100,
+                PostCommentCount = "7",
+                PostTime = "2 weeks",
+                Seen = true,
+                Back = false,
+                College = "Harvard",
+                Category = "clearbackgrounddorms.png",
+                commentid = 0},
+            new HomeModel(){
+                ProfilePicture = "UserIcon.png",
+                Username = "User Name",
+                //PostImage = "Harvard.jpg",
+                PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
+                PostDetail = "This is collegeVS",
+                PostUpvoteCount = 100,
+                PostCommentCount = "7",
+                PostTime = "2 weeks",
+                Seen = true,
+                Back = false,
+                College = "Harvard",
+                Category = "clearbackgrounddorms.png",
+                commentid = 1,
+            },
 
-    }
+            };
+
+            CurrentItem = highlights[0];
+        }
+
+        }
 }
 

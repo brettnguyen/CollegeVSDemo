@@ -9,8 +9,16 @@ namespace CollegeVS.Models
     public class HomeModel : INotifyPropertyChanged
 	{
 
-		
-
+		private bool isPlaying;
+		public bool IsPlaying
+		{
+			get { return isPlaying; }
+			set
+			{
+				isPlaying = value;
+				OnPropertyChanged();
+			}
+		}
 
 		private bool seen;
 
@@ -63,7 +71,7 @@ namespace CollegeVS.Models
 
 		public string Category { get; set; }
 
-
+		public string PostVideo { get; set; }
 		public string Title { get; set; }
 		public int commentid { get; set; }
 

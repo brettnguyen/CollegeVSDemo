@@ -28,14 +28,15 @@ namespace CollegeVS.Views
 	public partial class CLGVSHome : MenuContainerPage
 	{
 
-	
+		private readonly HighlightViewModel _highlightViewModel;
 		public CLGVSHome()
 		{
 
 
 			InitializeComponent();
-			this.BindingContext = new HighlightViewModel();
-			//BindingContext = Startup.ServiceProvider.GetService<CLGVSHomeViewModel>();
+			_highlightViewModel = new HighlightViewModel();
+			BindingContext = _highlightViewModel;
+			
 
 			
 		
@@ -54,7 +55,7 @@ namespace CollegeVS.Views
 
 			this.PopupViews.Add("FirstPopup", new SortPopup());
 
-			FillInfo();
+			
 
 		}
 
@@ -76,7 +77,7 @@ namespace CollegeVS.Views
 		void Comment_Clicked(Object sender, EventArgs e)
 		{
 
-			this.ShowMenu();
+		//	this.ShowMenu();
 
 		}
 
@@ -126,15 +127,14 @@ namespace CollegeVS.Views
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-
-			FillInfo();
+			_highlightViewModel.OnAppearing();
+			
 		}
 
-		public void FillInfo()
+		protected override void OnDisappearing()
 		{
-
-
-
+			base.OnDisappearing();
+			_highlightViewModel.OnDisappearing();
 		}
 
 		void Info_Clicked(object sender, EventArgs e)
@@ -144,7 +144,7 @@ namespace CollegeVS.Views
 			Info.IsVisible = false;
 			Info2.IsVisible = true;
 			RandomBar.IsVisible = true;
-			ListPosts.IsSwipeEnabled = false;
+			ListPosts.IsEnabled = false;
 		}
 
 		void Info2_Clicked(object sender, EventArgs e)
@@ -154,7 +154,7 @@ namespace CollegeVS.Views
 			Info.IsVisible = true;
 			Info2.IsVisible = false;
 			RandomBar.IsVisible = false;
-			ListPosts.IsSwipeEnabled = true;
+			ListPosts.IsEnabled = true;
 		}
 
 		void Post_Tapped(object sender, EventArgs e)
@@ -166,18 +166,18 @@ namespace CollegeVS.Views
 			Info.IsVisible = true;
 			Info2.IsVisible = false;
 			RandomBar.IsVisible = false;
-			ListPosts.IsSwipeEnabled = true;
+			ListPosts.IsEnabled = true;
 		}
 
 		public void ExpandInfo_Changed(object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
 			if (ExpandInfo.IsExpanded != true)
 				
-			ListPosts.IsSwipeEnabled = true;
+			ListPosts.IsEnabled = true;
 
 			else
 				
-			ListPosts.IsSwipeEnabled = false;
+			ListPosts.IsEnabled = false;
 
 			if (ExpandInfo.IsExpanded != true)
 

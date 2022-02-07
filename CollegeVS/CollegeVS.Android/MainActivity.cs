@@ -19,6 +19,7 @@ using Plugin.Permissions;
 using AndroidX.Core.Content;
 using AndroidX.Core.App;
 using ContextMenu.Droid;
+using PanCardView.Droid;
 
 namespace CollegeVS.Droid
 {
@@ -68,6 +69,7 @@ namespace CollegeVS.Droid
           
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             //Startup.Init();
+            CardsViewRenderer.Preserve();
             LoadApplication(new App());
 
        
