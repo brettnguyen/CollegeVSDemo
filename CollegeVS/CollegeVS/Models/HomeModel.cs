@@ -8,6 +8,13 @@ namespace CollegeVS.Models
 {
     public class HomeModel : INotifyPropertyChanged
 	{
+		private string  currentItem;
+		public string CurrentItem
+		{
+			get { return currentItem; }
+			set { OnPropertyChanged();
+}
+		}
 
 		private bool isPlaying;
 		public bool IsPlaying
@@ -61,7 +68,7 @@ namespace CollegeVS.Models
 
 		public int PostUpvoteCount { get; set; }
 
-		public string CurrentItem { get; set; }
+		
 
 		public string PostCommentCount { get; set; }
 

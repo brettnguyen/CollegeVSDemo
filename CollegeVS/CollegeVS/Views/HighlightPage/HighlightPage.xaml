@@ -9,7 +9,7 @@
                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="CollegeVS.Views.HighlightPage"
                    Shell.NavBarIsVisible="False"
-            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" 
+            xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
              ios:Page.UseSafeArea="True"
              >
     <ContentPage.Content>
@@ -30,20 +30,23 @@
             <CarouselView x:Name="ListPosts"
                           ItemsSource="{Binding highlights}"
                       BackgroundColor="Transparent"
-
+                          PositionChanged="ListPosts_PositionChanged"
                         IsBounceEnabled="False"
-                              
+                              CurrentItemChanged="ListPosts_CurrentItemChanged"
                                   VerticalScrollBarVisibility="Never"
-                          IsScrollAnimated="False"
+                          Scrolled="ListPosts_Scrolled"
+                          IsScrollAnimated="True"
                             ItemsUpdatingScrollMode="KeepItemsInView"
                                       Loop="False"
                       
                    
-                      HorizontalOptions="Center" Margin="0,0,0,0" >
+                      HorizontalOptions="Center" Margin="0" >
                 <CarouselView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="0" SnapPointsAlignment="Center" SnapPointsType="MandatorySingle" />
                 </CarouselView.ItemsLayout>
-
+                <CarouselView.GestureRecognizers>
+                    <DragGestureRecognizer DragStarting="DragGestureRecognizer_DragStarting" DropCompleted="DragGestureRecognizer_DropCompleted"/>
+                </CarouselView.GestureRecognizers>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
 
@@ -55,13 +58,21 @@
                             <RelativeLayout Padding="0">
 
 
-                                <ffimageloading:CachedImage    Source="{Binding PostImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                 <xct:MediaElement
+                                           Source="{Binding PostVideo}"
+                                         
+                    BindingContextChanged="previewVideo_BindingContextChanged"
+                    x:Name="previewVideo"
+                    Aspect="AspectFill"
+                
+             
+                    ShowsPlaybackControls="False"
+         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
-                                     LoadingDelay="0"
-                                                                           DownsampleToViewSize="True"
-                                            Aspect="Fill"
-                                      
-                                    />
+                    BackgroundColor="Transparent"
+                    IsVisible="true">
+                                               
+                                                  </xct:MediaElement>
 
                                 <yummy:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}" Opacity="0.38"  >

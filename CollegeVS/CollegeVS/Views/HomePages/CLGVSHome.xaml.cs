@@ -11,7 +11,9 @@ using CollegeVS.Models;
 using CollegeVS.Views;
 using System.ComponentModel;
 using SlideOverKit;
+using PanCardView;
 using Lottie.Forms;
+using Xamarin.CommunityToolkit.UI.Views;
 
 namespace CollegeVS.Views
 {
@@ -77,7 +79,10 @@ namespace CollegeVS.Views
 		void Comment_Clicked(Object sender, EventArgs e)
 		{
 
-		//	this.ShowMenu();
+			//	this.ShowMenu();
+
+			
+
 
 		}
 
@@ -127,6 +132,7 @@ namespace CollegeVS.Views
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
+			
 			_highlightViewModel.OnAppearing();
 			
 		}
@@ -190,10 +196,45 @@ namespace CollegeVS.Views
 
 
 		}
+		List<MediaElement> mediaElements = new List<MediaElement>();
 
-     
+		void previewVideo_BindingContextChanged(System.Object sender, System.EventArgs e)
+		{
 
 
+			var element = sender as MediaElement;
+			mediaElements.Add(element);
+
+		}
+
+	
+
+        void ListPosts_ItemAppearing(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearingEventArgs args)
+        {
+			
+				mediaElements[args.Index].Play();
+				
+			
+
+
+		}
+
+       async void ListPosts_ItemDisappearing(PanCardView.CardsView view, PanCardView.EventArgs.ItemDisappearingEventArgs args)
+        {
+
+
+			mediaElements[args.Index].Pause();
+
+
+
+
+		}
+
+       
+        void ListPosts_UserInteracted(PanCardView.CardsView view, PanCardView.EventArgs.UserInteractedEventArgs args)
+        {
+			//mediaElements[args.Index].Pause();
+		}
 
 
     }

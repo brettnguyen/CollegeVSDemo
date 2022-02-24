@@ -19,9 +19,11 @@ namespace CollegeVS.ViewModels
 {
     public class HighlightViewModel : BaseViewModel
     {
-
+       
 
         public ObservableCollection<HomeModel> highlights { get; set; }
+
+      
 
         private HomeModel currentItem;
         public HomeModel CurrentItem
@@ -40,12 +42,14 @@ namespace CollegeVS.ViewModels
 
         public ICommand StopCommand { get; }
 
-        public Command<object> ItemAppearingCommand { get; set; }
+        public ICommand testCommand { get; }
+
+    public Command<object> ItemAppearingCommand { get; set; }
 
         public Command<object> ItemDisappearingCommand { get; set; }
 
 
-
+        
 
 
 
@@ -57,6 +61,7 @@ namespace CollegeVS.ViewModels
            new HomeModel(){
                 ProfilePicture = "UserIcon.png",
                 Username = "User Name",
+
                 PostImage = "Harvard.jpg",
                 PostDetail = "This is collegeVS",
                 PostUpvoteCount = 100,
@@ -66,6 +71,8 @@ namespace CollegeVS.ViewModels
                 Back = false,
                 College = "Harvard",
                 Category = "clearbackgrounddorms.png",
+               
+                
                 commentid = 0},
             new HomeModel(){
                 ProfilePicture = "UserIcon.png",
@@ -92,15 +99,17 @@ namespace CollegeVS.ViewModels
             ItemAppearingCommand = new Command<object>(OnItemAppearing);
             ItemDisappearingCommand = new Command<object>(OnItemDisapearing);
 
-          
+            
         }
-
+      
         private void OnItemDisapearing(object obj)
         {
             if (obj is MediaElement mediaElement)
             {
                 if (currentItem.PostVideo == null)
                 {
+
+                   
                     mediaElement.Pause();
                 }
             }
@@ -113,17 +122,23 @@ namespace CollegeVS.ViewModels
             // }
         }
 
+  
         private void OnItemAppearing(object obj)
         {
+
+           
             if (obj is MediaElement mediaElement)
             {
                
                 if (currentItem.PostVideo != null)
                 {
                     
-                    mediaElement.Play();
+                    
+                    mediaElement.Pause();
                 }
             }
+
+            
             //if (obj is ItemAppearingEventArgs itemAppearedEventArgs)
             //{
             //if (itemAppearedEventArgs.Item is HomeModel item)

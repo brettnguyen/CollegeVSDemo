@@ -10,6 +10,7 @@
              x:Class="CollegeVS.Views.CLGVSHome"
 			 xmlns:controls="clr-namespace:CollegeVS" xmlns:views="clr-namespace:CollegeVS.Views"
                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+                     xmlns:models="clr-namespace:CollegeVS.Models" 
            xmlns:y="clr-namespace:SlideOverKit;assembly=SlideOverKit"
                     xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
                      xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:viewmodels="clr-namespace:CollegeVS.ViewModels" 
@@ -41,7 +42,7 @@
                
                    
                     <StackLayout>
-
+                        
                     <xct:Expander PropertyChanged="ExpandInfo_Changed" x:Name="ExpandInfo" IsExpanded="False" BackgroundColor="#10466C">
                             <xct:Expander.Header >
                                 <StackLayout Orientation="Horizontal" HeightRequest="30" Margin="0,0,0,0" Padding="0,2,0,5" Opacity=".9">
@@ -134,15 +135,16 @@
                  
                     <cards:CarouselView  x:Name="ListPosts" 
                                       ItemsSource="{Binding highlights}"
-                                         SelectedItem="{Binding CurrentItem}"
-                                 ItemAppearingCommand="{Binding ItemAppearingCommand, Source={x:Reference Name=ListPosts}}"
-            ItemDisappearingCommand="{Binding ItemDisappearingCommand}"
-                                         
+                                         SelectedIndex="{Binding CurrentItem}"
+                                         UserInteracted="ListPosts_UserInteracted"
+                                 ItemAppearing="ListPosts_ItemAppearing"
+                                         ItemDisappearing="ListPosts_ItemDisappearing"
                                          IsClippedToBounds="True"
-                                         IsCyclical="True"
+                                         IsCyclical="False"
                          IsHorizontalOrientation="False"
                                          IsVerticalSwipeEnabled="True"
-                                          MoveThresholdDistance="0"
+                                          MoveThresholdDistance="-1"
+                                         
                                  >
             
 
@@ -160,9 +162,24 @@
 
 
 
-                                        <RelativeLayout Padding="0">
+                                        <RelativeLayout  Padding="0">
                                            
-
+                                              <xct:MediaElement
+                                           Source="{Binding PostVideo}"
+                                         
+                                          
+                    BindingContextChanged="previewVideo_BindingContextChanged"
+                    x:Name="previewVideo"
+                    Aspect="AspectFill"
+                
+             
+                    ShowsPlaybackControls="False"
+         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
+                    BackgroundColor="Transparent"
+                    IsVisible="true">
+                                               
+                                                  </xct:MediaElement>
                                       
                                             <ffimageloading:CachedImage IsVisible="true"   Source="{Binding PostImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
@@ -171,19 +188,8 @@
                                             Aspect="Fill"
                                       
                                     />
-                                       <xct:MediaElement
-                    
-                    x:Name="previewVideo"
-                    Aspect="AspectFill"
-                 
-             Source="{Binding PostVideo}"
-                    ShowsPlaybackControls="False"
-         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
-                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
-                    BackgroundColor="Transparent"
-                    IsVisible="true">
-                                               
-                                                  </xct:MediaElement>
+                                        
+                                     
 
                                         <yummy:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}" Opacity="0.38"  >
@@ -306,7 +312,7 @@
 
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="End" Spacing="0">
-                                                            <ImageButton x:Name="Comment" Source="commenticon.png" Style="{StaticResource HomeButtonStyleFour}"    BackgroundColor="Transparent" Padding="5" Clicked="Comment_Clicked" Command="{Binding Path=BindingContext.checkCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{x:Reference previewVideo}"/>
+                                                            <ImageButton x:Name="Comment" Source="commenticon.png" Style="{StaticResource HomeButtonStyleFour}"    BackgroundColor="Transparent" Padding="5" Clicked="Comment_Clicked" />
                                                             <Label Text="1K" TextColor="White" Style="{StaticResource HomeLabelStyle}" Padding="0" VerticalOptions="Center"  HorizontalOptions="Center" >
                                                                 <Label.Effects>
                                                                     <controls:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">

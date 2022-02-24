@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{A5AE350C-4CD8-45B5-857B-C1753B2A8299}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/Views/HomePages/CLGVSHome.xaml">
     <Files>
-      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="120" Column="16" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="142" Column="59" />
-      <File FileName="CollegeVS/Models/HomeModel.cs" Line="17" Column="5" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" Line="78" Column="1" />
-      <File FileName="../../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/iOS/Xamarin.Shared.targets" Line="1566" Column="3" />
-      <File FileName="CollegeVS.iOS/Info.plist" />
-      <File FileName="CollegeVS.iOS/AppDelegate.cs" Line="36" Column="27" />
-      <File FileName="CollegeVS.Android/MainActivity.cs" Line="64" Column="1" />
-      <File FileName="CollegeVS/Models/HighlightModel.cs" Line="16" Column="3" />
-      <File FileName="CollegeVS/Views/TestView.xaml.cs" Line="1" Column="1" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" Line="233" Column="8" IsPinned="True" />
+      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="64" Column="1" />
+      <File FileName="CollegeVS/Models/HomeModel.cs" />
+      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml" Line="43" Column="58" />
+      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" Line="140" Column="23" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="140" Column="73" />
+      <File FileName="CollegeVS/Views/HomePages/Challenge.xaml" Line="1" Column="1" />
+      <File FileName="CollegeVS/Views/DarePages/DarePostBox.xaml.cs" Line="29" Column="36" />
+      <File FileName="CollegeVS.iOS/Main.cs" Line="17" Column="1" />
+      <File FileName="CollegeVS/ViewModels/NotificationsViewModel.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -20,12 +20,18 @@
               <Node name="Models" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="Comment" expanded="True" />
+                <Node name="DarePages" expanded="True">
+                  <Node name="DareCreation.xaml" expanded="True" />
+                  <Node name="DarePostBox.xaml" expanded="True" />
+                </Node>
+                <Node name="HighlightPage" expanded="True">
+                  <Node name="HighlightPage.xaml" expanded="True" />
+                </Node>
                 <Node name="HomePages" expanded="True">
                   <Node name="CLGVSHome.xaml" expanded="True" selected="True" />
                 </Node>
-                <Node name="LoginPages" expanded="True" />
                 <Node name="TestView.xaml" expanded="True" />
+                <Node name="ViewVideoControl.xaml" expanded="True" />
               </Node>
             </Node>
             <Node name="CollegeVS.Android" expanded="True" />

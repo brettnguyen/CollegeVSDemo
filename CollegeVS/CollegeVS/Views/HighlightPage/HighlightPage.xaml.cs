@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using CollegeVS.Models;
 using CollegeVS.ViewModels;
 using SlideOverKit;
+using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -19,6 +20,7 @@ namespace CollegeVS.Views
 		public HighlightPage()
 		{
 			InitializeComponent();
+		
 			highlights = new ObservableCollection<HomeModel>()
 		{
 			new HomeModel(){
@@ -29,7 +31,7 @@ namespace CollegeVS.Views
 				PostUpvoteCount = 100,
 				PostCommentCount = "7",
 				PostTime = "2 weeks",
-
+				PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
 				College = "Plattsburgh",
 				Title = "#1 Party Post",
 				Category = "clearbackgroundparty.png",
@@ -44,69 +46,14 @@ namespace CollegeVS.Views
 				PostUpvoteCount = 90,
 				PostCommentCount = "7",
 				PostTime = "1 week",
+				PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
 				Seen = true,
 				Back = false,
 				College = "Plattsburgh",
 				Title = "#1 Sports Post",
 				Category = "clearbackgroundsports.png"},
 
-			new HomeModel(){
-				ProfilePicture = "UserIcon.png",
-				Username = "Username",
-				PostImage = "Harvard.jpg",
-				PostDetail = "This is collegeVS",
-								Seen = true,
-				Back = false,
-				PostUpvoteCount = 80,
-				PostCommentCount = "7",
-				PostTime = "15 mins",
-
-				College = "Harvard",
-				Title = "#1 Dorms Post",
-				Category = "clearbackgrounddorms.png"},
-
-			new HomeModel(){
-				ProfilePicture = "UserIcon.png",
-				Username = "Username",
-				PostImage = "cvlogo.jpg",
-				PostDetail = "This is collegeVS",
-				PostUpvoteCount = 70,
-				PostCommentCount = "7",
-				PostTime = "1 hour",
-								Seen = true,
-				Back = false,
-				College = "Plattsburgh",
-				Title = "#1 Clubs Post",
-				Category = "clearbackgroundclubs.png"
-				},
-
-			new HomeModel(){
-				ProfilePicture = "UserIcon.png",
-				Username = "Username",
-				PostImage = "cvlogo.jpg",
-				PostDetail = "This is collegeVS",
-				PostUpvoteCount = 60,
-				PostCommentCount = "7",
-				PostTime = "15 hours",
-								Seen = true,
-				Back = false,
-				College = "Plattsburgh",
-				Title = "#1 Food Post",
-				Category = "clearbackgroundfood.png"},
-
-	new HomeModel(){
-				ProfilePicture = "SteveHarvey.jpg",
-				Username = "SteveHarvey",
-				PostImage = "cvlogo.jpg",
-				PostDetail = "This is collegeVS",
-				PostUpvoteCount = 60,
-				PostCommentCount = "7",
-				PostTime = "15 hours",
-								Seen = true,
-				Back = false,
-				College = "Plattsburgh",
-				Title = "#1 Other Post",
-				Category = "clearbackgroundother.png"},
+			
 
 
 		};
@@ -151,6 +98,47 @@ namespace CollegeVS.Views
 			await Shell.Current.GoToAsync("OtherUserProfile");
 
 		}
-	}
+
+		List<MediaElement> mediaElements = new List<MediaElement>();
+
+		void previewVideo_BindingContextChanged(System.Object sender, System.EventArgs e)
+        {
+			
+			
+				var element = sender as MediaElement;
+				mediaElements.Add(element);
+			
+		}
+
+        void ListPosts_PositionChanged(System.Object sender, Xamarin.Forms.PositionChangedEventArgs e)
+        {
+			
+			
+			
+		}
+
+        void ListPosts_CurrentItemChanged(System.Object sender, Xamarin.Forms.CurrentItemChangedEventArgs e)
+        {
+			
+			
+			
+		}
+
+        void ListPosts_Scrolled(System.Object sender, Xamarin.Forms.ItemsViewScrolledEventArgs e)
+        {
+			
+			//mediaElements[e.LastVisibleItemIndex].Stop();
+		}
+
+        void DragGestureRecognizer_DragStarting(System.Object sender, Xamarin.Forms.DragStartingEventArgs e)
+        {
+			ListPosts.Margin = 10;
+		}
+
+        void DragGestureRecognizer_DropCompleted(System.Object sender, Xamarin.Forms.DropCompletedEventArgs e)
+        {
+			ListPosts.Margin = 0;
+		}
+    }
 
 }
