@@ -44,13 +44,13 @@ namespace CollegeVS.Views
 		
 			this.SlideMenu = new CommentSlideUp();
 
-		
+
+			
 
 
 
 
 
-		
 
 
 
@@ -76,15 +76,15 @@ namespace CollegeVS.Views
 
 		}
 
-		void Comment_Clicked(Object sender, EventArgs e)
-		{
+	//	void Comment_Clicked(Object sender, EventArgs e)
+		//{
 
-			//	this.ShowMenu();
+		//	this.ShowMenu();
 
 			
 
 
-		}
+	//	}
 
 		void Options_Clicked(Object sender, EventArgs e)
 		{
@@ -132,14 +132,16 @@ namespace CollegeVS.Views
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-			
+			//mediaElement.Stop();
 			_highlightViewModel.OnAppearing();
+
 			
 		}
 
 		protected override void OnDisappearing()
 		{
 			base.OnDisappearing();
+			
 			_highlightViewModel.OnDisappearing();
 		}
 
@@ -196,45 +198,83 @@ namespace CollegeVS.Views
 
 
 		}
-		List<MediaElement> mediaElements = new List<MediaElement>();
+	//	List<MediaElement> mediaElements = new List<MediaElement>();
+	//	MediaElement mediaElement = new MediaElement();
 
-		void previewVideo_BindingContextChanged(System.Object sender, System.EventArgs e)
-		{
+	//	void previewVideo_BindingContextChanged(System.Object sender, System.EventArgs e)
+	//	{
+		//	mediaElement = sender as MediaElement;
 
+		//	var element = sender as MediaElement;
+//
+		//	mediaElements.Add(element);
 
-			var element = sender as MediaElement;
-			mediaElements.Add(element);
-
-		}
+		//}
 
 	
 
-        void ListPosts_ItemAppearing(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearingEventArgs args)
+     //   void ListPosts_ItemAppearing(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearingEventArgs args)
+     // {
+
+			//mediaElement.Play();
+			//mediaElements[args.Index].Play();
+			//mediaElements[args.Index].Stop();
+
+			//	
+		//}
+
+     // void ListPosts_ItemDisappearing(PanCardView.CardsView view, PanCardView.EventArgs.ItemDisappearingEventArgs args)
+     //  {
+
+			//mediaElement.Pause();
+			//mediaElement.Stop();
+
+			//mediaElement.Pause();
+			//mediaElement.Pause();
+			//mediaElement.Pause();
+
+
+			//mediaElements[args.Index].Pause();
+
+
+
+//
+	//	}
+
+       
+        void ListPosts_UserInteracted(PanCardView.CardsView view, PanCardView.EventArgs.UserInteractedEventArgs args)
         {
 			
-				mediaElements[args.Index].Play();
-				
-			
-
-
-		}
-
-       async void ListPosts_ItemDisappearing(PanCardView.CardsView view, PanCardView.EventArgs.ItemDisappearingEventArgs args)
-        {
-
-
-			mediaElements[args.Index].Pause();
-
-
 
 
 		}
 
        
-        void ListPosts_UserInteracted(PanCardView.CardsView view, PanCardView.EventArgs.UserInteractedEventArgs args)
+
+      async  void ListPosts_ItemSwiped(PanCardView.CardsView view, PanCardView.EventArgs.ItemSwipedEventArgs args)
         {
-			//mediaElements[args.Index].Pause();
+		
+			
+
+		
 		}
+
+		void ListPosts_ItemAppeared(PanCardView.CardsView view, PanCardView.EventArgs.ItemAppearedEventArgs args)
+        {
+			//ListPosts.IsNextItemPanInteractionEnabled = false;
+		
+			//ListPosts.IsPrevItemPanInteractionEnabled = true;
+		}
+
+    
+
+
+		
+
+    
+
+		//ItemAppearingCommand="{Binding ItemAppearingCommand}"
+          //ItemDisappearingCommand="{Binding ItemDisappearingCommand}"
 
 
     }

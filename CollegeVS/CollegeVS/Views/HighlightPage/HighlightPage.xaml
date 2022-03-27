@@ -32,21 +32,21 @@
                       BackgroundColor="Transparent"
                           PositionChanged="ListPosts_PositionChanged"
                         IsBounceEnabled="False"
+                          
                               CurrentItemChanged="ListPosts_CurrentItemChanged"
                                   VerticalScrollBarVisibility="Never"
                           Scrolled="ListPosts_Scrolled"
                           IsScrollAnimated="True"
                             ItemsUpdatingScrollMode="KeepItemsInView"
+                          
                                       Loop="False"
                       
-                   
+                   RemainingItemsThresholdReached="ListPosts_RemainingItemsThresholdReached"
                       HorizontalOptions="Center" Margin="0" >
                 <CarouselView.ItemsLayout>
-                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="0" SnapPointsAlignment="Center" SnapPointsType="MandatorySingle" />
+                    <LinearItemsLayout Orientation="Vertical" ItemSpacing="0" SnapPointsAlignment="Center"  SnapPointsType="MandatorySingle" />
                 </CarouselView.ItemsLayout>
-                <CarouselView.GestureRecognizers>
-                    <DragGestureRecognizer DragStarting="DragGestureRecognizer_DragStarting" DropCompleted="DragGestureRecognizer_DropCompleted"/>
-                </CarouselView.GestureRecognizers>
+                
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
 
@@ -64,8 +64,8 @@
                     BindingContextChanged="previewVideo_BindingContextChanged"
                     x:Name="previewVideo"
                     Aspect="AspectFill"
-                
-             
+                PropertyChanged="previewVideo_PropertyChanged"
+             AutoPlay="False"
                     ShowsPlaybackControls="False"
          RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"

@@ -20,6 +20,7 @@ using AndroidX.Core.Content;
 using AndroidX.Core.App;
 using ContextMenu.Droid;
 using PanCardView.Droid;
+using MediaManager;
 
 namespace CollegeVS.Droid
 {
@@ -62,8 +63,8 @@ namespace CollegeVS.Droid
 
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
+            CrossMediaManager.Current.Init(this);
 
-         
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
           

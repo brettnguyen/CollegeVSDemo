@@ -8,6 +8,7 @@ namespace CollegeVS.Models
 {
     public class HomeModel : INotifyPropertyChanged
 	{
+		MediaElement mediaElement = new MediaElement();
 		private string  currentItem;
 		public string CurrentItem
 		{
@@ -47,6 +48,18 @@ namespace CollegeVS.Models
 			set
 			{
 				back = value;
+				OnPropertyChanged();
+			}
+		}
+
+		private bool stopped;
+
+		public bool Stopped
+		{
+			get { return stopped; }
+			set
+			{
+				stopped = value;
 				OnPropertyChanged();
 			}
 		}

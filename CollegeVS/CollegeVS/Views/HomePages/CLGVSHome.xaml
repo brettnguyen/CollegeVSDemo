@@ -135,28 +135,39 @@
                  
                     <cards:CarouselView  x:Name="ListPosts" 
                                       ItemsSource="{Binding highlights}"
-                                         SelectedIndex="{Binding CurrentItem}"
-                                         UserInteracted="ListPosts_UserInteracted"
-                                 ItemAppearing="ListPosts_ItemAppearing"
-                                         ItemDisappearing="ListPosts_ItemDisappearing"
+                                 SelectedItem="{Binding CurrentItem}"
+                                        
+                                         
+                                       ItemSwiped="ListPosts_ItemSwiped"
+                                    UserInteracted="ListPosts_UserInteracted"
+                                    
+                                          ItemAppearingCommand="{Binding ItemAppearingCommand}"
+            ItemDisappearingCommand="{Binding ItemDisappearingCommand}"
+                           
+                                         ItemAppeared="ListPosts_ItemAppeared"
                                          IsClippedToBounds="True"
-                                         IsCyclical="False"
+                                        IsCyclical="False"
+                                          OppositePanDirectionDisablingThreshold="1"
                          IsHorizontalOrientation="False"
                                          IsVerticalSwipeEnabled="True"
-                                          MoveThresholdDistance="-1"
+                                          MoveThresholdDistance="3"
                                          
+                                         
+                                        
+                  
                                  >
+                    
             
-
+                        
                             <cards:CarouselView.ItemTemplate>
                                 <DataTemplate>
                                     <ScrollView >
                                         
-                                    <AbsoluteLayout  >
+                                    <AbsoluteLayout   >
                                      
                                     <AbsoluteLayout.GestureRecognizers>
                                         <TapGestureRecognizer NumberOfTapsRequired="2" Command="{Binding Path=BindingContext.SetStatusCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{Binding .}" />
-                                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Path=BindingContext.StopCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{x:Reference previewVideo}"/>
+                                      <!--  <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding Path=BindingContext.StopCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{x:Reference previewVideo}"/> -->
                                     </AbsoluteLayout.GestureRecognizers>
 
 
@@ -164,23 +175,15 @@
 
                                         <RelativeLayout  Padding="0">
                                            
-                                              <xct:MediaElement
-                                           Source="{Binding PostVideo}"
-                                         
-                                          
-                    BindingContextChanged="previewVideo_BindingContextChanged"
-                    x:Name="previewVideo"
-                    Aspect="AspectFill"
-                
-             
-                    ShowsPlaybackControls="False"
-         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
-                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
-                    BackgroundColor="Transparent"
-                    IsVisible="true">
-                                               
-                                                  </xct:MediaElement>
                                       
+                                            
+                                        
+                                   <views:TestView
+                                       BackgroundColor="Transparent"
+                                       Stopped="{Binding Stopped}"
+                                         IsPlaying="{Binding IsPlaying}"
+                                                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"></views:TestView>
                                             <ffimageloading:CachedImage IsVisible="true"   Source="{Binding PostImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
                                      LoadingDelay="0"
@@ -188,8 +191,11 @@
                                             Aspect="Fill"
                                       
                                     />
-                                        
-                                     
+                               <!--  <views:ViewVideoControl
+                                    PostVideo="{Binding PostVideo}"
+                                                 IsPlaying="{Binding IsPlaying}"
+                                                 x:DataType="models:HomeModel" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"/> -->
 
                                         <yummy:PancakeView BackgroundGradientStartPoint="0,1" BackgroundGradientEndPoint="0,0" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}" Opacity="0.38"  >
@@ -312,7 +318,7 @@
 
                                                         </StackLayout>
                                                         <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="End" Spacing="0">
-                                                            <ImageButton x:Name="Comment" Source="commenticon.png" Style="{StaticResource HomeButtonStyleFour}"    BackgroundColor="Transparent" Padding="5" Clicked="Comment_Clicked" />
+                                                            <ImageButton x:Name="Comment" Source="commenticon.png" Style="{StaticResource HomeButtonStyleFour}"    BackgroundColor="Transparent" Padding="5" Command="{Binding Path=BindingContext.checkCommand, Source={x:Reference Name=ListPosts}}" CommandParameter="{Binding .}"/>
                                                             <Label Text="1K" TextColor="White" Style="{StaticResource HomeLabelStyle}" Padding="0" VerticalOptions="Center"  HorizontalOptions="Center" >
                                                                 <Label.Effects>
                                                                     <controls:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
@@ -329,7 +335,7 @@
                                                         </StackLayout>
                                                         <StackLayout Padding="0,0,0,0" HorizontalOptions="End" Orientation="Vertical" Spacing="0" >
 
-                                                            <ImageButton x:Name="Share" Source="shareicon.png" Style="{StaticResource HomeButtonStyleFour}"   BackgroundColor="Transparent" Padding="5" Margin="0,0,0,0" />
+                                                            <ImageButton x:Name="Share" Source="shareicon.png" Style="{StaticResource HomeButtonStyleFour}"   BackgroundColor="Transparent" Padding="5" Margin="0,0,0,0"  />
                                                             <Label Text="#" TextColor="White" Style="{StaticResource HomeLabelStyle}"  Padding="0" VerticalOptions="Center" HorizontalOptions="Center" >
                                                                 <Label.Effects>
                                                                     <controls:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">

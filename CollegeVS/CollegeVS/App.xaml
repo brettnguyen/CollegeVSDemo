@@ -3,14 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              x:Class="CollegeVS.App"
-             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" 
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:converters="clr-namespace:CollegeVS.Converter" 
              ios:Page.UseSafeArea="true"
              >
     <!--
         Define global resources and styles here, that apply to all pages in your app.
 
     -->
+
     <Application.Resources>
+        <converters:InvertedBoolConverter x:Key="InvertedBoolConverter"/>
         <ResourceDictionary x:Name="dictionary">
             <Color x:Key="Primary">#10466C</Color>
             <Style TargetType="Button">

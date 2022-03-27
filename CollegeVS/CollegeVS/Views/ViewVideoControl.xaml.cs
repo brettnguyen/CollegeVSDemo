@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,11 +15,12 @@ namespace CollegeVS.Views
         public ViewVideoControl()
         {
             InitializeComponent();
+
         }
 
         public static readonly BindableProperty IsPlayingProperty =
-            BindableProperty.Create(nameof(IsPlaying), typeof(bool),
-                typeof(ViewVideoControl), false, propertyChanged: OnIsPlayingChanged);
+             BindableProperty.Create(nameof(IsPlaying), typeof(bool),
+                 typeof(ViewVideoControl), false, propertyChanged: OnIsPlayingChanged);
 
         private static void OnIsPlayingChanged(BindableObject bindable, object oldvalue, object newvalue)
         {
@@ -37,7 +39,7 @@ namespace CollegeVS.Views
                         Aspect = Aspect.AspectFill,
                         ShowsPlaybackControls = false
                     };
-                    
+
                     home.Container.Children.Add(home._mediaElement);
                 }
 
@@ -53,6 +55,7 @@ namespace CollegeVS.Views
 
                 home._mediaElement = null;
             }
+
         }
 
         public bool IsPlaying
@@ -63,8 +66,8 @@ namespace CollegeVS.Views
 
 
         public static readonly BindableProperty PostVideoProperty =
-            BindableProperty.Create(nameof(PostVideo), typeof(string),
-                typeof(ViewVideoControl));
+          BindableProperty.Create(nameof(PostVideo), typeof(string),
+                 typeof(ViewVideoControl));
 
         public string PostVideo
         {

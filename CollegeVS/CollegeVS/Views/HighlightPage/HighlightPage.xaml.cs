@@ -20,7 +20,7 @@ namespace CollegeVS.Views
 		public HighlightPage()
 		{
 			InitializeComponent();
-		
+			
 			highlights = new ObservableCollection<HomeModel>()
 		{
 			new HomeModel(){
@@ -73,6 +73,7 @@ namespace CollegeVS.Views
 			HomeModel homeModel = ListPosts.CurrentItem as HomeModel;
 			homeModel.Seen = false;
 			homeModel.Back = true;
+			
 		}
 
 		void Remove_Tapped(System.Object sender, System.EventArgs e)
@@ -84,8 +85,9 @@ namespace CollegeVS.Views
 		}
 		void Comment_Clicked(Object sender, EventArgs e)
 		{
+			
 
-			this.ShowMenu();
+			//this.ShowMenu();
 
 		}
 		async void College_Tapped(object sender, EventArgs e)
@@ -98,47 +100,89 @@ namespace CollegeVS.Views
 			await Shell.Current.GoToAsync("OtherUserProfile");
 
 		}
-
+		
 		List<MediaElement> mediaElements = new List<MediaElement>();
-
-		void previewVideo_BindingContextChanged(System.Object sender, System.EventArgs e)
+//
+		MediaElement mediaElement = new MediaElement();
+	
+	void previewVideo_BindingContextChanged(System.Object sender, System.EventArgs e)
         {
+		
 			
-			
-				var element = sender as MediaElement;
-				mediaElements.Add(element);
+			var element = sender as MediaElement;
+			mediaElements.Add(element);
+			mediaElement = sender as MediaElement;
+		//	
+				
 			
 		}
 
         void ListPosts_PositionChanged(System.Object sender, Xamarin.Forms.PositionChangedEventArgs e)
         {
+
+			if (ListPosts.IsDragging == false)
+			{
+			mediaElements[e.PreviousPosition].Stop();
+				mediaElements[e.PreviousPosition].Pause();
+
+			}
+			
+			if (ListPosts.IsDragging == true)
+			{
+				mediaElements[e.PreviousPosition].Pause();
+			}
 			
 			
+
+		}
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+		
+
+		}
+		void ListPosts_CurrentItemChanged(System.Object sender, Xamarin.Forms.CurrentItemChangedEventArgs e)
+        {
+			
+			//mediaElement.Pause();
+
+		}
+
+		void ListPosts_Scrolled(System.Object sender, Xamarin.Forms.ItemsViewScrolledEventArgs e)
+		{
+
+		
+		if(ListPosts.IsDragging == true)
+			{
+				mediaElements[e.FirstVisibleItemIndex].Pause();
+				mediaElements[e.CenterItemIndex].Pause();
+				
+			}
+			if (ListPosts.IsDragging == false)
+			{
+				
+				mediaElements[e.CenterItemIndex].Play();
+			}
+		}
+
+       void ListPosts_RemainingItemsThresholdReached(System.Object sender, System.EventArgs e)
+        {
 			
 		}
 
-        void ListPosts_CurrentItemChanged(System.Object sender, Xamarin.Forms.CurrentItemChangedEventArgs e)
+        void previewVideo_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-			
-			
-			
+			if(ListPosts.IsDragging == true)
+            {
+				if(ListPosts.Position != null)
+                {
+					mediaElement.Pause();
+				}
+				
+			}
 		}
 
-        void ListPosts_Scrolled(System.Object sender, Xamarin.Forms.ItemsViewScrolledEventArgs e)
-        {
-			
-			//mediaElements[e.LastVisibleItemIndex].Stop();
-		}
 
-        void DragGestureRecognizer_DragStarting(System.Object sender, Xamarin.Forms.DragStartingEventArgs e)
-        {
-			ListPosts.Margin = 10;
-		}
-
-        void DragGestureRecognizer_DropCompleted(System.Object sender, Xamarin.Forms.DropCompletedEventArgs e)
-        {
-			ListPosts.Margin = 0;
-		}
     }
 
 }

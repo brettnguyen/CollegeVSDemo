@@ -2,22 +2,25 @@
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+       xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
     x:Class="CollegeVS.Views.TestView">
   
                 <xct:MediaElement
-                    
+                 
                     x:Name="previewVideo"
                     Aspect="AspectFill"
-                  Source="https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4"
-             
+                 Source="{Binding PostVideo}"
+                    PropertyChanging="previewVideo_PropertyChanging"
+       PropertyChanged="previewVideo_PropertyChanged"
                     ShowsPlaybackControls="False"
          
                     BackgroundColor="Transparent"
-                    IsVisible="true">
-                                               
+                   >
+                                       
                                                   </xct:MediaElement>
-    
+
+   
     
 </ContentView>

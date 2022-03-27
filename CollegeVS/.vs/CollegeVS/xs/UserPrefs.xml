@@ -1,54 +1,52 @@
 ﻿<Properties StartupConfiguration="{A5AE350C-4CD8-45B5-857B-C1753B2A8299}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/Views/HomePages/CLGVSHome.xaml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/ViewModels/HighlightViewModel.cs">
     <Files>
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" Line="233" Column="8" IsPinned="True" />
-      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="64" Column="1" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" Line="248" Column="1" IsPinned="True" />
+      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="203" Column="13" IsPinned="True" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="149" Column="58" />
       <File FileName="CollegeVS/Models/HomeModel.cs" />
-      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml" Line="43" Column="58" />
-      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" Line="140" Column="23" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="140" Column="73" />
-      <File FileName="CollegeVS/Views/HomePages/Challenge.xaml" Line="1" Column="1" />
-      <File FileName="CollegeVS/Views/DarePages/DarePostBox.xaml.cs" Line="29" Column="36" />
-      <File FileName="CollegeVS.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="CollegeVS/ViewModels/NotificationsViewModel.cs" Line="1" Column="1" />
+      <File FileName="CollegeVS/Views/TestView.xaml.cs" Line="106" Column="17" />
+      <File FileName="CollegeVS/Views/TestView.xaml" />
+      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" Line="73" Column="4" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CollegeVS" expanded="True">
             <Node name="CollegeVS" expanded="True">
+              <Node name="Converter" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="HighlightViewModel.cs" selected="True" />
+              </Node>
               <Node name="Views" expanded="True">
-                <Node name="DarePages" expanded="True">
-                  <Node name="DareCreation.xaml" expanded="True" />
-                  <Node name="DarePostBox.xaml" expanded="True" />
-                </Node>
                 <Node name="HighlightPage" expanded="True">
                   <Node name="HighlightPage.xaml" expanded="True" />
                 </Node>
                 <Node name="HomePages" expanded="True">
-                  <Node name="CLGVSHome.xaml" expanded="True" selected="True" />
+                  <Node name="CLGVSHome.xaml" expanded="True" />
                 </Node>
                 <Node name="TestView.xaml" expanded="True" />
                 <Node name="ViewVideoControl.xaml" expanded="True" />
               </Node>
             </Node>
-            <Node name="CollegeVS.Android" expanded="True" />
-            <Node name="CollegeVS.iOS" expanded="True">
-              <Node name="Renderers" expanded="True" />
+            <Node name="CollegeVS.Android" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="Raw" expanded="True" />
+              </Node>
             </Node>
+            <Node name="CollegeVS.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.emulator-5554" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.CollegeVS.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.E2BDBFB3-46B0-4D6E-A3B9-C36A807EE46B" />
+  <MonoDevelop.Ide.ItemProperties.CollegeVS.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.00008030-001A595C3C68802E" />
 </Properties>

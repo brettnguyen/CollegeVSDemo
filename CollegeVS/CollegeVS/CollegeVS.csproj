@@ -82,6 +82,7 @@
     <None Remove="Images\postcamera.svg" />
     <None Remove="Images\clubs.svg" />
     <None Remove="ContextViewCell" />
+    <None Remove="Converter\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -264,6 +265,7 @@
     <Folder Include="Views\Comment\" />
     <Folder Include="DeviceSizes\" />
     <Folder Include="Views\AnimationTriggers\" />
+    <Folder Include="Converter\" />
   </ItemGroup>
   <ItemGroup>
     <SharedImage Include="Images\inv.svg" />

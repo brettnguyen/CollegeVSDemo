@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <ContentView
     xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="CollegeVS.Views.ViewVideoControl">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    x:Class="CollegeVS.Views.ViewVideoControl"
+    >
    
-          <Grid x:Name="Container"/>
-   
+         
+<Grid x:Name="Container"></Grid>
 </ContentView>
