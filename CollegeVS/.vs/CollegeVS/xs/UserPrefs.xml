@@ -1,13 +1,15 @@
 ﻿<Properties StartupConfiguration="{A5AE350C-4CD8-45B5-857B-C1753B2A8299}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/ViewModels/HighlightViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/Views/TestView.xaml.cs">
     <Files>
       <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" Line="248" Column="1" IsPinned="True" />
-      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="203" Column="13" IsPinned="True" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="149" Column="58" />
+      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="97" Column="21" IsPinned="True" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="178" Column="39" />
       <File FileName="CollegeVS/Models/HomeModel.cs" />
-      <File FileName="CollegeVS/Views/TestView.xaml.cs" Line="106" Column="17" />
-      <File FileName="CollegeVS/Views/TestView.xaml" />
-      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" Line="73" Column="4" />
+      <File FileName="CollegeVS/Views/TestView.xaml.cs" Line="78" Column="17" />
+      <File FileName="CollegeVS/Views/TestView.xaml" Line="1" Column="1" />
+      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="CollegeVS.Android/MainActivity.cs" Line="72" Column="30" />
+      <File FileName="CollegeVS.iOS/AppDelegate.cs" Line="34" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -16,9 +18,7 @@
             <Node name="CollegeVS" expanded="True">
               <Node name="Converter" expanded="True" />
               <Node name="Models" expanded="True" />
-              <Node name="ViewModels" expanded="True">
-                <Node name="HighlightViewModel.cs" selected="True" />
-              </Node>
+              <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
                 <Node name="HighlightPage" expanded="True">
                   <Node name="HighlightPage.xaml" expanded="True" />
@@ -26,7 +26,9 @@
                 <Node name="HomePages" expanded="True">
                   <Node name="CLGVSHome.xaml" expanded="True" />
                 </Node>
-                <Node name="TestView.xaml" expanded="True" />
+                <Node name="TestView.xaml" expanded="True">
+                  <Node name="TestView.xaml.cs" selected="True" />
+                </Node>
                 <Node name="ViewVideoControl.xaml" expanded="True" />
               </Node>
             </Node>
@@ -43,7 +45,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.emulator-5554" />
+  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Pixel_2_API_32" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -184,7 +184,7 @@
                                          IsPlaying="{Binding IsPlaying}"
                                                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"></views:TestView>
-                                            <ffimageloading:CachedImage IsVisible="true"   Source="{Binding PostImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
+                                            <ffimageloading:CachedImage IsVisible="false"   Source="{Binding PostImage}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width}"
                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height}"
                                      LoadingDelay="0"
                                                                            DownsampleToViewSize="True"

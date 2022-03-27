@@ -10,6 +10,7 @@ using FFImageLoading;
 using SlideOverKit.iOS;
 using ContextMenu.iOS;
 using PanCardView.iOS;
+using Xamarin.Forms;
 
 namespace CollegeVS.iOS
 {
@@ -30,6 +31,7 @@ namespace CollegeVS.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            Device.SetFlags(new string[] { "MediaElement_Experimental" });
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             //ImageCircleRenderer.Init();
             ContextMenuViewRenderer.Preserve();

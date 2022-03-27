@@ -67,7 +67,7 @@ namespace CollegeVS.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-          
+            Device.SetFlags(new string[] { "MediaElement_Experimental" });
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             //Startup.Init();
             CardsViewRenderer.Preserve();

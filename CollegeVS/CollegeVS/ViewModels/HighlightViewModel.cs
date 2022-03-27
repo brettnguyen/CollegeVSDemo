@@ -113,7 +113,11 @@ namespace CollegeVS.ViewModels
             {
                 if (itemAppearedEventArgs.Item is HomeModel item)
                 {
-                    item.Stopped = false;
+                    if(item.Stopped == true)
+                    {
+item.Stopped = false;
+                    }
+                    
                     item.IsPlaying = true;
                    
                 }
@@ -254,7 +258,41 @@ namespace CollegeVS.ViewModels
                 Category = "clearbackgrounddorms.png",
                 commentid = 1,
             },
+              new HomeModel(){
+                ProfilePicture = "UserIcon.png",
+                Username = "User Name",
+             
+                //PostImage = "Harvard.jpg",
+                PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
+                PostDetail = "10",
+                PostUpvoteCount = 100,
+                PostCommentCount = "7",
+                PostTime = "2 weeks",
+                Seen = true,
+                Back = false,
 
+                College = "Harvard",
+                Category = "clearbackgrounddorms.png",
+                commentid = 1,
+            },
+
+               new HomeModel(){
+                ProfilePicture = "UserIcon.png",
+                Username = "User Name",
+             
+                //PostImage = "Harvard.jpg",
+                PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
+                PostDetail = "12",
+                PostUpvoteCount = 100,
+                PostCommentCount = "7",
+                PostTime = "2 weeks",
+                Seen = true,
+                Back = false,
+
+                College = "Harvard",
+                Category = "clearbackgrounddorms.png",
+                commentid = 1,
+            },
 
             };
 

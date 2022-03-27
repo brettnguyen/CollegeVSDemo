@@ -29,7 +29,31 @@ namespace CollegeVS.Views
             {
                 return;
             }
-            
+            if (home.Stopped == true)
+            {
+
+                //home.previewVideo.Stop();
+
+
+
+                home.previewVideo.Pause();
+
+
+
+            }
+
+            if (home.Stopped == false)
+            {
+
+                //home.previewVideo.Stop();
+
+
+
+                home.previewVideo.Play();
+
+
+
+            }
 
 
             if (home.IsPlaying == true)
