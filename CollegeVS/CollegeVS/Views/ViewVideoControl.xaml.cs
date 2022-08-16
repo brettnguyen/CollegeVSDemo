@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using CollegeVS.Models;
+using CollegeVS.ViewModels;
 using Xamarin.CommunityToolkit.UI.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,11 +13,12 @@ namespace CollegeVS.Views
     public partial class ViewVideoControl : ContentView
     {
         private MediaElement _mediaElement;
-
+       
         public ViewVideoControl()
         {
             InitializeComponent();
 
+           
         }
 
         public static readonly BindableProperty IsPlayingProperty =
@@ -29,32 +32,50 @@ namespace CollegeVS.Views
                 return;
             }
 
-            if (home.IsPlaying)
+      
+         
+           if (home.IsPlaying == true)
             {
-                if (home._mediaElement == null)
-                {
-                    home._mediaElement = new MediaElement
-                    {
-                        Source = home.PostVideo,
-                        Aspect = Aspect.AspectFill,
-                        ShowsPlaybackControls = false
-                    };
 
-                    home.Container.Children.Add(home._mediaElement);
+
+               if (home._mediaElement == null)
+                  {
+                      home._mediaElement = new MediaElement
+                      {
+                          Source = home.PostVideo,
+                          Aspect = Aspect.AspectFill,
+                          ShowsPlaybackControls = false
+                      };
+                          home.Container.Children.Add(home._mediaElement);                  
+
+                  }
+               
+                home._mediaElement.Play();
+                
+
+                if (home.Stopped == true)
+                {
+                    home._mediaElement.Pause();
                 }
 
-                home._mediaElement.Play();
+                else
+                {
+                    home._mediaElement.Play();
+                }
+
+                
             }
             else
             {
-                home._mediaElement.Stop();
-                if (home.Container.Children.Contains(home._mediaElement))
-                {
-                    home.Container.Children.Remove(home._mediaElement);
-                }
-
-                home._mediaElement = null;
+               
+                    
+                    home._mediaElement.Pause();
+               
+                home._mediaElement.Position = TimeSpan.FromSeconds(0);
+                
+                
             }
+            
 
         }
 
@@ -64,6 +85,27 @@ namespace CollegeVS.Views
             set => SetValue(IsPlayingProperty, value);
         }
 
+        public static readonly BindableProperty StoppedProperty =
+           BindableProperty.Create(nameof(Stopped), typeof(bool),
+               typeof(TestView), false, propertyChanged: OnIsPlayingChanged);
+
+        public bool Stopped
+        {
+            get => (bool)GetValue(StoppedProperty);
+            set => SetValue(StoppedProperty, value);
+        }
+
+        public static readonly BindableProperty ResetProperty =
+        BindableProperty.Create(nameof(Reset), typeof(bool),
+            typeof(TestView), false, propertyChanged: OnIsPlayingChanged);
+
+        public bool Reset
+        {
+            get => (bool)GetValue(ResetProperty);
+            set => SetValue(ResetProperty, value);
+        }
+
+      
 
         public static readonly BindableProperty PostVideoProperty =
           BindableProperty.Create(nameof(PostVideo), typeof(string),
@@ -74,5 +116,9 @@ namespace CollegeVS.Views
             get => (string)GetValue(PostVideoProperty);
             set => SetValue(PostVideoProperty, value);
         }
+
+        
+
+
     }
 }

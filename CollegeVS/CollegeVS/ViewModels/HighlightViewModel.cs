@@ -19,7 +19,7 @@ namespace CollegeVS.ViewModels
 {
     public class HighlightViewModel : BaseViewModel
     {
-        bool test;
+        
         private ObservableCollection<HomeModel> _highlights;
         public ObservableCollection<HomeModel> highlights
         {
@@ -96,8 +96,12 @@ namespace CollegeVS.ViewModels
             {
                     
                     item.IsPlaying = false;
-                    
 
+                    //item.Stopped = true;
+                    if(item.Stopped == true)
+                    {
+                        item.Reset = true;
+                    }
              }
            }
         }
@@ -113,11 +117,16 @@ namespace CollegeVS.ViewModels
             {
                 if (itemAppearedEventArgs.Item is HomeModel item)
                 {
-                    if(item.Stopped == true)
+                       if(item.Stopped == true)
                     {
-item.Stopped = false;
+                       
+                        item.Stopped = false;
+                        
                     }
-                    
+                       else
+                    {
+
+                    }
                     item.IsPlaying = true;
                    
                 }
@@ -154,22 +163,27 @@ item.Stopped = false;
             //   mediaElement.Pause();
 
             // }
-          if( CurrentItem.Stopped == true)
+
+            if (currentItem.Stopped == true)
             {
-                CurrentItem.Stopped = false;
+                currentItem.Stopped = false;
+
             }
-          else
+            else
             {
-                CurrentItem.Stopped = true;
+                currentItem.Stopped = true;
             }
-           // int index = highlights.IndexOf(obj);
-            
+
+
+
+            // int index = highlights.IndexOf(obj);
+
             //highlights[index].Stopped = true;
 
-            
+
 
             //highlights[index].Seen = false;
-           // highlights[index].Back = true;
+            // highlights[index].Back = true;
 
         }
         void SetStatus(Object obj)
@@ -202,27 +216,68 @@ item.Stopped = false;
         {
             IsBusy = true;
 
-
-
-            
-            CreateItems();
            
+
+
+            CreateItems();
+            
             IsBusy = false;
+        }
+        public void ResetVideo()
+        {
+            
+            if (highlights != null)
+            {
+               
+                    
+
+                    if(currentItem.Stopped == true)
+                    {
+                        
+
+                    }
+                    else
+                {
+                    currentItem.Stopped = false;
+                    currentItem.IsPlaying = true;
+                }
+                
+            }
+            else
+            {
+
+            }
+           
         }
         public  void OnDisappearing()
         {
+           // CurrentItem.Zero = true;
             IsBusy = true;
-            CurrentItem.Stopped = true;
-             highlights = new ObservableRangeCollection<HomeModel>();
+
+            //currentItem.Stopped = true;
+            currentItem.IsPlaying = false;
             IsBusy = false;
         }
-       
+
+        public void Gone()
+        {
+            
+                // CurrentItem.Zero = true;
+                IsBusy = true;
+
+                highlights = null;
+                IsBusy = false;
+            
+        }
+
+         
 
             private void CreateItems()
         {
+
             highlights = new ObservableCollection<HomeModel>()
             {
-
+               
 
             new HomeModel(){
                 ProfilePicture = "UserIcon.png",
@@ -244,7 +299,7 @@ item.Stopped = false;
               new HomeModel(){
                 ProfilePicture = "UserIcon.png",
                 Username = "User Name",
-             
+          
                 //PostImage = "Harvard.jpg",
                 PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
                 PostDetail = "This is collegeasgargwegwaegwaegwegwaegeawVS",
@@ -261,7 +316,7 @@ item.Stopped = false;
               new HomeModel(){
                 ProfilePicture = "UserIcon.png",
                 Username = "User Name",
-             
+           
                 //PostImage = "Harvard.jpg",
                 PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
                 PostDetail = "10",
@@ -279,7 +334,7 @@ item.Stopped = false;
                new HomeModel(){
                 ProfilePicture = "UserIcon.png",
                 Username = "User Name",
-             
+        
                 //PostImage = "Harvard.jpg",
                 PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
                 PostDetail = "12",

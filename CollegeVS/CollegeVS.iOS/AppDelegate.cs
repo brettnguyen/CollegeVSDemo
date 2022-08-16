@@ -12,6 +12,8 @@ using ContextMenu.iOS;
 using PanCardView.iOS;
 using Xamarin.Forms;
 
+using MediaManager;
+
 namespace CollegeVS.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -30,6 +32,8 @@ namespace CollegeVS.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
+            
+            CrossMediaManager.Current.Init();
             global::Xamarin.Forms.Forms.Init();
             Device.SetFlags(new string[] { "MediaElement_Experimental" });
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init();

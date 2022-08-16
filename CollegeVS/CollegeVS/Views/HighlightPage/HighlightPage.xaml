@@ -9,6 +9,7 @@
                xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="CollegeVS.Views.HighlightPage"
                    Shell.NavBarIsVisible="False"
+                        xmlns:mm="clr-namespace:MediaManager.Forms;assembly=MediaManager.Forms"
             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core" xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms" xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
              ios:Page.UseSafeArea="True"
              >
@@ -29,7 +30,7 @@
             
             <CarouselView x:Name="ListPosts"
                           ItemsSource="{Binding highlights}"
-                      BackgroundColor="Transparent"
+                            CurrentItem="{Binding CurrentItem}"
                           PositionChanged="ListPosts_PositionChanged"
                         IsBounceEnabled="False"
                           
@@ -37,19 +38,20 @@
                                   VerticalScrollBarVisibility="Never"
                           Scrolled="ListPosts_Scrolled"
                           IsScrollAnimated="True"
-                            ItemsUpdatingScrollMode="KeepItemsInView"
+                            
                           
                                       Loop="False"
                       
-                   RemainingItemsThresholdReached="ListPosts_RemainingItemsThresholdReached"
+                   
                       HorizontalOptions="Center" Margin="0" >
                 <CarouselView.ItemsLayout>
                     <LinearItemsLayout Orientation="Vertical" ItemSpacing="0" SnapPointsAlignment="Center"  SnapPointsType="MandatorySingle" />
                 </CarouselView.ItemsLayout>
-                
+              
                 <CarouselView.ItemTemplate>
-                    <DataTemplate>
 
+                    <DataTemplate>
+              
                         <AbsoluteLayout  >
                             <AbsoluteLayout.GestureRecognizers>
                                         <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Upvote_Tapped"/>
@@ -57,7 +59,7 @@
 
                             <RelativeLayout Padding="0">
 
-
+                                
                                  <xct:MediaElement
                                            Source="{Binding PostVideo}"
                                          

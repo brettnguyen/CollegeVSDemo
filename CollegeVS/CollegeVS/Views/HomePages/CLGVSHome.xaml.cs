@@ -38,10 +38,13 @@ namespace CollegeVS.Views
 			InitializeComponent();
 			_highlightViewModel = new HighlightViewModel();
 			BindingContext = _highlightViewModel;
-			
 
-			
-		
+			Device.BeginInvokeOnMainThread(() =>
+            {
+                _highlightViewModel.OnAppearing();
+            });
+
+
 			this.SlideMenu = new CommentSlideUp();
 
 
@@ -72,7 +75,7 @@ namespace CollegeVS.Views
 		{
 
 			this.ShowPopup("FirstPopup");
-
+			
 
 		}
 
@@ -133,14 +136,18 @@ namespace CollegeVS.Views
 		{
 			base.OnAppearing();
 			//mediaElement.Stop();
-			_highlightViewModel.OnAppearing();
-
 			
-		}
+				_highlightViewModel.ResetVideo();
+			
+
+
+			}
 
 		protected override void OnDisappearing()
 		{
 			base.OnDisappearing();
+
+
 			
 			_highlightViewModel.OnDisappearing();
 		}
@@ -152,7 +159,7 @@ namespace CollegeVS.Views
 			Info.IsVisible = false;
 			Info2.IsVisible = true;
 			RandomBar.IsVisible = true;
-			ListPosts.IsEnabled = false;
+			//ListPosts.IsEnabled = false;
 		}
 
 		void Info2_Clicked(object sender, EventArgs e)
@@ -162,7 +169,7 @@ namespace CollegeVS.Views
 			Info.IsVisible = true;
 			Info2.IsVisible = false;
 			RandomBar.IsVisible = false;
-			ListPosts.IsEnabled = true;
+			//ListPosts.IsEnabled = true;
 		}
 
 		void Post_Tapped(object sender, EventArgs e)
@@ -174,28 +181,20 @@ namespace CollegeVS.Views
 			Info.IsVisible = true;
 			Info2.IsVisible = false;
 			RandomBar.IsVisible = false;
-			ListPosts.IsEnabled = true;
+			//ListPosts.IsEnabled = true;
 		}
 
 		public void ExpandInfo_Changed(object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
-			if (ExpandInfo.IsExpanded != true)
-				
-			ListPosts.IsEnabled = true;
 
+			if(ExpandInfo.IsExpanded == true)
+            {
+				ListPosts.IsUserInteractionEnabled = false;
+            }
 			else
-				
-			ListPosts.IsEnabled = false;
-
-			if (ExpandInfo.IsExpanded != true)
-
-				ExitFrame.IsVisible = false;
-
-			else
-
-				ExitFrame.IsVisible = true;
-
-
+            {
+				ListPosts.IsUserInteractionEnabled = true;
+			}
 
 		}
 	//	List<MediaElement> mediaElements = new List<MediaElement>();
@@ -266,15 +265,19 @@ namespace CollegeVS.Views
 			//ListPosts.IsPrevItemPanInteractionEnabled = true;
 		}
 
-    
+        void LifecycleEffect_Loaded(System.Object sender, System.EventArgs e)
+        {
+			
+		}
 
 
-		
 
-    
 
-		//ItemAppearingCommand="{Binding ItemAppearingCommand}"
-          //ItemDisappearingCommand="{Binding ItemDisappearingCommand}"
+
+
+
+        //ItemAppearingCommand="{Binding ItemAppearingCommand}"
+        //ItemDisappearingCommand="{Binding ItemDisappearingCommand}"
 
 
     }

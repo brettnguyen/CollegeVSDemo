@@ -17,6 +17,17 @@ namespace CollegeVS.Models
 }
 		}
 
+		private bool reset;
+		public bool Reset
+		{
+			get { return reset; }
+			set
+			{
+				reset = value;
+				OnPropertyChanged();
+			}
+		}
+
 		private bool isPlaying;
 		public bool IsPlaying
 		{
@@ -60,6 +71,18 @@ namespace CollegeVS.Models
 			set
 			{
 				stopped = value;
+				OnPropertyChanged();
+			}
+		}
+
+		private bool zero;
+
+		public bool Zero
+		{
+			get { return zero; }
+			set
+			{
+				zero = value;
 				OnPropertyChanged();
 			}
 		}

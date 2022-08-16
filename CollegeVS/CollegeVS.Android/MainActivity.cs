@@ -22,6 +22,7 @@ using ContextMenu.Droid;
 using PanCardView.Droid;
 using MediaManager;
 
+
 namespace CollegeVS.Droid
 {
     [Activity(Label = "CollegeVS", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
@@ -63,10 +64,11 @@ namespace CollegeVS.Droid
 
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
 
+            
             CrossMediaManager.Current.Init(this);
-
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            
             Device.SetFlags(new string[] { "MediaElement_Experimental" });
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
             //Startup.Init();

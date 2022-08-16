@@ -9,7 +9,6 @@ using CollegeVS.ViewModels;
 using CollegeVS.Models;
 
 
-
 namespace CollegeVS
 {
 	public partial class App : Application
@@ -18,6 +17,7 @@ namespace CollegeVS
 		const int smallWightResolution = 768;
 		const int smallHeightResolution = 1280;
 
+	
 
 		public App()
 		{
@@ -26,7 +26,7 @@ namespace CollegeVS
 
 			LoadStyles();
 			Plugin.Media.CrossMedia.Current.Initialize();
-		
+			
 			MainPage =  new AppShell();
 		 
 

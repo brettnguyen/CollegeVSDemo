@@ -16,56 +16,24 @@ namespace CollegeVS.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HighlightPage : MenuContainerPage
     {
-		public ObservableCollection<HomeModel> highlights { get; set; }
+		private readonly HighlightViewModel _highlightViewModel;
 		public HighlightPage()
 		{
 			InitializeComponent();
-			
-			highlights = new ObservableCollection<HomeModel>()
-		{
-			new HomeModel(){
-				ProfilePicture = "UserIcon.png",
-				Username = "SteveHarvey",
-				PostImage = "SUNYPlattsburgh.jpg",
-				PostDetail = "This is collegeVS",
-				PostUpvoteCount = 100,
-				PostCommentCount = "7",
-				PostTime = "2 weeks",
-				PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
-				College = "Plattsburgh",
-				Title = "#1 Party Post",
-				Category = "clearbackgroundparty.png",
-				Seen = true,
-				Back = false,},
 
-			new HomeModel(){
-				ProfilePicture = "UserIcon.png",
-				Username = "Username",
-				PostImage = "cvlogo.jpg",
-				PostDetail = "This is collegeVS",
-				PostUpvoteCount = 90,
-				PostCommentCount = "7",
-				PostTime = "1 week",
-				PostVideo = "https://sec.ch9.ms/ch9/5d93/a1eab4bf-3288-4faf-81c4-294402a85d93/XamarinShow_mid.mp4",
-				Seen = true,
-				Back = false,
-				College = "Plattsburgh",
-				Title = "#1 Sports Post",
-				Category = "clearbackgroundsports.png"},
+			_highlightViewModel = new HighlightViewModel();
+			BindingContext = _highlightViewModel;
 
-			
-
-
-		};
-			this.BindingContext = this;
-
+			Device.BeginInvokeOnMainThread(async () =>
+			{
+				//_highlightViewModel.OnAppearing();
+			});
 			this.SlideMenu = new CommentSlideUp();
 
+			
 
 
-		
 
-		
 
 		}
 		void Upvote_Tapped(System.Object sender, System.EventArgs e)
@@ -97,7 +65,12 @@ namespace CollegeVS.Views
 
 		async void User_Tapped(object sender, EventArgs e)
 		{
-			await Shell.Current.GoToAsync("OtherUserProfile");
+			//await Shell.Current.GoToAsync("OtherUserProfile");
+
+			if (ListPosts.Position > 0)
+			{
+				ListPosts.Position--;
+			}
 
 		}
 		
@@ -119,18 +92,23 @@ namespace CollegeVS.Views
 
         void ListPosts_PositionChanged(System.Object sender, Xamarin.Forms.PositionChangedEventArgs e)
         {
-
-			if (ListPosts.IsDragging == false)
-			{
-			mediaElements[e.PreviousPosition].Stop();
-				mediaElements[e.PreviousPosition].Pause();
-
-			}
 			
-			if (ListPosts.IsDragging == true)
+			if (mediaElements != null)
 			{
-				mediaElements[e.PreviousPosition].Pause();
+				if (ListPosts.CurrentItem == ListPosts.CurrentItem)
+				{
+					//mediaElements[e.PreviousPosition].Pause();
+					//mediaElements[e.CurrentPosition].Play();
+
+
+				}
 			}
+			else
+            {
+
+            }
+
+			
 			
 			
 
@@ -138,8 +116,20 @@ namespace CollegeVS.Views
 		protected override void OnAppearing()
 		{
 			base.OnAppearing();
-		
 
+			_highlightViewModel.OnAppearing();
+
+
+		}
+
+
+		protected override void OnDisappearing()
+		{
+			base.OnDisappearing();
+
+
+
+			_highlightViewModel.Gone();
 		}
 		void ListPosts_CurrentItemChanged(System.Object sender, Xamarin.Forms.CurrentItemChangedEventArgs e)
         {
@@ -150,36 +140,34 @@ namespace CollegeVS.Views
 
 		void ListPosts_Scrolled(System.Object sender, Xamarin.Forms.ItemsViewScrolledEventArgs e)
 		{
+			if (mediaElements != null)
+			{
+				if (ListPosts.IsDragging == true)
+				{
+					//mediaElements[e.CenterItemIndex].Pause();
+					//mediaElements[e.FirstVisibleItemIndex].Pause();
+					//mediaElements[e.FirstVisibleItemIndex].Stop();
+					//mediaElements[e.LastVisibleItemIndex].Pause();
+				}
+				else
+				{
+					//mediaElements[e.FirstVisibleItemIndex].Play();
+					//mediaElements[e.LastVisibleItemIndex].Pause();
+				}
+			}
 
-		
-		if(ListPosts.IsDragging == true)
-			{
-				mediaElements[e.FirstVisibleItemIndex].Pause();
-				mediaElements[e.CenterItemIndex].Pause();
-				
-			}
-			if (ListPosts.IsDragging == false)
-			{
-				
-				mediaElements[e.CenterItemIndex].Play();
-			}
+			else
+            {
+
+            }
+
 		}
 
-       void ListPosts_RemainingItemsThresholdReached(System.Object sender, System.EventArgs e)
-        {
-			
-		}
+     
 
         void previewVideo_PropertyChanged(System.Object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-			if(ListPosts.IsDragging == true)
-            {
-				if(ListPosts.Position != null)
-                {
-					mediaElement.Pause();
-				}
-				
-			}
+			
 		}
 
 

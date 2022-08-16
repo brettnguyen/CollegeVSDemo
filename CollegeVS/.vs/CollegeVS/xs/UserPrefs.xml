@@ -1,51 +1,60 @@
 ﻿<Properties StartupConfiguration="{A5AE350C-4CD8-45B5-857B-C1753B2A8299}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="CollegeVS/Views/TestView.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../.nuget/packages/microsoft.ui.xaml/2.7.2/readme.txt">
     <Files>
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" Line="248" Column="1" IsPinned="True" />
-      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="97" Column="21" IsPinned="True" />
-      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" Line="178" Column="39" />
+      <File FileName="CollegeVS/ViewModels/HighlightViewModel.cs" Line="258" Column="42" IsPinned="True" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml.cs" IsPinned="True" />
+      <File FileName="CollegeVS/AppShell.xaml" />
+      <File FileName="CollegeVS/AppShell.xaml.cs" />
+      <File FileName="CollegeVS/Views/HomePages/CLGVSHome.xaml" />
       <File FileName="CollegeVS/Models/HomeModel.cs" />
-      <File FileName="CollegeVS/Views/TestView.xaml.cs" Line="78" Column="17" />
-      <File FileName="CollegeVS/Views/TestView.xaml" Line="1" Column="1" />
-      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" Line="1" Column="1" />
-      <File FileName="CollegeVS.Android/MainActivity.cs" Line="72" Column="30" />
-      <File FileName="CollegeVS.iOS/AppDelegate.cs" Line="34" Column="15" />
+      <File FileName="CollegeVS/Views/ProfilePages/CLGVSProfile.xaml" />
+      <File FileName="CollegeVS/DeviceSizes/GeneralDevicesStyle.xaml" />
+      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml" />
+      <File FileName="CollegeVS/Views/HighlightPage/HighlightPage.xaml.cs" />
+      <File FileName="CollegeVS/Views/LoginPages/LoginPage.xaml.cs" />
+      <File FileName="CollegeVS/Views/Comment/CommentSlideUp.xaml.cs" />
+      <File FileName="CollegeVS.Android/MainActivity.cs" />
+      <File FileName="CollegeVS.iOS/AppDelegate.cs" />
+      <File FileName="CollegeVS/Helpers/Utils.cs" />
+      <File FileName="CollegeVS/App.xaml" />
+      <File FileName="CollegeVS/App.xaml.cs" />
+      <File FileName="CollegeVS/Views/LoginPages/LoginPage.xaml" />
+      <File FileName="../../../../../../Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/bin/MSBuild/Current/bin/Microsoft.Common.CurrentVersion.targets" />
+      <File FileName="../../../../.nuget/packages/xamarin.essentials/1.7.1/readme.txt" />
+      <File FileName="../../../../.nuget/packages/microsoft.ui.xaml/2.7.1/readme.txt" />
+      <File FileName="CollegeVS/Views/ViewVideoControl.xaml.cs" />
+      <File FileName="CollegeVS/Views/ViewVideoControl.xaml" />
+      <File FileName="../../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Legacy.targets" />
+      <File FileName="../../../../../../Applications/Visual Studio (Preview).app/Contents/MonoBundle/MSBuild/Current/bin/Microsoft.Common.CurrentVersion.targets" Line="2218" Column="5" />
+      <File FileName="../../../../.nuget/packages/microsoft.ui.xaml/2.8.0/readme.txt" Line="1" Column="1" />
+      <File FileName="../../../../.nuget/packages/microsoft.ui.xaml/2.7.2/readme.txt" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CollegeVS" expanded="True">
             <Node name="CollegeVS" expanded="True">
-              <Node name="Converter" expanded="True" />
-              <Node name="Models" expanded="True" />
               <Node name="ViewModels" expanded="True" />
               <Node name="Views" expanded="True">
-                <Node name="HighlightPage" expanded="True">
-                  <Node name="HighlightPage.xaml" expanded="True" />
-                </Node>
                 <Node name="HomePages" expanded="True">
                   <Node name="CLGVSHome.xaml" expanded="True" />
                 </Node>
-                <Node name="TestView.xaml" expanded="True">
-                  <Node name="TestView.xaml.cs" selected="True" />
-                </Node>
+                <Node name="LoginPages" expanded="True" />
                 <Node name="ViewVideoControl.xaml" expanded="True" />
               </Node>
             </Node>
-            <Node name="CollegeVS.Android" expanded="True">
-              <Node name="Resources" expanded="True">
-                <Node name="Raw" expanded="True" />
-              </Node>
-            </Node>
+            <Node name="CollegeVS.Android" expanded="True" selected="True" />
             <Node name="CollegeVS.iOS" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.MonoDroid LastDeploySdkVersion="13.0.99.36" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <Xamarin.Addins.Core.Project ActiveDebugTarget="Android.Pixel_5_API_33" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
-  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Pixel_2_API_32" />
+  <MonoDevelop.Ide.ItemProperties.CollegeVS.Android AndroidDesignerPreferredTheme="MainTheme" AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.emulator-5554" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

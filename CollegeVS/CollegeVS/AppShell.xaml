@@ -89,21 +89,14 @@
             
 		</Tab>
         <Tab Title="Dares" Route="Dares" Icon="dares.png" >
-
-
-           
-            
+   
             <ShellContent  x:Name="CreateSentIncoming"  Route="CreateSentIncoming"   ContentTemplate="{DataTemplate local:CreateSentIncoming}" />
-  <ShellContent  x:Name="SentIncoming" Route="SentIncoming"  IsVisible="False"  ContentTemplate="{DataTemplate local:SentIncoming}"/>
-           
-
-
+            <ShellContent  x:Name="SentIncoming" Route="SentIncoming"  IsVisible="False"  ContentTemplate="{DataTemplate local:SentIncoming}"/>
+ 
         </Tab>
 	
 		<Tab Title="Post" Route="Post" Icon="postcamera.png">
 			<ShellContent ContentTemplate="{DataTemplate local:Post}" />
-
-
 		</Tab>
 		
 

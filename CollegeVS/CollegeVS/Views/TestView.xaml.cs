@@ -29,58 +29,8 @@ namespace CollegeVS.Views
             {
                 return;
             }
-            if (home.Stopped == true)
-            {
+           
 
-                //home.previewVideo.Stop();
-
-
-
-                home.previewVideo.Pause();
-
-
-
-            }
-
-            if (home.Stopped == false)
-            {
-
-                //home.previewVideo.Stop();
-
-
-
-                home.previewVideo.Play();
-
-
-
-            }
-
-
-            if (home.IsPlaying == true)
-            {
-
-                //home.previewVideo.Stop();
-
-                
-              
-                home.previewVideo.Play();
-                
-
-
-            }
-            if (home.IsPlaying == false)
-            {
-
-                //home.previewVideo.Stop();
-
-                home.previewVideo.Position = TimeSpan.FromSeconds(0);
-        
-                home.previewVideo.Pause();
-
-
-
-
-            }
 
         }
 
@@ -117,29 +67,29 @@ namespace CollegeVS.Views
         {
             
             
-            if (Stopped == true)
-            {
-               previewVideo.Pause();
-           }
             
-
-
-            if (IsPlaying == false)
-            {
-                //previewVideo.Position = TimeSpan.FromSeconds(0);
-                previewVideo.Pause();
-
-                //previewVideo.Stop();
-
-            }
           
 
         }
 
         void previewVideo_PropertyChanging(System.Object sender, Xamarin.Forms.PropertyChangingEventArgs e)
         {
-            
+          
 
+
+
+            if (IsPlaying == true)
+            {
+                
+                previewVideo.Play();
+            }
+            else
+            {
+
+                previewVideo.Stop();
+
+
+            }
         }
     }
 }
