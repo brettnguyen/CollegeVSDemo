@@ -6,7 +6,7 @@ A college based social media app that ranks colleges. Points are used for rankin
 # Build
 CollegeVS is built using xamarin forms for the front-end framework with C# as the back-end framework. The database that is used is Microsoft Azure.
 
-# ShowCase and images
+# Showcase and images
 <img src= https://user-images.githubusercontent.com/77566307/225459481-9b3ac999-db56-44f1-b26f-07dd898a2a68.png width="250" > <img src= https://user-images.githubusercontent.com/77566307/225459448-91ce690c-3271-41c4-8efd-eb1256204c43.png width="250" >
 <img src= https://user-images.githubusercontent.com/77566307/225459463-c25c6375-143e-48ae-abe0-aed759502ab4.png width="250" >
 <img src= https://user-images.githubusercontent.com/77566307/225459571-08c5cef0-3e55-4b4a-abe4-8543647baa74.png width="250" >
