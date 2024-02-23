@@ -4,7 +4,7 @@
 A college based social media app that ranks colleges. Points are used for rankings and are obtained by a user from their respective college. Points are given based on the number of the number of upvotes a post gets. A post can be put into 1 of 6 categories. Parties, sports, Clubs, food, dorms, and other. 
 
 # Build
-CollegeVS is built using xamarin forms for the front-end framework with C# as the back-end framework. The database that is used is Microsoft Azure.
+CollegeVS is built using xamarin forms for the front-end framework with C# as the back-end framework with an SQL Azure database.
 
 # Showcase and images
 <img src= https://user-images.githubusercontent.com/77566307/225459481-9b3ac999-db56-44f1-b26f-07dd898a2a68.png width="250" > <img src= https://user-images.githubusercontent.com/77566307/225459448-91ce690c-3271-41c4-8efd-eb1256204c43.png width="250" >
