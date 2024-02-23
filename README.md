@@ -1,5 +1,5 @@
 # CollegeVSDemo
-(For legal reasons I am not allowed to disclose too much information. As well as this is not the full code of CollegeVS just a demo)
+
 
 A college based social media app that ranks colleges. Points are used for rankings and are obtained by a user from their respective college. Points are given based on the number of the number of upvotes a post gets. A post can be put into 1 of 6 categories. Parties, sports, Clubs, food, dorms, and other. 
 
